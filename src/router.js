@@ -15,8 +15,7 @@ import PurchasePriceController from './controllers/purchase-price-controller.js'
 import ReceiveOrderController from './controllers/receive-order-controller.js';
 import RecipeBookController from './controllers/recipe-book-controller.js';
 import RrhhController from './controllers/rrhh-controller.js';
-import FirebaseServiceInstance from '../../services/firebase-service.js';
-
+import FirebaseServiceInstance from './services/firebase-service.js';
 
 const BASE_PATH = '/nrd/';
 
