@@ -1,6 +1,7 @@
 import BaseController from './base-controller.js';
 import HomeView from '../views/home-view.js';
-import FirebaseServiceInstance from '../../../services/firebase-service.js';
+import FirebaseServiceInstance from '../services/firebase-service.js';
+
 
 export default class HomeController extends BaseController {
 
