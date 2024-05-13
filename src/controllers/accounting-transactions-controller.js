@@ -1,7 +1,7 @@
 import BaseController from './base-controller.js';
 import AccountingTransactionsView from '../views/accounting-transactions-view.js';
 import DataPersistenceModel from '../models/data-persistence-model.js';
-DataPersistenceModel
+
 
 export default class AccountingTransactionsController extends BaseController {
     constructor() {

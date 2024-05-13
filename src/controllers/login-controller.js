@@ -1,6 +1,6 @@
 import BaseController from './base-controller.js';
 import LoginView from '../views/login-view.js';
-import FirebaseServiceInstance from '../../../services/firebase-service.js';
+import FirebaseServiceInstance from '../services/firebase-service.js';
 
 export default class LoginController extends BaseController {
 
