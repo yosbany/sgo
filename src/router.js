@@ -115,7 +115,6 @@ export default async function router() {
                 executeControllerMethod(controller, camelCaseKey);
             }
         }
-
     } else {
         routeNotFound();
     }
