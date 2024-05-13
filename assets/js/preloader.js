@@ -1,22 +1,27 @@
-// Función para mostrar el loader
-function showLoader() {
+// Función para insertar el loader
+function insertLoader() {
     var pre = document.createElement("div");
     pre.innerHTML = '<div class="loader-wrapper"><div class="loader">Loading...</div></div>';
     document.body.insertBefore(pre, document.body.firstChild);
 }
 
-// Función para marcar la página como cargada
-function markPageLoaded() {
+// Función para agregar la clase "loaded" al body cuando el DOM está cargado
+function addLoadedClass() {
     document.body.className += " loaded";
 }
 
-// Mostrar el loader cuando se carga la página
-document.addEventListener("DOMContentLoaded", function(event) {
-    showLoader();
+// Insertar el loader cuando la página se carga por primera vez
+window.addEventListener("DOMContentLoaded", function(event) {
+    insertLoader();
 });
 
-// Marcar la página como cargada cuando cambia el hash de la URL
-window.addEventListener("hashchange", function() {
-    showLoader();
-    markPageLoaded();
+// Agregar la clase "loaded" cuando el DOM está cargado
+window.addEventListener("DOMContentLoaded", function(event) {
+    addLoadedClass();
+});
+
+// Insertar el loader y agregar la clase "loaded" cuando cambia el hash de la URL
+window.addEventListener("hashchange", function(event) {
+    insertLoader();
+    addLoadedClass();
 });
