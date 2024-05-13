@@ -1,4 +1,4 @@
-import FirebaseServiceInstance from "../../../services/firebase-service.js";
+import FirebaseServiceInstance from "../services/firebase-service";
 
 export default class DataPersistenceModel {
     constructor() {
