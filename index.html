@@ -29,17 +29,17 @@
     <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__content">
         <div class="mdc-list-group">
-          <nav class="mdc-list mdc-drawer-menu">
+          <nav class="mdc-list mdc-drawer-menu" id="sidebar-menu">
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link active" href="#ordenes">
+              <a class="mdc-drawer-link active" href="#home">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
                 Inicio
               </a>
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#ordenes">
+              <a class="mdc-drawer-link" href="#make-order">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">attach_money</i>
                 Ordenes de Compra
@@ -47,7 +47,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#lanch">
+              <a class="mdc-drawer-link" href="#budget-lunch">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">track_changes</i>
                 Lanch Para Fiestas
@@ -55,7 +55,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#movimientos">
+              <a class="mdc-drawer-link" href="#accounting-transactions">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">grid_on</i>
                 Movimientos
@@ -63,7 +63,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#nominas">
+              <a class="mdc-drawer-link" href="#rrhh">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">business</i>
                 Nóminas
@@ -71,7 +71,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#recetario">
+              <a class="mdc-drawer-link" href="#recipe-book">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">local_dining</i>
                 Recetario
@@ -79,7 +79,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#catalogo">
+              <a class="mdc-drawer-link" href="#online-catalog">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">grid_on</i>
                 Catálogo
@@ -95,7 +95,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#plan_compras">
+              <a class="mdc-drawer-link" href="#purchase-plan">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">grid_on</i>
                 Plan de Compras
@@ -103,7 +103,7 @@
             </div>
 
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-drawer-link" href="#turnos_mostrador">
+              <a class="mdc-drawer-link" href="#counter-shifts">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
                   aria-hidden="true">grid_on</i>
                 Turnos Mostrados
@@ -118,22 +118,22 @@
               <div class="mdc-expansion-panel" id="ui-sub-menu">
                 <nav class="mdc-list mdc-drawer-submenu">
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="#calculadora">
+                    <a class="mdc-drawer-link" href="#calculate-price">
                       Calcular Precios
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="#buscador_costo">
+                    <a class="mdc-drawer-link" href="#purchase-price">
                       Buscador de Costos
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="#imprimir_precios">
+                    <a class="mdc-drawer-link" href="#print-price">
                       Imprimir Precios
                     </a>
                   </div>
                   <div class="mdc-list-item mdc-drawer-item">
-                    <a class="mdc-drawer-link" href="#generar_carteles">
+                    <a class="mdc-drawer-link" href="#posters">
                       Generar Carteles
                     </a>
                   </div>
@@ -152,7 +152,7 @@
           <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <button
               class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
-            <span class="mdc-top-app-bar__title">Inicio</span>
+            <span class="mdc-top-app-bar__title" id="mainTitle">Inicio</span>
           </div>
           <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__section-right">
             <div class="menu-button-container">

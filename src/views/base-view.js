@@ -15,7 +15,7 @@ export default class BaseView {
         return document.getElementById(elementId) ? document.getElementById("elementId").innerHTML : document.createElement("dvi").innerHTML;
     }
 
-    async fetchAndSetHTML(url, targetElementId) {
+    async fetchAndSetHTML(url, targetElementId, title) {
 
         this.hideLoaderPage();
         this.hideLoaderApp();
@@ -24,6 +24,9 @@ export default class BaseView {
             .then(response => response.text())
             .then(html => {
                 document.getElementById(targetElementId).innerHTML = this._filterScripts(html);
+            })
+            .then(() =>{
+                this._setPageTitleAndHeader(title)
             });
     }
 
@@ -53,7 +56,7 @@ export default class BaseView {
         hideLoaderApp();
     }
 
-    setPageTitleAndHeader(title) {
+    _setPageTitleAndHeader(title) {
         const newTitle = "NRD - " + title;
         document.title = newTitle;
         //document.getElementById("pageTitle").innerText = newTitle;
@@ -64,15 +67,13 @@ export default class BaseView {
     _setSidebarMenu() {
         if (window.location.hash) {
             const hash = window.location.hash.slice(1);
-            const sidebarLinks = document.querySelectorAll('#sidebarMenu a.nav-link');
+            const sidebarLinks = document.querySelectorAll('#sidebar-menu a.mdc-drawer-link');
             sidebarLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href && href.includes('#' + hash)) {
                     link.classList.add('active');
-                    link.setAttribute('aria-current', 'page');
                 } else {
                     link.classList.remove('active');
-                    link.removeAttribute('aria-current');
                 }
             });
         }

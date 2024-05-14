@@ -7,8 +7,7 @@ export default class PurchasePriceView extends BaseView {
     }
 
     async renderView(resultado) {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "purchase-price.html", "app");
-        this.setPageTitleAndHeader("Precio Compra");
+        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "purchase-price.html", "app", "Precio Compra");
         this.searchInput = document.getElementById("searchInput");
         this.initEventView();
         this.cargarResultadosEnTabla(resultado);

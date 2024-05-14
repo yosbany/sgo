@@ -12,7 +12,7 @@ import PrintPriceController from './controllers/print-price-controller.js';
 import ProfileController from './controllers/profile-controller.js';
 import PurchasePlanController from './controllers/purchase-plan-controller.js';
 import PurchasePriceController from './controllers/purchase-price-controller.js';
-import ReceiveOrderController from './controllers/receive-order-controller.js';
+import ProceduresController from './controllers/procedures-controller.js';
 import RecipeBookController from './controllers/recipe-book-controller.js';
 import RrhhController from './controllers/rrhh-controller.js';
 import FirebaseServiceInstance from './services/firebase-service.js';
@@ -49,8 +49,8 @@ const routes = {
     'purchase-plan': new PurchasePlanController(),
     // PurchasePriceController
     'purchase-price': new PurchasePriceController(),
-    // ReceiveOrderController
-    'receive-order': new ReceiveOrderController(),
+    // ProceduresController
+    'procedures': new ProceduresController(),
     // RecipeBookController
     'recipe-book': new RecipeBookController(),
     // RrhhController
@@ -58,7 +58,7 @@ const routes = {
 };
 
 function isRoutePublic(key) {
-    const publicRoutes = ['login.html'];
+    const publicRoutes = ['login.html', '404.html', '500.html'];
     return publicRoutes.includes(key);
 }
 

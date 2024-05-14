@@ -1,19 +1,17 @@
 import BaseView from './base-view.js';
 
-export default class CalculatePriceView extends BaseView {
+export default class ProceduresView extends BaseView {
 
     constructor() {
         super();
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "calculate-price.html", "app", "Calcular Precio");
+        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "procedures.html", "app", "Procedimientos");
         this.initEventView();
     }
 
     initEventView() {
 
     }
-
-
 }

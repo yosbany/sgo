@@ -7,8 +7,7 @@ export default class PostersView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "posters.html", "app");
-        this.setPageTitleAndHeader("Carteles");
+        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "posters.html", "app", "Carteles");
         this.initEventView();
     }
 

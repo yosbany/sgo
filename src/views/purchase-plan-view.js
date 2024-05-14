@@ -7,8 +7,7 @@ export default class PurchasePlanView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "purchase-plan.html", "app");
-        this.setPageTitleAndHeader("Plan Compras");
+        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "purchase-plan.html", "app", "Plan Compras");
         this.initEventView();
     }
 

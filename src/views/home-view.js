@@ -8,8 +8,7 @@ export default class HomeView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "home.html", "app");
-        this.setPageTitleAndHeader("Inicio");
+        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "home.html", "app", "Inicio");
         this.initEventView();
     }
 
