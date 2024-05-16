@@ -16,17 +16,26 @@ import ProceduresController from './controllers/procedures-controller.js';
 import RecipeBookController from './controllers/recipe-book-controller.js';
 import RrhhController from './controllers/rrhh-controller.js';
 import FirebaseServiceInstance from './services/firebase-service.js';
+import Error404Controller from './controllers/error-404-controller.js';
+import Error500Controller from './controllers/error-500-controller.js';
+
 
 const BASE_PATH = '/nrd/';
 
 const routes = {
+    //Public
+    // Error404Controller
+    '404.html': new Error404Controller(),
+    // Error500Controller
+    '500.html': new Error500Controller(),
+    // LoginController
+    'login.html': new LoginController(),
+    //Private
     // HomeController
     '': new HomeController(),
     'index.html': new HomeController(),
     'home': new HomeController(),
     'exit': new HomeController(),
-    // LoginController
-    'login.html': new LoginController(),
     // AccountingTransactionsController
     'accounting-transactions': new AccountingTransactionsController(),
     // BudgetLunchController

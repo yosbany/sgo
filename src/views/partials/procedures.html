@@ -1,56 +1,29 @@
-<select class="form-select form-select-lg">
-  <option>CLIENTE 1</option>
-  <option>CLIENTE 2</option>
-  <option>CLIENTE 3</option>
-  <option>CLIENTE 4</option>
-</select>
+<div class="container-fluid">
+  <!-- Formulario para crear un nuevo registro -->
+  <form id="newRecordForm">
+      <div class="mb-3">
+          <label for="titulo">Título</label>
+          <input type="text" class="form-control" id="titulo" required>
+      </div>
+      <!-- Agregar más campos según las propiedades de la entidad -->
+      <button type="submit" class="btn btn-primary">Crear Registro</button>
+  </form>
 
-<table class="table table-borderless">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th style="text-align: right;">Cantidad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="vertical-align: middle;"><input class="form-check-input" type="checkbox" checked style="scale: 1.6;">
-      </td>
-      <td style="vertical-align: middle;">
-        <h4 style="margin-bottom: 0px !important;">AZUCAR COMUN BOLSA 25KG</h4>
-      </td>
-      <td style="vertical-align: middle;"><span class="badge bg-secondary">$ 59</span></td>
-      <td style="vertical-align: middle;"><input type="number" class="form-control" style="width: 80px;float: right;">
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: middle;"><input class="form-check-input" type="checkbox" style="scale: 1.6;"></td>
-      <td style="vertical-align: middle;">
-        <h4 style="margin-bottom: 0px !important;">SAL COMUN BOLSA 25KG</h4>
-      </td>
-      <td style="vertical-align: middle;"><span class="badge bg-secondary">$ 134</span></td>
-      <td style="vertical-align: middle;"><input type="number" class="form-control" style="width: 80px;float: right;">
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: middle;"><input class="form-check-input" type="checkbox" style="scale: 1.6;"></td>
-      <td style="vertical-align: middle;">
-        <h4 style="margin-bottom: 0px !important;">HARINA 0 BOLSA 25KG</h4>
-      </td>
-      <td style="vertical-align: middle;"><span class="badge bg-secondary">$ 45</span></td>
-      <td style="vertical-align: middle;"><input type="number" class="form-control" style="width: 80px;float: right;">
-      </td>
-    </tr>
-  </tbody>
-</table>
-<label for="comment" class="mt-4">Resumen del Pedido:</label>
-<textarea class="form-control mb-4" rows="5" id="comment" name="text" readonly></textarea>
-<button type="button" class="btn btn-primary">Copiar</button>
-<button type="button" class="btn btn-primary">Imprimir</button>
-<button type="button" class="btn btn-primary">Guardar</button>
+  <hr>
 
-<script>
-  window.location.href = '../access-denied.html';
-</script>
+  <!-- Tabla para mostrar registros -->
+  <h2>Registros</h2>
+  <input type="text" id="searchInput" placeholder="Buscar en la tabla...">
+  <table id="recordTable" class="table">
+      <thead>
+          <tr>
+              <th>Título</th>
+              <!-- Agregar más encabezados según las propiedades de la entidad -->
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Los registros se agregarán dinámicamente aquí -->
+      </tbody>
+  </table>
+</div>
