@@ -1,6 +1,6 @@
 import BaseView from './base-view.js';
 
-export default class IndexView extends BaseView {
+export default class HomeView extends BaseView {
 
     constructor(controller) {
         super();
