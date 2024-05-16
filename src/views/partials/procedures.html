@@ -1,29 +1,56 @@
 <div class="container-fluid">
-  <!-- Formulario para crear un nuevo registro -->
-  <form id="newRecordForm">
-      <div class="mb-3">
-          <label for="titulo">Título</label>
-          <input type="text" class="form-control" id="titulo" required>
-      </div>
-      <!-- Agregar más campos según las propiedades de la entidad -->
-      <button type="submit" class="btn btn-primary">Crear Registro</button>
-  </form>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gestión de Registros</a>
+        </div>
+    </nav>
 
-  <hr>
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        <h1>Registros</h1>
+        <!-- Botón para crear nuevo registro -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearRegistroModal">
+            Crear Nuevo Registro
+        </button>
 
-  <!-- Tabla para mostrar registros -->
-  <h2>Registros</h2>
-  <input type="text" id="searchInput" placeholder="Buscar en la tabla...">
-  <table id="recordTable" class="table">
-      <thead>
-          <tr>
-              <th>Título</th>
-              <!-- Agregar más encabezados según las propiedades de la entidad -->
-              <th>Acciones</th>
-          </tr>
-      </thead>
-      <tbody>
-          <!-- Los registros se agregarán dinámicamente aquí -->
-      </tbody>
-  </table>
+        <!-- Tabla para mostrar los registros -->
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Marco Normativo</th>
+                    <th>Objetivo del Documento</th>
+                    <!-- Agrega más columnas según las propiedades de la entidad -->
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaRegistros">
+                <!-- Aquí se mostrarán los registros -->
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<!-- Modales -->
+<!-- Modal para crear un nuevo registro -->
+<div class="modal fade" id="crearRegistroModal" tabindex="-1" aria-labelledby="crearRegistroModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="crearRegistroModalLabel">Crear Nuevo Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí van los campos del formulario para crear un nuevo registro -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para ver un registro -->
+<!-- Agrega aquí modales para ver, actualizar y confirmar eliminación -->
