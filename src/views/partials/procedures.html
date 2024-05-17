@@ -1,48 +1,59 @@
-<div class="container-fluid">
-    <!-- Contenido principal -->
-    <div class="container mt-4">
-        <!-- Botón para crear nuevo registro -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearRegistroModal">
-            Crear Nuevo Procedimiento
-        </button>
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+            <div class="mdc-card p-0">
+                <div class="container-fluid">
+                    <!-- Contenido principal -->
+                    <div class="container mt-4">
+                        <!-- Botón para crear nuevo registro -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#crearRegistroModal">
+                            Crear Nuevo Procedimiento
+                        </button>
 
-        <!-- Tabla para mostrar los registros -->
-        <table class="table mt-4">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Marco Normativo</th>
-                    <th>Objetivo del Documento</th>
-                    <!-- Agrega más columnas según las propiedades de la entidad -->
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="tablaRegistros">
-                <!-- Aquí se mostrarán los registros -->
-            </tbody>
-        </table>
-    </div>
-</div>
+                        <!-- Tabla para mostrar los registros -->
+                        <table class="table mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Marco Normativo</th>
+                                    <th>Objetivo del Documento</th>
+                                    <!-- Agrega más columnas según las propiedades de la entidad -->
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaRegistros">
+                                <!-- Aquí se mostrarán los registros -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-<!-- Modales -->
-<!-- Modal para crear un nuevo registro -->
-<div class="modal fade" id="crearRegistroModal" tabindex="-1" aria-labelledby="crearRegistroModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="crearRegistroModalLabel">Crear Nuevo Registro</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Aquí van los campos del formulario para crear un nuevo registro -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                <!-- Modales -->
+                <!-- Modal para crear un nuevo registro -->
+                <div class="modal fade" id="crearRegistroModal" tabindex="-1" aria-labelledby="crearRegistroModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="crearRegistroModalLabel">Crear Nuevo Registro</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Aquí van los campos del formulario para crear un nuevo registro -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para ver un registro -->
+                <!-- Agrega aquí modales para ver, actualizar y confirmar eliminación -->
             </div>
         </div>
     </div>
 </div>
-
-<!-- Modal para ver un registro -->
-<!-- Agrega aquí modales para ver, actualizar y confirmar eliminación -->
