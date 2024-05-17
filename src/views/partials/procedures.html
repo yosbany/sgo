@@ -1,59 +1,201 @@
-<div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
-            <div class="mdc-card p-0">
-                <div class="container-fluid">
-                    <!-- Contenido principal -->
-                    <div class="container mt-4">
-                        <!-- Botón para crear nuevo registro -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#crearRegistroModal">
-                            Crear Nuevo Procedimiento
-                        </button>
+<div class="container-fluid">
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        <!-- Botón para crear nuevo registro -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearRegistroModal">
+            Crear Nuevo Procedimiento
+        </button>
 
-                        <!-- Tabla para mostrar los registros -->
-                        <table class="table mt-4">
-                            <thead>
-                                <tr>
-                                    <th>Título</th>
-                                    <th>Marco Normativo</th>
-                                    <th>Objetivo del Documento</th>
-                                    <!-- Agrega más columnas según las propiedades de la entidad -->
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tablaRegistros">
-                                <!-- Aquí se mostrarán los registros -->
-                            </tbody>
-                        </table>
-                    </div>
+        <!-- Tabla para mostrar los registros -->
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Resumen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaRegistros">
+                <!-- Aquí se mostrarán los registros -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modales -->
+<!-- Modal para crear un nuevo registro -->
+<div class="modal fade" id="crearRegistroModal" tabindex="-1" aria-labelledby="crearRegistroModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="crearRegistroModalLabel">Crear Nuevo Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="titulo">
                 </div>
-
-                <!-- Modales -->
-                <!-- Modal para crear un nuevo registro -->
-                <div class="modal fade" id="crearRegistroModal" tabindex="-1" aria-labelledby="crearRegistroModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="crearRegistroModalLabel">Crear Nuevo Registro</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- Aquí van los campos del formulario para crear un nuevo registro -->
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="mb-3">
+                    <label for="resumen" class="form-label">Resumen</label>
+                    <input type="text" class="form-control" id="resumen">
                 </div>
-
-                <!-- Modal para ver un registro -->
-                <!-- Agrega aquí modales para ver, actualizar y confirmar eliminación -->
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal para ver un registro -->
+<div class="modal fade" id="verRegistroModal" tabindex="-1" aria-labelledby="verRegistroModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="verRegistroModalLabel">Ver Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="verTitulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="verTitulo" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="verResumen" class="form-label">Resumen</label>
+                    <input type="text" class="form-control" id="verResumen" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="verDescripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="verDescripcion" rows="3" readonly></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para actualizar un registro -->
+<div class="modal fade" id="actualizarRegistroModal" tabindex="-1" aria-labelledby="actualizarRegistroModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="actualizarRegistroModalLabel">Actualizar Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="actualizarTitulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="actualizarTitulo">
+                </div>
+                <div class="mb-3">
+                    <label for="actualizarResumen" class="form-label">Resumen</label>
+                    <input type="text" class="form-control" id="actualizarResumen">
+                </div>
+                <div class="mb-3">
+                    <label for="actualizarDescripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="actualizarDescripcion" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnActualizar">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para confirmar eliminación de un registro -->
+<div class="modal fade" id="eliminarRegistroModal" tabindex="-1" aria-labelledby="eliminarRegistroModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="eliminarRegistroModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que quieres eliminar este registro?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Función para mostrar detalles de un registro
+    function verRegistro(titulo, resumen, descripcion) {
+        document.getElementById("verTitulo").value = titulo;
+        document.getElementById("verResumen").value = resumen;
+        document.getElementById("verDescripcion").value = descripcion;
+        $('#verRegistroModal').modal('show');
+    }
+
+    // Función para actualizar un registro
+    function actualizarRegistro(titulo, resumen, descripcion) {
+        document.getElementById("actualizarTitulo").value = titulo;
+        document.getElementById("actualizarResumen").value = resumen;
+        document.getElementById("actualizarDescripcion").value = descripcion;
+        $('#actualizarRegistroModal').modal('show');
+    }
+
+    // Función para eliminar un registro
+    function eliminarRegistro() {
+        // Aquí puedes implementar la lógica para eliminar el registro
+    }
+    function cargarDatosDummy() {
+        // Datos dummy
+        var registros = [
+            {
+                titulo: "Título 1",
+                resumen: "Resumen del procedimiento 1",
+                descripcion: "Descripción detallada del procedimiento 1."
+            },
+            {
+                titulo: "Título 2",
+                resumen: "Resumen del procedimiento 2",
+                descripcion: "Descripción detallada del procedimiento 2."
+            },
+            {
+                titulo: "Título 3",
+                resumen: "Resumen del procedimiento 3",
+                descripcion: "Descripción detallada del procedimiento 3."
+            }
+        ];
+
+        // Limpiar tabla antes de cargar datos
+        document.getElementById("tablaRegistros").innerHTML = "";
+
+        // Iterar sobre los registros y agregarlos a la tabla
+        registros.forEach(function(registro) {
+            var fila = "<tr>" +
+                "<td>" + registro.titulo + "</td>" +
+                "<td>" + registro.resumen + "</td>" +
+                "<td>" +
+                "<button type='button' class='btn btn-primary' onclick='verRegistro(\"" + registro.titulo + "\", \"" + registro.resumen + "\", \"" + registro.descripcion + "\")'>Ver</button> " +
+                "<button type='button' class='btn btn-info' onclick='actualizarRegistro(\"" + registro.titulo + "\", \"" + registro.resumen + "\", \"" + registro.descripcion + "\")'>Actualizar</button> " +
+                "<button type='button' class='btn btn-danger' onclick='eliminarRegistro()'>Eliminar</button>" +
+                "</td>" +
+                "</tr>";
+            document.getElementById("tablaRegistros").innerHTML += fila;
+        });
+    }
+
+    // Llamar a la función para cargar datos dummy al cargar la página (solo para pruebas)
+    window.onload = function() {
+        cargarDatosDummy();
+    };
+</script>
