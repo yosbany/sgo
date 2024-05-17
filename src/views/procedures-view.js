@@ -24,7 +24,7 @@ export default class ProceduresView extends BaseView {
     cargarDatosDummy() {
         const tablaRegistros = document.getElementById("tablaRegistros");
 
-        registrosDummy.forEach(registro => {
+        this.registrosDummy.forEach(registro => {
             const fila = document.createElement("tr");
             fila.innerHTML = `
                 <td>${registro.titulo}</td>
