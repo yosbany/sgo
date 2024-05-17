@@ -39,11 +39,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="resumen" class="form-label">Resumen</label>
-                    <input type="text" class="form-control" id="resumen">
+                    <textarea class="form-control" id="resumen" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                    <textarea class="form-control" id="descripcion" rows="5"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
@@ -64,18 +64,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="mb-3">
-                    <label for="verTitulo" class="form-label">Título</label>
-                    <input type="text" class="form-control" id="verTitulo" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="verResumen" class="form-label">Resumen</label>
-                    <input type="text" class="form-control" id="verResumen" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="verDescripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="verDescripcion" rows="3" readonly></textarea>
-                </div>
+                <h5>Título:</h5>
+                <p id="verTitulo"></p>
+                <h5>Resumen:</h5>
+                <p id="verResumen"></p>
+                <h5>Descripción:</h5>
+                <p id="verDescripcion"></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -100,11 +94,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="actualizarResumen" class="form-label">Resumen</label>
-                    <input type="text" class="form-control" id="actualizarResumen">
+                    <textarea class="form-control" id="actualizarResumen" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="actualizarDescripcion" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="actualizarDescripcion" rows="3"></textarea>
+                    <textarea class="form-control" id="actualizarDescripcion" rows="5"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
@@ -134,68 +128,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    // Función para mostrar detalles de un registro
-    function verRegistro(titulo, resumen, descripcion) {
-        document.getElementById("verTitulo").value = titulo;
-        document.getElementById("verResumen").value = resumen;
-        document.getElementById("verDescripcion").value = descripcion;
-        $('#verRegistroModal').modal('show');
-    }
-
-    // Función para actualizar un registro
-    function actualizarRegistro(titulo, resumen, descripcion) {
-        document.getElementById("actualizarTitulo").value = titulo;
-        document.getElementById("actualizarResumen").value = resumen;
-        document.getElementById("actualizarDescripcion").value = descripcion;
-        $('#actualizarRegistroModal').modal('show');
-    }
-
-    // Función para eliminar un registro
-    function eliminarRegistro() {
-        // Aquí puedes implementar la lógica para eliminar el registro
-    }
-    function cargarDatosDummy() {
-        // Datos dummy
-        var registros = [
-            {
-                titulo: "Título 1",
-                resumen: "Resumen del procedimiento 1",
-                descripcion: "Descripción detallada del procedimiento 1."
-            },
-            {
-                titulo: "Título 2",
-                resumen: "Resumen del procedimiento 2",
-                descripcion: "Descripción detallada del procedimiento 2."
-            },
-            {
-                titulo: "Título 3",
-                resumen: "Resumen del procedimiento 3",
-                descripcion: "Descripción detallada del procedimiento 3."
-            }
-        ];
-
-        // Limpiar tabla antes de cargar datos
-        document.getElementById("tablaRegistros").innerHTML = "";
-
-        // Iterar sobre los registros y agregarlos a la tabla
-        registros.forEach(function(registro) {
-            var fila = "<tr>" +
-                "<td>" + registro.titulo + "</td>" +
-                "<td>" + registro.resumen + "</td>" +
-                "<td>" +
-                "<button type='button' class='btn btn-primary' onclick='verRegistro(\"" + registro.titulo + "\", \"" + registro.resumen + "\", \"" + registro.descripcion + "\")'>Ver</button> " +
-                "<button type='button' class='btn btn-info' onclick='actualizarRegistro(\"" + registro.titulo + "\", \"" + registro.resumen + "\", \"" + registro.descripcion + "\")'>Actualizar</button> " +
-                "<button type='button' class='btn btn-danger' onclick='eliminarRegistro()'>Eliminar</button>" +
-                "</td>" +
-                "</tr>";
-            document.getElementById("tablaRegistros").innerHTML += fila;
-        });
-    }
-
-    // Llamar a la función para cargar datos dummy al cargar la página (solo para pruebas)
-    window.onload = function() {
-        cargarDatosDummy();
-    };
-</script>

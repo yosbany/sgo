@@ -33,7 +33,7 @@ export default class BaseView {
     _filterScripts(html) {
         const tempElement = document.createElement('div');
         tempElement.innerHTML = html;
-        //tempElement.querySelectorAll('script').forEach(script => script.parentNode.removeChild(script));
+        tempElement.querySelectorAll('script').forEach(script => script.parentNode.removeChild(script));
         return tempElement.innerHTML;
     }
 

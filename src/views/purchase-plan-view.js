@@ -14,4 +14,6 @@ export default class PurchasePlanView extends BaseView {
     initEventView() {
 
     }
+
+    
 }
