@@ -26,9 +26,9 @@ const BASE_PATH = '/nrd/';
 const routes = {
     //Public
     // Error404Controller
-    '404.html': new Error404Controller(),
+    'error-404.html': new Error404Controller(),
     // Error500Controller
-    '500.html': new Error500Controller(),
+    'error-500.html': new Error500Controller(),
     // LoginController
     'login.html': new LoginController(),
     //Private
