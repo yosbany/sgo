@@ -68,7 +68,7 @@ const routes = {
 };
 
 function isRoutePublic(key) {
-    const publicRoutes = ['login.html', '404.html', '500.html'];
+    const publicRoutes = ['login.html', 'error-404.html', 'error-500.html'];
     return publicRoutes.includes(key);
 }
 
@@ -87,7 +87,7 @@ function executeControllerMethod(controller, methodName) {
 }
 
 function routeNotFound() {
-    redirectTo("404.html");
+    redirectTo("error-404.html");
 }
 
 export default async function router() {
@@ -117,8 +117,10 @@ export default async function router() {
             }
             // Si el usuario está autenticado, ejecutar el controlador
             if (!window.location.hash) {
+                console.log("hash")
                 executeControllerMethod(controller, 'init');
             } else {
+                console.log("path")
                 const camelCaseKey = key.includes('-') ? key.replace(/-([a-z])/g, function (match, letter) {
                     return letter.toUpperCase();
                 }) : key;
