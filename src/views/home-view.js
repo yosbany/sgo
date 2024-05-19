@@ -31,11 +31,10 @@ export default class HomeView extends BaseView {
     }
 
     createMenu() {
-        
         const sidebarNav = document.getElementById('sidebarnav');
         let menuHTML = '';
-
         MENUITEM.forEach(item => {
+            console.log(item);
             menuHTML += `
                 <li id="${item.id}" class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="${item.route}" aria-expanded="false">
@@ -44,9 +43,7 @@ export default class HomeView extends BaseView {
                     </a>
                 </li>`;
         });
-
         sidebarNav.innerHTML = menuHTML;
-
         // Añadir evento click a los elementos del menú
         const menuItemsElements = sidebarNav.querySelectorAll('.sidebar-item');
         menuItemsElements.forEach(item => {
