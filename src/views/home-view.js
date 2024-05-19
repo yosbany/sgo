@@ -25,6 +25,7 @@ export default class HomeView extends BaseView {
     }
 
     async renderView() {
+        console.log("renderView");
         await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "home.html", "app", "Inicio");
         this.createMenu();
         this.initEventView();
