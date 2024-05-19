@@ -15,9 +15,10 @@ import PurchasePriceController from './controllers/purchase-price-controller.js'
 import ProceduresController from './controllers/procedures-controller.js';
 import RecipeBookController from './controllers/recipe-book-controller.js';
 import RrhhController from './controllers/rrhh-controller.js';
-import FirebaseServiceInstance from './services/firebase-service.js';
 import Error404Controller from './controllers/error-404-controller.js';
 import Error500Controller from './controllers/error-500-controller.js';
+import DataPersistenceModel from './models/data-persistence-model.js';
+
 
 
 const BASE_PATH = '/nrd/';
@@ -107,7 +108,8 @@ export default async function router() {
             }
         } else {
             // Si es privada, verificar la autenticación del usuario
-            const currentUser = await FirebaseServiceInstance.getCurrentUser();
+            const dataPersistenceModel =  new DataPersistenceModel();
+            const currentUser = await dataPersistenceModel.storageService.getCurrentUser();
             if (!currentUser) {
                 // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
                 redirectTo("login.html");
