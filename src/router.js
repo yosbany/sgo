@@ -86,13 +86,9 @@ function executeControllerMethod(controller, methodName) {
     }
 }
 
-function routeNotFound() {
-    redirectTo("error-404.html");
-}
-
 export default async function router() {
     const key = getKeyFromHashAndPath();
-    console.log("router key: ", key);
+    console.log("go router key: ", key);
     if (routes.hasOwnProperty(key)) {
         const controller = routes[key];
         // Verificar si la ruta es pública
@@ -117,10 +113,8 @@ export default async function router() {
             }
             // Si el usuario está autenticado, ejecutar el controlador
             if (!window.location.hash) {
-                console.log("hash")
                 executeControllerMethod(controller, 'init');
             } else {
-                console.log("path")
                 const camelCaseKey = key.includes('-') ? key.replace(/-([a-z])/g, function (match, letter) {
                     return letter.toUpperCase();
                 }) : key;
@@ -128,6 +122,6 @@ export default async function router() {
             }
         }
     } else {
-        routeNotFound();
+        redirectTo("error-404.html");
     }
 }
