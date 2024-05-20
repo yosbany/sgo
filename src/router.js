@@ -6,7 +6,6 @@ import AccountingTransactionsController from './controllers/accounting-transacti
 import BudgetLunchController from './controllers/budget-lunch-controller.js';
 import CalculatePriceController from './controllers/calculate-price-controller.js';
 import CounterShiftsController from './controllers/counter-shifts-controller.js';
-import MakeOrderController from './controllers/make-order-controller.js';
 import OnlineCatalogController from './controllers/online-catalog-controller.js';
 import PostersController from './controllers/posters-controller.js';
 import PrintPriceController from './controllers/print-price-controller.js';
@@ -18,6 +17,7 @@ import RecipeBookController from './controllers/recipe-book-controller.js';
 import RrhhController from './controllers/rrhh-controller.js';
 import Error404Controller from './controllers/error-404-controller.js';
 import Error500Controller from './controllers/error-500-controller.js';
+import PurchaseOrdersController from './controllers/purchase-orders-controller.js';
 
 
 
@@ -47,7 +47,7 @@ const routes = {
     // CounterShiftsController
     'counter-shifts': new CounterShiftsController(),
     // MakeOrderController
-    'make-order': new MakeOrderController(),
+    'list-purchase-orders': new PurchaseOrdersController(),
     // OnlineCatalogController
     'online-catalog': new OnlineCatalogController(),
     // PostersController
