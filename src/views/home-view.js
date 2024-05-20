@@ -39,7 +39,7 @@ export default class HomeView extends BaseView {
             const isActive = item.id === 'home' ? 'active' : '';
     
             menuHTML += `
-                <li id="${item.id}" class="sidebar-item ${isSelected}">
+                <li class="sidebar-item ${isSelected}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link ${isActive}" href="${item.route}" aria-expanded="false">
                         <i class="mdi ${item.icon}"></i>
                         <span class="hide-menu">${item.name}</span>
