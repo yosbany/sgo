@@ -23,6 +23,14 @@ export default class PurchaseOrdersController extends BaseController {
         this.view.newPurchaseOrderRenderPartialView();
     }
 
+    async viewPurchaseOrder(idOrder){
+        this.view.viewPurchaseOrderRenderPartialView();
+    }
+
+    async editPurchaseOrder(idOrder){
+        this.view.editPurchaseOrderRenderPartialView();
+    }
+
 }
 
 

@@ -9,17 +9,39 @@ export default class PurchaseOrdersView extends BaseView {
 
     async listPurchaseOrdersRenderPartialView(){
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
-        var nuevaOrdenBtn = document.getElementById('nuevaOrdenBtn');
-        nuevaOrdenBtn.addEventListener('click', (event) => {
+        document.getElementById('nuevaOrdenBtn').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
         });
+        document.querySelectorAll('.eye').forEach(button => {
+            button.addEventListener('click', function() {
+                const rowId = this.getAttribute('id-row-data-bind');
+                console.log('ID del row:', rowId);
+                this.controller.viewPurchaseOrder();
+            });
+        });
+        
     }
 
     async newPurchaseOrderRenderPartialView(){
-        await this.getPartials('new-purchase-order.html', 'Nueva - Ordene de Compra');
+        await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
     }
 
+    async viewPurchaseOrderRenderPartialView(order){
+        await this.getPartials('view-purchase-order.html', 'Ver - Orden de Compra');
+    }
+
+    async editPurchaseOrderRenderPartialView(order){
+        await this.getPartials('edit-purchase-order.html', 'Editar - Orden de Compra');
+    }
+
+
     
+
+
+
+
+
+
 
     async renderView() {
         await this.getPartials('make-order.html', 'Ordenes de Compra');

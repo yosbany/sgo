@@ -35,8 +35,8 @@ export default class HomeView extends BaseView {
         let menuHTML = '';
 
         MENUITEM.forEach(item => {
-            const isSelected = item.id === 'home' ? 'selected' : '';
-            const isActive = item.id === 'home' ? 'active' : '';
+            const isSelected = item.route === '#home' ? 'selected' : '';
+            const isActive = item.route === '#home' ? 'active' : '';
     
             menuHTML += `
                 <li class="sidebar-item ${isSelected}">
