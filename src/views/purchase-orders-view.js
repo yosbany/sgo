@@ -14,7 +14,8 @@ export default class PurchaseOrdersView extends BaseView {
         });
         document.querySelectorAll('.eye').forEach(button => {
             button.addEventListener('click', (event) => {
-                const rowId = this.getAttribute('id-row-data-bind');
+                
+                const rowId = button.getAttribute('id-row-data-bind');
                 console.log('ID del row:', rowId);
                 this.controller.viewPurchaseOrder();
             });
