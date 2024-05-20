@@ -49,7 +49,7 @@ const routes = {
     // MakeOrderController
     'list-purchase-orders': new PurchaseOrdersController(),
     // OnlineCatalogController
-    'online-catalog': new OnlineCatalogController(),
+    'list-purchase-orders': new OnlineCatalogController(),
     // PostersController
     'posters': new PostersController(),
     // PrintPriceController
