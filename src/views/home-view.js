@@ -33,15 +33,20 @@ export default class HomeView extends BaseView {
     createMenu() {
         const sidebarNav = document.getElementById('sidebarnav');
         let menuHTML = '';
+
         MENUITEM.forEach(item => {
+            const isSelected = item.id === 'home' ? 'selected' : '';
+            const isActive = item.id === 'home' ? 'active' : '';
+    
             menuHTML += `
-                <li id="${item.id}" class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="${item.route}" aria-expanded="false">
+                <li id="${item.id}" class="sidebar-item ${isSelected}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link ${isActive}" href="${item.route}" aria-expanded="false">
                         <i class="mdi ${item.icon}"></i>
                         <span class="hide-menu">${item.name}</span>
                     </a>
                 </li>`;
         });
+    
         sidebarNav.innerHTML = menuHTML;
         // Añadir evento click a los elementos del menú
         const menuItemsElements = sidebarNav.querySelectorAll('.sidebar-item');
