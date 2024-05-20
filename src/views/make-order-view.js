@@ -12,8 +12,7 @@ export default class MakeOrderView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "make-order.html", "app", "Ordenes de Compra");
-        
+        await this.getPartials('make-order.html', 'Ordenes de Compra');
         this.proveedorSelect = document.getElementById('proveedorSelect');
         this.productosTableBody = document.getElementById('productosTableBody');
         this.resumenPedidoTextarea = document.getElementById('comment');

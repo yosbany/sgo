@@ -2,19 +2,19 @@ import BaseView from './base-view.js';
 
 const MENUITEM = [
     { id: 'home', name: 'Inicio', icon: 'home', route: '#home' },
-    { id: 'make-order', name: 'Ordenes de Compra', icon: 'attach_money', route: '#make-order' },
-    { id: 'budget-lunch', name: 'Lanch Para Fiestas', icon: 'track_changes', route: '#budget-lunch' },
-    { id: 'accounting-transactions', name: 'Movimientos', icon: 'grid_on', route: '#accounting-transactions' },
-    { id: 'rrhh', name: 'Nóminas', icon: 'business', route: '#rrhh' },
-    { id: 'recipe-book', name: 'Recetario', icon: 'local_dining', route: '#recipe-book' },
-    { id: 'online-catalog', name: 'Catálogo', icon: 'grid_on', route: '#online-catalog' },
-    { id: 'procedures', name: 'Procedimientos', icon: 'chrome_reader_mode', route: '#procedures' },
-    { id: 'purchase-plan', name: 'Plan de Compras', icon: 'grid_on', route: '#purchase-plan' },
-    { id: 'counter-shifts', name: 'Turnos Mostrados', icon: 'grid_on', route: '#counter-shifts' },
-    { id: 'calculate-price', name: 'Calcular Precios', icon: 'build', route: '#calculate-price' },
-    { id: 'purchase-price', name: 'Buscador de Costos', icon: 'build', route: '#purchase-price' },
-    { id: 'print-price', name: 'Imprimir Precios', icon: 'build', route: '#print-price' },
-    { id: 'posters', name: 'Generar Carteles', icon: 'build', route: '#posters' }
+    { id: 'make-order', name: 'Ordenes de Compra', icon: 'mdi-view-dashboard', route: '#make-order' },
+    { id: 'budget-lunch', name: 'Lanch Para Fiestas', icon: 'mdi-chart-bubble', route: '#budget-lunch' },
+    { id: 'accounting-transactions', name: 'Movimientos', icon: 'mdi-blur-linear', route: '#accounting-transactions' },
+    { id: 'rrhh', name: 'Nóminas', icon: 'mdi-note-outline', route: '#rrhh' },
+    { id: 'recipe-book', name: 'Recetario', icon: 'mdi-relative-scale', route: '#recipe-book' },
+    { id: 'online-catalog', name: 'Catálogo', icon: 'mdi-pencil', route: '#online-catalog' },
+    { id: 'procedures', name: 'Procedimientos', icon: 'mdi-multiplication-box', route: '#procedures' },
+    { id: 'purchase-plan', name: 'Plan de Compras', icon: 'mdi-bulletin-board', route: '#purchase-plan' },
+    { id: 'counter-shifts', name: 'Turnos Mostrados', icon: 'mdi-bulletin-board', route: '#counter-shifts' },
+    { id: 'calculate-price', name: 'Calcular Precios', icon: 'mdi-bulletin-board', route: '#calculate-price' },
+    { id: 'purchase-price', name: 'Buscador de Costos', icon: 'mdi-bulletin-board', route: '#purchase-price' },
+    { id: 'print-price', name: 'Imprimir Precios', icon: 'mdi-bulletin-board', route: '#print-price' },
+    { id: 'posters', name: 'Generar Carteles', icon: 'mdi-bulletin-board', route: '#posters' }
 ];
 
 export default class HomeView extends BaseView {
@@ -25,7 +25,6 @@ export default class HomeView extends BaseView {
     }
 
     async renderView() {
-        
         await this.getPartials('home.html', 'Inicio');
         this.createMenu();
         this.initEventView();
