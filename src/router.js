@@ -17,6 +17,8 @@ import RrhhController from './controllers/rrhh-controller.js';
 import Error404Controller from './controllers/error-404-controller.js';
 import Error500Controller from './controllers/error-500-controller.js';
 import PurchaseOrdersController from './controllers/purchase-orders-controller.js';
+import ProductionCatalogController from './controllers/production-catalog-controller.js';
+
 
 
 
@@ -49,7 +51,7 @@ const routes = {
     'list-purchase-orders': new PurchaseOrdersController(),
     'new-purchase-order': new PurchaseOrdersController(),
     // OnlineCatalogController
-    'list-production-catalog': new OnlineCatalogController(),
+    'list-production-catalog': new ProductionCatalogController(),
     // PostersController
     'posters': new PostersController(),
     // PrintPriceController
