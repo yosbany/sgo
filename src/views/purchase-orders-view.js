@@ -12,7 +12,17 @@ export default class PurchaseOrdersView extends BaseView {
 
     async listPurchaseOrdersRenderPartialView(){
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
+        var nuevaOrdenBtn = document.getElementById('nuevaOrdenBtn');
+        nuevaOrdenBtn.addEventListener('click', function () {
+            
+        });
     }
+
+    async newPurchaseOrderRenderPartialView(){
+        await this.getPartials('new-purchase-order.html', 'Nueva - Ordene de Compra');
+    }
+
+    
 
     async renderView() {
         await this.getPartials('make-order.html', 'Ordenes de Compra');

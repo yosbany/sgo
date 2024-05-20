@@ -18,21 +18,10 @@ export default class PurchaseOrdersController extends BaseController {
         this.view.listPurchaseOrdersRenderPartialView();
     }
 
-    async makeOrder() {
-        console.log("MakeOrderController makeOrder");
-        const proveedores = this.dataPersistenceModel.getProveedores();
-        this.view.renderView();
-        
+    //route: #new-purchase-order
+    async newPurchaseOrder(){
+        this.view.newPurchaseOrderRenderPartialView();
     }
-
-    async getProveedores(){
-        return await this.dataPersistenceModel.getProveedores();
-    }
-
-    async getArticulosXProveedor(proveedor){
-        return await this.dataPersistenceModel.getArticulosXProveedor(proveedor);
-    }
-
 
 }
 
