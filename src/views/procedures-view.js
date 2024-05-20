@@ -11,7 +11,7 @@ export default class ProceduresView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "procedures.html", "app", "Procedimientos");
+        await this.getPartials('procedures.html', 'Procedimientos');
         this.initEventView();
         this.cargarDatosDummy();
     }

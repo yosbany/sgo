@@ -7,7 +7,7 @@ export default class CounterShiftsView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "counter-shifts.html", "app", "Turnos Mostrador");
+        await this.getPartials('counter-shifts.html', 'Turnos Mostrador');
         this.initEventView();
     }
 

@@ -7,7 +7,7 @@ export default class RecipeBookView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "recipe-book.html", "app", "Recetario");
+        await this.getPartials('recipe-book.html', 'Recetario');
         this.initEventView();
     }
 

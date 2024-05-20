@@ -7,7 +7,7 @@ export default class BudgetLunchView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "budget-lunch.html", "app", "Lunch Para Fiestas");
+        await this.getPartials('budget-lunch.html', 'Lunch Para Fiestas');
         this.initEventView();
     }
 

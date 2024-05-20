@@ -7,7 +7,7 @@ export default class RrhhView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "rrhh.html", "app", "Nómina");
+        await this.getPartials('rrhh.html', 'Nómina');
         this.initEventView();
     }
 

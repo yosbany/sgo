@@ -7,7 +7,7 @@ export default class ProfileView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "profile.html", "app","Perfil");
+        await this.getPartials('profile.html', 'Perfil');
         this.initEventView();
     }
 

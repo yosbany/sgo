@@ -9,12 +9,12 @@ const MENUITEM = [
     { id: 'recipe-book', name: 'Recetario', icon: 'mdi-relative-scale', route: '#recipe-book' },
     { id: 'online-catalog', name: 'Catálogo', icon: 'mdi-pencil', route: '#online-catalog' },
     { id: 'procedures', name: 'Procedimientos', icon: 'mdi-multiplication-box', route: '#procedures' },
-    { id: 'purchase-plan', name: 'Plan de Compras', icon: 'mdi-bulletin-board', route: '#purchase-plan' },
+    { id: 'purchase-plan', name: 'Plan de Compras', icon: 'mdi-alert', route: '#purchase-plan' },
     { id: 'counter-shifts', name: 'Turnos Mostrados', icon: 'mdi-bulletin-board', route: '#counter-shifts' },
-    { id: 'calculate-price', name: 'Calcular Precios', icon: 'mdi-bulletin-board', route: '#calculate-price' },
+    { id: 'calculate-price', name: 'Calcular Precios', icon: 'mdi-alert-octagon', route: '#calculate-price' },
     { id: 'purchase-price', name: 'Buscador de Costos', icon: 'mdi-bulletin-board', route: '#purchase-price' },
-    { id: 'print-price', name: 'Imprimir Precios', icon: 'mdi-bulletin-board', route: '#print-price' },
-    { id: 'posters', name: 'Generar Carteles', icon: 'mdi-bulletin-board', route: '#posters' }
+    { id: 'print-price', name: 'Imprimir Precios', icon: 'mdi-all-inclusive', route: '#print-price' },
+    { id: 'posters', name: 'Generar Carteles', icon: 'mdi-all-inclusive', route: '#posters' }
 ];
 
 export default class HomeView extends BaseView {

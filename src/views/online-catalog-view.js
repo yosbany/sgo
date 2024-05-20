@@ -7,7 +7,7 @@ export default class OnlineCatalogView extends BaseView {
     }
 
     async renderView() {
-        await this.fetchAndSetHTML(this.PATH_FRAGMENTS + "online-catalog.html", "app", "Catálogo en Línea");
+        await this.getPartials('online-catalog.html', 'Catálogo en Línea');
         this.initEventView();
     }
 
