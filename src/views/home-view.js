@@ -3,11 +3,11 @@ import BaseView from './base-view.js';
 const MENUITEM = [
     { name: 'Inicio', icon: 'home', route: '#home' },
     { name: 'Ordenes de Compra', icon: 'mdi-view-dashboard', route: '#list-purchase-orders' },
-    { name: 'Lanch Para Fiestas', icon: 'mdi-chart-bubble', route: '#budget-lunch' },
+    { name: 'Lanch para Fiestas', icon: 'mdi-chart-bubble', route: '#budget-lunch' },
     { name: 'Movimientos', icon: 'mdi-blur-linear', route: '#accounting-transactions' },
     { name: 'Nóminas', icon: 'mdi-note-outline', route: '#rrhh' },
     { name: 'Recetario', icon: 'mdi-relative-scale', route: '#recipe-book' },
-    { name: 'Catálogo', icon: 'mdi-pencil', route: '#online-catalog' },
+    { name: 'Catálogo de Producción', icon: 'mdi-pencil', route: '#list-production-catalog' },
     { name: 'Procedimientos', icon: 'mdi-multiplication-box', route: '#procedures' },
     { name: 'Plan de Compras', icon: 'mdi-alert', route: '#purchase-plan' },
     { name: 'Turnos Mostrados', icon: 'mdi-bulletin-board', route: '#counter-shifts' },

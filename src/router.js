@@ -6,7 +6,7 @@ import AccountingTransactionsController from './controllers/accounting-transacti
 import BudgetLunchController from './controllers/budget-lunch-controller.js';
 import CalculatePriceController from './controllers/calculate-price-controller.js';
 import CounterShiftsController from './controllers/counter-shifts-controller.js';
-import OnlineCatalogController from './controllers/online-catalog-controller.js';
+import OnlineCatalogController from './controllers/production-catalog-controller.js';
 import PostersController from './controllers/posters-controller.js';
 import PrintPriceController from './controllers/print-price-controller.js';
 import ProfileController from './controllers/profile-controller.js';
