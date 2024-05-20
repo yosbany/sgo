@@ -4,12 +4,10 @@ export default class BaseView {
 
 
     constructor() {
-        this.PATH_FRAGMENTS = "./src/views/partials/";
+       
     }
 
-    emitEventController(keyEvent, dataEvent) {
-        document.dispatchEvent(new CustomEvent(keyEvent, dataEvent));
-    }
+    
 
     getContent(elementId) {
         const element = document.getElementById(elementId);

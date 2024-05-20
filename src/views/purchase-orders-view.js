@@ -1,7 +1,4 @@
 import BaseView from './base-view.js';
-import DataPersistenceModel from '../models/data-persistence-model.js';
-
-
 
 export default class PurchaseOrdersView extends BaseView {
 
@@ -13,8 +10,8 @@ export default class PurchaseOrdersView extends BaseView {
     async listPurchaseOrdersRenderPartialView(){
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
         var nuevaOrdenBtn = document.getElementById('nuevaOrdenBtn');
-        nuevaOrdenBtn.addEventListener('click', function () {
-            
+        nuevaOrdenBtn.addEventListener('click', (event) => {
+            this.redirectToPage('#new-purchase-order');
         });
     }
 
