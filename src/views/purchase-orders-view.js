@@ -1,14 +1,17 @@
 import BaseView from './base-view.js';
-import LocalStorageModel from '../models/local-storage-model.js';
 import DataPersistenceModel from '../models/data-persistence-model.js';
 
 
 
-export default class MakeOrderView extends BaseView {
+export default class PurchaseOrdersView extends BaseView {
 
     constructor(controller) {
         super();
         this.controller = controller;
+    }
+
+    async listPurchaseOrdersRenderPartialView(){
+        await this.getPartials('list-purchase-order.html', 'Lista - Ordenes de Compra');
     }
 
     async renderView() {

@@ -1,16 +1,21 @@
 import BaseController from './base-controller.js';
-import MakeOrderView from '../views/make-order-view.js';
+import PurchaseOrdersView from '../views/purchase-orders-view.js';
 import DataPersistenceModel from '../models/data-persistence-model.js';
 
 
 
 
-export default class MakeOrderController extends BaseController {
+export default class PurchaseOrdersController extends BaseController {
+    
     constructor() {
         super();
-        this.view = new MakeOrderView(this); 
+        this.view = new PurchaseOrdersView(this); 
         this.dataPersistenceModel = new DataPersistenceModel();
-        
+    }
+
+    //route: #list-purchase-orders
+    async listPurchaseOrders(){
+        this.view.listPurchaseOrdersRenderPartialView();
     }
 
     async makeOrder() {

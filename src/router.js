@@ -1,4 +1,5 @@
 import { redirectTo } from './util.js';
+import DataPersistenceModel from './models/data-persistence-model.js';
 import HomeController from './controllers/home-controller.js';
 import LoginController from './controllers/login-controller.js';
 import AccountingTransactionsController from './controllers/accounting-transactions-controller.js';
@@ -17,7 +18,7 @@ import RecipeBookController from './controllers/recipe-book-controller.js';
 import RrhhController from './controllers/rrhh-controller.js';
 import Error404Controller from './controllers/error-404-controller.js';
 import Error500Controller from './controllers/error-500-controller.js';
-import DataPersistenceModel from './models/data-persistence-model.js';
+
 
 
 
@@ -79,6 +80,12 @@ function getKeyFromHashAndPath() {
     return hash || path || '';
 }
 
+function getCamelCaseKey(key){
+    return key.includes('-') ? key.replace(/-([a-z])/g, function (match, letter) {
+        return letter.toUpperCase();
+    }) : key;
+}
+
 function executeControllerMethod(controller, methodName) {
     const method = controller[methodName];
     if (method && typeof method === 'function') {
@@ -97,10 +104,7 @@ export default async function router() {
             if (!window.location.hash) {
                 executeControllerMethod(controller, 'init');
             } else {
-                const camelCaseKey = key.includes('-') ? key.replace(/-([a-z])/g, function (match, letter) {
-                    return letter.toUpperCase();
-                }) : key;
-                executeControllerMethod(controller, camelCaseKey);
+                executeControllerMethod(controller, getCamelCaseKey(key));
             }
         } else {
             // Si es privada, verificar la autenticación del usuario
@@ -115,10 +119,7 @@ export default async function router() {
             if (!window.location.hash) {
                 executeControllerMethod(controller, 'init');
             } else {
-                const camelCaseKey = key.includes('-') ? key.replace(/-([a-z])/g, function (match, letter) {
-                    return letter.toUpperCase();
-                }) : key;
-                executeControllerMethod(controller, camelCaseKey);
+                executeControllerMethod(controller, getCamelCaseKey(key));
             }
         }
     } else {

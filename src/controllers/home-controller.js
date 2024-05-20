@@ -1,6 +1,5 @@
 import BaseController from './base-controller.js';
 import HomeView from '../views/home-view.js';
-import FirebaseServiceInstance from '../services/firebase-service.js';
 
 
 export default class HomeController extends BaseController {
@@ -12,18 +11,19 @@ export default class HomeController extends BaseController {
 
     async init() {
         console.log("HomeController init");
-        this.view.renderView();
+        this.view.homeRenderPartialView();
     }
 
+    //route: #home
     async home() {
         console.log("HomeController home");
-        this.view.renderView();
+        this.view.homeRenderPartialView();
     }
 
+    //route: #exit
     exit() {
         console.log("HomeController exit");
-        FirebaseServiceInstance.logout();
-        this.redirectToPage("login.html");
+        
     }
 
 }
