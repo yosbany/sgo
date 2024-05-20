@@ -11,7 +11,7 @@ export default class PurchaseOrdersView extends BaseView {
     }
 
     async listPurchaseOrdersRenderPartialView(){
-        await this.getPartials('list-purchase-order.html', 'Lista - Ordenes de Compra');
+        await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
     }
 
     async renderView() {
