@@ -58,8 +58,8 @@ function isRoutePublic(key) {
 }
 
 function getKeyFromHashAndPath() {
-    const hash = window.location.hash.slice(1);
-    const path = window.location.pathname.slice(BASE_PATH.length);
+    const hash = window.location.hash.slice(1).split('?')[0];
+    const path = window.location.pathname.slice(BASE_PATH.length).split('?')[0];
     return hash || path || '';
 }
 
