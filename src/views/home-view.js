@@ -53,7 +53,7 @@ export default class HomeView extends BaseView {
                         break;
                     case 'card5':
                         await this.controller.loadDataAction();
-                        console.log("loadDataAction");
+                        console.log("loadDataAction", toastr);
                         toastr.success("Datos cargados correctamente.");
                         break;
                     default:
