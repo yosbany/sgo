@@ -25,16 +25,18 @@ export default class PurchaseOrdersController extends BaseController {
 
     //route: #view-purchase-order
     async viewPurchaseOrder(idOrder){
+        console.log(idOrder);
         this.view.viewPurchaseOrderRenderPartialView();
     }
 
     //route: #edit-purchase-order
     async editPurchaseOrder(idOrder){
+        console.log(idOrder);
         this.view.editPurchaseOrderRenderPartialView();
     }
 
     async deletePurchaseOrderAction(idOrder){
-        
+        console.log(idOrder);
     }
 
 }
