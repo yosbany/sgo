@@ -27,14 +27,13 @@ export default class PurchaseOrdersView extends BaseView {
         let deleteRowId = null;
         document.querySelectorAll('.delete').forEach(button => {
             button.addEventListener('click', (event) => {
-                deleteRowId = this.getAttribute('id-row-data-bind');
+                deleteRowId = button.getAttribute('id-row-data-bind');
                 const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
                 confirmDeleteModal.show();
             });
         });
         document.getElementById('btn-confirm-delete').addEventListener('click', (event) => {
             if (deleteRowId) {
-                console.log('Eliminar registro con ID:', deleteRowId);
                 this.controller.deletePurchaseOrderAction(deleteRowId);
                 deleteRowId = null;
                 const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
