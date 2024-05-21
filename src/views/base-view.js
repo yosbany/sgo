@@ -38,10 +38,20 @@ export default class BaseView {
             });
     }
 
+    addUrlParameter(url, key, value) {
+        let separator = url.includes('?') ? '&' : '?';
+        let newUrl = url + separator + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+        return newUrl;
+    }
 
-
-    redirectToPage(path) {
-        redirectTo(path);
+    redirectToPage(path, paramKey, paramValue) {
+        if(paramKey && paramValue){
+            let newPath = addUrlParameter(url, paramKey, paramValue);
+            redirectTo(newPath);
+        }
+        else{
+            redirectTo(path);
+        }
     }
 
     showLoaderPage() {

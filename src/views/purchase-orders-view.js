@@ -7,7 +7,7 @@ export default class PurchaseOrdersView extends BaseView {
         this.controller = controller;
     }
 
-    async listPurchaseOrdersRenderPartialView(){
+    async listPurchaseOrdersRenderPartialView() {
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
         document.getElementById('btn-nueva-orden').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
@@ -15,13 +15,13 @@ export default class PurchaseOrdersView extends BaseView {
         document.querySelectorAll('.view').forEach(button => {
             button.addEventListener('click', (event) => {
                 const rowId = button.getAttribute('id-row-data-bind');
-                this.redirectToPage('#view-purchase-order?'+rowId);
+                this.redirectToPage('#view-purchase-order', 'idOrder', rowId);
             });
         });
         document.querySelectorAll('.edit').forEach(button => {
             button.addEventListener('click', (event) => {
                 const rowId = button.getAttribute('id-row-data-bind');
-                this.redirectToPage('#edit-purchase-order?'+rowId);
+                this.redirectToPage('#edit-purchase-order', 'idOrder', rowId);
             });
         });
         let deleteRowId = null;
@@ -40,24 +40,24 @@ export default class PurchaseOrdersView extends BaseView {
                 confirmDeleteModal.hide();
             }
         });
-        
+
     }
 
-    async newPurchaseOrderRenderPartialView(){
+    async newPurchaseOrderRenderPartialView() {
         await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });
     }
 
-    async viewPurchaseOrderRenderPartialView(order){
+    async viewPurchaseOrderRenderPartialView(order) {
         await this.getPartials('view-purchase-order.html', 'Ver - Orden de Compra');
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });
     }
 
-    async editPurchaseOrderRenderPartialView(order){
+    async editPurchaseOrderRenderPartialView(order) {
         await this.getPartials('edit-purchase-order.html', 'Editar - Orden de Compra');
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
@@ -65,7 +65,7 @@ export default class PurchaseOrdersView extends BaseView {
     }
 
 
-    
+
 
 
 
@@ -141,10 +141,10 @@ export default class PurchaseOrdersView extends BaseView {
                 checkbox.addEventListener('change', () => {
                     cantidadInput.disabled = !checkbox.checked;
                     cantidadInput.readOnly = !checkbox.checked;
-                    if(checkbox.checked){
+                    if (checkbox.checked) {
                         row.classList.add('table-success');
                     }
-                    else{
+                    else {
                         row.classList.remove('table-success');
                     }
                     this.actualizarResumenPedido();
@@ -162,10 +162,10 @@ export default class PurchaseOrdersView extends BaseView {
                 });
 
                 productoH5.addEventListener('click', () => {
-                    if(checkbox.checked){
+                    if (checkbox.checked) {
                         row.classList.add('table-success');
                     }
-                    else{
+                    else {
                         row.classList.toggle('table-success');
                     }
                 });
