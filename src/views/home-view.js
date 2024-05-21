@@ -28,9 +28,8 @@ export default class HomeView extends BaseView {
         await this.getPartials('home.html', 'Inicio');
         this.createMenu();
         
-        // Asignar el evento click a cada card
         document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', (event) =>{
+            card.addEventListener('click', async (event) =>{
                 const cardId = event.currentTarget.id;
                 switch (cardId) {
                     case 'card1':
@@ -50,7 +49,8 @@ export default class HomeView extends BaseView {
                         // Lógica específica para la card 4
                         break;
                     case 'card5':
-                        this.controller.loadDataAction();
+                        await this.controller.loadDataAction();
+                        toastr.success("Datos cargados correctamente.");
                         break;
                     default:
                         console.log('Card desconocida');
