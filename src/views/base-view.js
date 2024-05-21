@@ -1,13 +1,9 @@
 import { redirectTo, showLoaderPage, showLoaderApp, hideLoaderPage, hideLoaderApp } from '../util.js'
 
 export default class BaseView {
-
-
     constructor() {
        
     }
-
-    
 
     getContent(elementId) {
         const element = document.getElementById(elementId);
@@ -46,7 +42,7 @@ export default class BaseView {
 
     redirectToPage(path, paramKey, paramValue) {
         if(paramKey && paramValue){
-            let newPath = addUrlParameter(url, paramKey, paramValue);
+            let newPath = this.addUrlParameter(url, paramKey, paramValue);
             redirectTo(newPath);
         }
         else{
