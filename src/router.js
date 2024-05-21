@@ -87,8 +87,8 @@ function executeControllerMethod(controller, methodName, params = {}) {
 
 export default async function router() {
     const key = getKeyFromHashAndPath();
-    console.log("go router key: ", key);
     const params = getUrlParams();
+    console.log("go router key: ", key, "params: "+params);
     if (routes.hasOwnProperty(key)) {
         const controller = routes[key];
         // Verificar si la ruta es pública
