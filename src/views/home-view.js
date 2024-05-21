@@ -31,6 +31,7 @@ export default class HomeView extends BaseView {
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('click', async (event) =>{
                 const cardId = event.currentTarget.id;
+                console.log("cardId.currentTarget: "+event.currentTarget);
                 console.log("cardId: "+cardId);
                 console.log("event: "+event);
                 switch (cardId) {
