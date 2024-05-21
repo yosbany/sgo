@@ -31,6 +31,10 @@ export default class PurchaseOrdersController extends BaseController {
         this.view.editPurchaseOrderRenderPartialView();
     }
 
+    async deletePurchaseOrder(idOrder){
+        
+    }
+
 }
 
 

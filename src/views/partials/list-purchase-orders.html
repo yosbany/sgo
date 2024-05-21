@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-info" id="nuevaOrdenBtn">
+<button type="button" class="btn btn-info" id="btn-nueva-orden">
     <i class="mdi mdi-plus fs-4"></i>
     Nueva Orden de Compra
 </button>
@@ -18,7 +18,7 @@
             <th scope="col" style="vertical-align: middle;">Importe 1</th>
             <th scope="col" style="vertical-align: middle;">
                 <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
-                    <button type="button" class="eye btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1" id-row-data-bind="34">
+                    <button type="button" class="view btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1" id-row-data-bind="34">
                         <i class="mdi mdi-eye"></i>
                     </button>
                     <button type="button" class="edit btn btn-primary btn-sm table-action-btn mb-1 mb-md-0 me-md-1" id-row-data-bind="34">
@@ -33,3 +33,22 @@
 
     </tbody>
 </table>
+
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar este registro?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

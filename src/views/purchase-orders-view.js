@@ -9,30 +9,60 @@ export default class PurchaseOrdersView extends BaseView {
 
     async listPurchaseOrdersRenderPartialView(){
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
-        document.getElementById('nuevaOrdenBtn').addEventListener('click', (event) => {
+        document.getElementById('btn-nueva-orden').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
         });
-        document.querySelectorAll('.eye').forEach(button => {
+        document.querySelectorAll('.view').forEach(button => {
             button.addEventListener('click', (event) => {
-                
                 const rowId = button.getAttribute('id-row-data-bind');
-                console.log('ID del row:', rowId);
-                this.controller.viewPurchaseOrder();
+                this.controller.viewPurchaseOrder(rowId);
             });
+        });
+        document.querySelectorAll('.edit').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const rowId = button.getAttribute('id-row-data-bind');
+                this.controller.editPurchaseOrder(rowId);
+            });
+        });
+        let deleteRowId = null;
+        document.querySelectorAll('.delete').forEach(button => {
+            button.addEventListener('click', (event) => {
+                deleteRowId = this.getAttribute('id-row-data-bind');
+                const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+                confirmDeleteModal.show();
+            });
+        });
+        document.getElementById('confirmDeleteBtn').addEventListener('click', (event) => {
+            if (deleteRowId) {
+                console.log('Eliminar registro con ID:', deleteRowId);
+                this.controller.deletePurchaseOrder(deleteRowId);
+                deleteRowId = null;
+                const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
+                confirmDeleteModal.hide();
+            }
         });
         
     }
 
     async newPurchaseOrderRenderPartialView(){
         await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
+        document.getElementById('link-regresar').addEventListener('click', (event) => {
+            this.redirectToPage('#list-purchase-orders');
+        });
     }
 
     async viewPurchaseOrderRenderPartialView(order){
         await this.getPartials('view-purchase-order.html', 'Ver - Orden de Compra');
+        document.getElementById('link-regresar').addEventListener('click', (event) => {
+            this.redirectToPage('#list-purchase-orders');
+        });
     }
 
     async editPurchaseOrderRenderPartialView(order){
         await this.getPartials('edit-purchase-order.html', 'Editar - Orden de Compra');
+        document.getElementById('link-regresar').addEventListener('click', (event) => {
+            this.redirectToPage('#list-purchase-orders');
+        });
     }
 
 
