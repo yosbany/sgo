@@ -27,10 +27,13 @@ const routes = {
     'error-500.html': new Error500Controller(),
     'login.html': new LoginController(),
     //Private
+    //HomeController
     '': new HomeController(),
     'index.html': new HomeController(),
     'home': new HomeController(),
     'exit': new HomeController(),
+    'load-data': new HomeController(),
+
     'accounting-transactions': new AccountingTransactionsController(),
     'budget-lunch': new BudgetLunchController(),
     'calculate-price': new CalculatePriceController(),

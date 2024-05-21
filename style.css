@@ -10,3 +10,7 @@
 .table-action-btn i {
     font-size: 20px;
 }
+
+.card {
+    cursor: pointer;
+}

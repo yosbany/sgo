@@ -27,7 +27,36 @@ export default class HomeView extends BaseView {
     async homeRenderPartialView() {
         await this.getPartials('home.html', 'Inicio');
         this.createMenu();
-        this.initEventView();
+        
+        // Asignar el evento click a cada card
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', (event) =>{
+                const cardId = event.currentTarget.id;
+                switch (cardId) {
+                    case 'card1':
+                        alert('Nueva Orden de Compra');
+                        // Lógica específica para la card 1
+                        break;
+                    case 'card2':
+                        alert('Nuevo Movimiento Contable');
+                        // Lógica específica para la card 2
+                        break;
+                    case 'card3':
+                        alert('Nueva Tarea Operativa');
+                        // Lógica específica para la card 3
+                        break;
+                    case 'card4':
+                        alert('Calculadora de Precios');
+                        // Lógica específica para la card 4
+                        break;
+                    case 'card5':
+                        this.redirectToPage('#load-data');
+                        break;
+                    default:
+                        console.log('Card desconocida');
+                }
+            });
+        });
     }
 
     createMenu() {

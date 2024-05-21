@@ -13,6 +13,10 @@ export default class HomeController extends BaseController {
         console.log("HomeController init");
         this.view.homeRenderPartialView();
     }
+    //route: #load-data
+    async loadData(){
+        console.log("HomeController loadData");
+    }
 
     //route: #home
     async home() {
