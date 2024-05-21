@@ -34,15 +34,15 @@ export default class BaseView {
             });
     }
 
-    addUrlParameter(url, key, value) {
-        let separator = url.includes('?') ? '&' : '?';
-        let newUrl = url + separator + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+    addUrlParameter(path, key, value) {
+        let separator = path.includes('?') ? '&' : '?';
+        let newUrl = path + separator + encodeURIComponent(key) + '=' + encodeURIComponent(value);
         return newUrl;
     }
 
     redirectToPage(path, paramKey, paramValue) {
         if(paramKey && paramValue){
-            let newPath = this.addUrlParameter(url, paramKey, paramValue);
+            let newPath = this.addUrlParameter(path, paramKey, paramValue);
             redirectTo(newPath);
         }
         else{
