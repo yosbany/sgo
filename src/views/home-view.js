@@ -50,7 +50,7 @@ export default class HomeView extends BaseView {
                         // Lógica específica para la card 4
                         break;
                     case 'card5':
-                        this.redirectToPage('#load-data');
+                        this.controller.loadDataAction();
                         break;
                     default:
                         console.log('Card desconocida');
