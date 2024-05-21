@@ -19,54 +19,36 @@ import Error500Controller from './controllers/error-500-controller.js';
 import PurchaseOrdersController from './controllers/purchase-orders-controller.js';
 import ProductionCatalogController from './controllers/production-catalog-controller.js';
 
-
-
-
-
 const BASE_PATH = '/nrd/';
 
 const routes = {
     //Public
-    // Error404Controller
     'error-404.html': new Error404Controller(),
-    // Error500Controller
     'error-500.html': new Error500Controller(),
-    // LoginController
     'login.html': new LoginController(),
     //Private
-    // HomeController
     '': new HomeController(),
     'index.html': new HomeController(),
     'home': new HomeController(),
     'exit': new HomeController(),
-    // AccountingTransactionsController
     'accounting-transactions': new AccountingTransactionsController(),
-    // BudgetLunchController
     'budget-lunch': new BudgetLunchController(),
-    // CalculatePriceController
     'calculate-price': new CalculatePriceController(),
-    // CounterShiftsController
     'counter-shifts': new CounterShiftsController(),
-    // PurchaseOrdersController
+    //PurchaseOrdersController
     'list-purchase-orders': new PurchaseOrdersController(),
     'new-purchase-order': new PurchaseOrdersController(),
-    // OnlineCatalogController
+    'view-purchase-order': new PurchaseOrdersController(),
+    'edit-purchase-order': new PurchaseOrdersController(),
+
     'list-production-catalog': new ProductionCatalogController(),
-    // PostersController
     'posters': new PostersController(),
-    // PrintPriceController
     'print-price': new PrintPriceController(),
-    // ProfileController
     'profile': new ProfileController(),
-    // PurchasePlanController
     'purchase-plan': new PurchasePlanController(),
-    // PurchasePriceController
     'purchase-price': new PurchasePriceController(),
-    // ProceduresController
     'procedures': new ProceduresController(),
-    // RecipeBookController
     'recipe-book': new RecipeBookController(),
-    // RrhhController
     'rrhh': new RrhhController()
 };
 
@@ -74,7 +56,6 @@ function isRoutePublic(key) {
     const publicRoutes = ['login.html', 'error-404.html', 'error-500.html'];
     return publicRoutes.includes(key);
 }
-
 
 function getKeyFromHashAndPath() {
     const hash = window.location.hash.slice(1);
@@ -88,25 +69,35 @@ function getCamelCaseKey(key){
     }) : key;
 }
 
-function executeControllerMethod(controller, methodName) {
+function getUrlParams() {
+    const searchParams = new URLSearchParams(window.location.search);
+    let params = {};
+    for (let [key, value] of searchParams.entries()) {
+        params[key] = value;
+    }
+    return params;
+}
+
+function executeControllerMethod(controller, methodName, params = {}) {
     const method = controller[methodName];
     if (method && typeof method === 'function') {
-        method.call(controller);
+        method.call(controller, params);
     }
 }
 
 export default async function router() {
     const key = getKeyFromHashAndPath();
     console.log("go router key: ", key);
+    const params = getUrlParams();
     if (routes.hasOwnProperty(key)) {
         const controller = routes[key];
         // Verificar si la ruta es pública
         if (isRoutePublic(key)) {
             // Si es pública, ejecutar el controlador directamente
             if (!window.location.hash) {
-                executeControllerMethod(controller, 'init');
+                executeControllerMethod(controller, 'init', params);
             } else {
-                executeControllerMethod(controller, getCamelCaseKey(key));
+                executeControllerMethod(controller, getCamelCaseKey(key), params);
             }
         } else {
             // Si es privada, verificar la autenticación del usuario
@@ -119,9 +110,9 @@ export default async function router() {
             }
             // Si el usuario está autenticado, ejecutar el controlador
             if (!window.location.hash) {
-                executeControllerMethod(controller, 'init');
+                executeControllerMethod(controller, 'init', params);
             } else {
-                executeControllerMethod(controller, getCamelCaseKey(key));
+                executeControllerMethod(controller, getCamelCaseKey(key), params);
             }
         }
     } else {
