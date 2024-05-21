@@ -2,7 +2,7 @@ import { redirectTo, showLoaderPage, showLoaderApp, hideLoaderPage, hideLoaderAp
 
 export default class BaseView {
     constructor() {
-       
+
     }
 
     getContent(elementId) {
@@ -41,11 +41,11 @@ export default class BaseView {
     }
 
     redirectToPage(path, paramKey, paramValue) {
-        if(paramKey && paramValue){
+        if (paramKey && paramValue) {
             let newPath = this.addUrlParameter(path, paramKey, paramValue);
             redirectTo(newPath);
         }
-        else{
+        else {
             redirectTo(path);
         }
     }
