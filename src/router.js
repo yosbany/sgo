@@ -71,6 +71,13 @@ function getCamelCaseKey(key){
 
 function getUrlParams() {
     const searchParams = new URLSearchParams(window.location.search);
+    const hashParamsIndex = window.location.hash.indexOf('?');
+    if (hashParamsIndex !== -1) {
+        const hashParams = new URLSearchParams(window.location.hash.slice(hashParamsIndex + 1));
+        for (let [key, value] of hashParams.entries()) {
+            searchParams.append(key, value);
+        }
+    }
     let params = {};
     for (let [key, value] of searchParams.entries()) {
         params[key] = value;
