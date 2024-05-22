@@ -19,6 +19,6 @@
     padding: 0.5rem !important;
 }
 
-select[disabled] option {
+.form-select:disabled {
     font-weight: bold !important;
-  }
+}
