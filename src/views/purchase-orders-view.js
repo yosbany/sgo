@@ -68,11 +68,11 @@ export default class PurchaseOrdersView extends BaseView {
         }
     }
 
-    async cargarTablaArticulosXProveedor(articulos, articulosSeleccionados) {
+    async cargarTablaArticulosXProveedor(articulos, articulosSeleccionados, soloLectura = false) {
         let tbody = document.getElementById("body-tabla-articulos-proveedor");
         const divordenpie = document.getElementById("orden-pie");
         tbody.innerHTML = '';
-    
+
         if (articulos.length === 0) {
             divordenpie.style.display = 'none'
             let tr = document.createElement('tr');
@@ -85,58 +85,61 @@ export default class PurchaseOrdersView extends BaseView {
             articulos.forEach(articulo => {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td style="vertical-align: middle;"><input class="form-check-input checkbox-row" type="checkbox" style="scale: 1.6;"></td>
-                    <td style="vertical-align: middle;"><h5 data-bs-toggle="tooltip" title="COMPRAS X ${articulo.pack_compra}" style="margin-bottom: 0px !important;cursor: pointer;" data-bind="${articulo.pack_compra}">${articulo.nombre}</h5></td>
-                    <td style="vertical-align: middle;"><span class="badge bg-secondary precio-row">$ ${articulo.precio_compra}</span></td>
-                    <td style="text-align: right;"><input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;text-align: right;" disabled value=${articulo.stock_deseado}></td>
+                    <td style="vertical-align: middle;">
+                        <input class="form-check-input checkbox-row" type="checkbox" style="scale: 1.6;" ${soloLectura ? 'disabled' : ''}>
+                    </td>
+                    <td style="vertical-align: middle;">
+                        <h5 data-bs-toggle="tooltip" title="COMPRAS X ${articulo.pack_compra}" style="margin-bottom: 0px !important;cursor: pointer;" data-bind="${articulo.pack_compra}">${articulo.nombre}</h5>
+                    </td>
+                    <td style="vertical-align: middle;">
+                        <span class="badge bg-secondary precio-row">$ ${articulo.precio_compra}</span>
+                    </td>
+                    <td style="text-align: right;">
+                        <input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;text-align: right;" ${soloLectura ? 'disabled' : ''} value=${articulo.stock_deseado}>
+                    </td>
                 `;
                 tbody.appendChild(tr);
-    
-                const checkbox = tr.querySelector('.checkbox-row');
-                const stock_deseado = tr.querySelector('.stock-deseado-row');
-                const nombre = tr.cells[1];
-    
-                // Verificar si el artículo está en el array de artículos seleccionados
-                if (articulosSeleccionados && articulosSeleccionados.some(a => a.nombre === articulo.nombre)) {
-                    checkbox.checked = true;
-                    tr.classList.add('table-success');
-                    stock_deseado.disabled = false;
-                    stock_deseado.readOnly = false;
+
+                if (!soloLectura) {
+                    const checkbox = tr.querySelector('.checkbox-row');
+                    const stock_deseado = tr.querySelector('.stock-deseado-row');
+                    const nombre = tr.cells[1];
+
+                    checkbox.addEventListener('change', () => {
+                        stock_deseado.disabled = !checkbox.checked;
+                        stock_deseado.readOnly = !checkbox.checked;
+                        if (checkbox.checked) {
+                            tr.classList.add('table-success');
+                        } else {
+                            tr.classList.remove('table-success');
+                        }
+                        this.actualizarResumen();
+                    });
+                    stock_deseado.addEventListener('input', () => {
+                        this.actualizarResumen();
+                    });
+                    stock_deseado.addEventListener('focus', () => {
+                        stock_deseado.value = '';
+                    });
+                    stock_deseado.addEventListener('blur', () => {
+                        if (stock_deseado.value === '') {
+                            stock_deseado.value = articulo.stock_deseado;
+                        }
+                        this.actualizarResumen();
+                    });
+                    nombre.addEventListener('click', () => {
+                        if (checkbox.checked) {
+                            tr.classList.add('table-success');
+                        } else {
+                            tr.classList.toggle('table-success');
+                        }
+                    });
                 }
-    
-                checkbox.addEventListener('change', () => {
-                    stock_deseado.disabled = !checkbox.checked;
-                    stock_deseado.readOnly = !checkbox.checked;
-                    if (checkbox.checked) {
-                        tr.classList.add('table-success');
-                    } else {
-                        tr.classList.remove('table-success');
-                    }
-                    this.actualizarResumen();
-                });
-                stock_deseado.addEventListener('input', () => {
-                    this.actualizarResumen();
-                });
-                stock_deseado.addEventListener('focus', () => {
-                    stock_deseado.value = '';
-                });
-                stock_deseado.addEventListener('blur', () => {
-                    if (stock_deseado.value === '') {
-                        stock_deseado.value = articulo.stock_deseado;
-                    }
-                    this.actualizarResumen();
-                });
-                nombre.addEventListener('click', () => {
-                    if (checkbox.checked) {
-                        tr.classList.add('table-success');
-                    } else {
-                        tr.classList.toggle('table-success');
-                    }
-                });
             });
         }
     }
-    
+
+
 
     async actualizarResumen() {
         const proveedorSeleccionado = document.getElementById("select-proveedores").value;
@@ -166,7 +169,7 @@ export default class PurchaseOrdersView extends BaseView {
         resumenPedido.style.height = 'auto';
         resumenPedido.style.height = (resumenPedido.scrollHeight + 2) + 'px';
     }
-    
+
     async listPurchaseOrdersRenderPartialView(ordenes) {
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
 
@@ -230,7 +233,7 @@ export default class PurchaseOrdersView extends BaseView {
             const contenido = document.getElementById("resumen-pedido").value;
             if (contenido.trim() !== '') {
                 //this.imprimirContenido(contenido);
-                
+
             } else {
                 console.log('No hay contenido para imprimir.');
             }
@@ -250,7 +253,7 @@ export default class PurchaseOrdersView extends BaseView {
                 };
             });
             const resumenPedido = document.getElementById('resumen-pedido').value;
-            
+
             if (!proveedorSeleccionado) {
                 toastr.error("Por favor, seleccione un proveedor.");
                 return;
@@ -259,7 +262,7 @@ export default class PurchaseOrdersView extends BaseView {
                 toastr.error("Por favor, marque al menos un artículo.");
                 return;
             }
-        
+
             const datosAGuardar = {
                 id: (new Date()).getTime(),
                 fecha: new Date(),
@@ -268,7 +271,7 @@ export default class PurchaseOrdersView extends BaseView {
                 resumen: resumenPedido,
                 importe: 0
             };
-            
+
             try {
                 await this.controller.guardarOrdenDeCompraAction(datosAGuardar);
                 toastr.success("Orden de compra guardada correctamente.");
@@ -278,15 +281,15 @@ export default class PurchaseOrdersView extends BaseView {
                 toastr.error("Hubo un error al guardar la orden de compra. Por favor, intente nuevamente.");
             }
         });
-        
+
     }
 
     async viewPurchaseOrderRenderPartialView(proveedores, order) {
         await this.getPartials('view-purchase-order.html', 'Ver - Orden de Compra');
-        
+
         this.cargarSelectProveedores(proveedores, order.proveedor);
         const articulos = await this.controller.getArticulosXProveedorAction(order.proveedor);
-        this.cargarTablaArticulosXProveedor(articulos, order.articulos);
+        this.cargarTablaArticulosXProveedor(articulos, order.articulos, true);
 
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
@@ -304,7 +307,7 @@ export default class PurchaseOrdersView extends BaseView {
             const contenido = document.getElementById("resumen-pedido").value;
             if (contenido.trim() !== '') {
                 //this.imprimirContenido(contenido);
-                
+
             } else {
                 console.log('No hay contenido para imprimir.');
             }
@@ -316,7 +319,7 @@ export default class PurchaseOrdersView extends BaseView {
         this.cargarSelectProveedores(proveedores, order.proveedor);
         const articulos = await this.controller.getArticulosXProveedorAction(order.proveedor);
         this.cargarTablaArticulosXProveedor(articulos, order.articulos);
-        
+
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });
@@ -333,7 +336,7 @@ export default class PurchaseOrdersView extends BaseView {
             const contenido = document.getElementById("resumen-pedido").value;
             if (contenido.trim() !== '') {
                 //this.imprimirContenido(contenido);
-                
+
             } else {
                 console.log('No hay contenido para imprimir.');
             }
@@ -353,7 +356,7 @@ export default class PurchaseOrdersView extends BaseView {
                 };
             });
             const resumenPedido = document.getElementById('resumen-pedido').value;
-            
+
             if (!proveedorSeleccionado) {
                 toastr.error("Por favor, seleccione un proveedor.");
                 return;
@@ -362,7 +365,7 @@ export default class PurchaseOrdersView extends BaseView {
                 toastr.error("Por favor, marque al menos un artículo.");
                 return;
             }
-        
+
             const datosAGuardar = {
                 id: (new Date()).getTime(),
                 fecha: new Date(),
