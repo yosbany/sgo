@@ -22,7 +22,7 @@ export default class DataPersistenceModel {
     isLocalStorage = true;
 
     async loadData() {
-        const jsonPath = './load-data.json';
+        const jsonPath = './src/models/load-data.json';
         fetch(jsonPath)
             .then(response => {
                 if (!response.ok) {
