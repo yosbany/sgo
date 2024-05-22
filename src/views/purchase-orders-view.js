@@ -174,7 +174,7 @@ export default class PurchaseOrdersView extends BaseView {
         });
         document.getElementById('select-proveedores').addEventListener('change', async (event) => {
             const proveedorSeleccionado = event.target.value;
-            const articulos = await this.controller.getArticulosXProveedor(proveedorSeleccionado);
+            const articulos = await this.controller.getArticulosXProveedorAction(proveedorSeleccionado);
             this.cargarTablaArticulosXProveedor(articulos);
         });
     }
