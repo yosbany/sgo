@@ -45,7 +45,9 @@ class LocalStorageService {
     getData(path, defaultValue = null) {
         try {
             const storedData = localStorage.getItem(path);
-            return storedData !== null ? JSON.parse(storedData) : defaultValue;
+            const results = storedData !== null ? JSON.parse(storedData) : defaultValue;
+            console.log(path, results);
+            return results
         } catch (error) {
             throw new Error('Error al leer de localStorage: ' + error.message);
         }
