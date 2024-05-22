@@ -73,7 +73,7 @@ export default class PurchaseOrdersView extends BaseView {
         const divordenpie = document.getElementById("orden-pie");
         tbody.innerHTML = '';
         if (articulos.length === 0) {
-            divordenpie.style.display = 'block'
+            divordenpie.style.display = 'none'
             let tr = document.createElement('tr');
             tr.innerHTML = `
                 <th colspan="4" style="text-align: center;"><b>No hay registros<b></th>
