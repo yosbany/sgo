@@ -117,8 +117,8 @@ export default class PurchaseOrdersView extends BaseView {
                 if (articulosSeleccionados && articulosSeleccionados.some(a => a.nombre === articulo.nombre)) {
                     checkbox.checked = true;
                     tr.classList.add('table-success');
-                    stock_deseado.disabled = false;
-                    stock_deseado.readOnly = false;
+                    stock_deseado.disabled = soloLectura ? true : false;
+                    stock_deseado.readOnly = soloLectura ? true : false;
                 }
 
                 if (!soloLectura) {
@@ -153,6 +153,7 @@ export default class PurchaseOrdersView extends BaseView {
                     });
                 }
             });
+            this.actualizarResumen();
         }
     }
 
@@ -335,7 +336,8 @@ export default class PurchaseOrdersView extends BaseView {
         await this.getPartials('edit-purchase-order.html', 'Editar - Orden de Compra');
         this.cargarSelectProveedores(proveedores, order.proveedor);
         const articulos = await this.controller.getArticulosXProveedorAction(order.proveedor);
-        this.cargarTablaArticulosXProveedor(articulos, order.articulos);
+        await this.cargarTablaArticulosXProveedor(articulos, order.articulos);
+
 
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
