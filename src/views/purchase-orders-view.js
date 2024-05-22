@@ -42,7 +42,7 @@ export default class PurchaseOrdersView extends BaseView {
         }
     }
 
-    async cargarSelectProveedores(proveedores){
+    async cargarSelectProveedores(proveedores, proveedorSeleccionadoPorDefecto = null) {
         let select = document.getElementById("select-proveedores");
         select.innerHTML = '';
         if (proveedores.length === 0) {
@@ -55,10 +55,14 @@ export default class PurchaseOrdersView extends BaseView {
                 const option = document.createElement('option');
                 option.value = proveedor.nombre;
                 option.textContent = proveedor.nombre;
+                if (proveedorSeleccionadoPorDefecto && proveedor.nombre === proveedorSeleccionadoPorDefecto) {
+                    option.selected = true;
+                }
                 select.appendChild(option);
             });
         }
     }
+    
 
 
     async listPurchaseOrdersRenderPartialView(ordenes) {
@@ -110,6 +114,7 @@ export default class PurchaseOrdersView extends BaseView {
 
     async viewPurchaseOrderRenderPartialView(order) {
         await this.getPartials('view-purchase-order.html', 'Ver - Orden de Compra');
+        this.cargarSelectProveedores(proveedores, "CARNELANDIA");
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });
