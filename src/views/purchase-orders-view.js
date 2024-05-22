@@ -100,11 +100,18 @@ export default class PurchaseOrdersView extends BaseView {
                 `;
                 tbody.appendChild(tr);
 
-                if (!soloLectura) {
-                    const checkbox = tr.querySelector('.checkbox-row');
-                    const stock_deseado = tr.querySelector('.stock-deseado-row');
-                    const nombre = tr.cells[1];
+                const checkbox = tr.querySelector('.checkbox-row');
+                const stock_deseado = tr.querySelector('.stock-deseado-row');
+                const nombre = tr.cells[1];
 
+                if (articulosSeleccionados.some(a => a.nombre === articulo.nombre)) {
+                    checkbox.checked = true;
+                    tr.classList.add('table-success');
+                    stock_deseado.disabled = false;
+                    stock_deseado.readOnly = false;
+                }
+
+                if (!soloLectura) {
                     checkbox.addEventListener('change', () => {
                         stock_deseado.disabled = !checkbox.checked;
                         stock_deseado.readOnly = !checkbox.checked;
