@@ -7,8 +7,8 @@ export default class PurchaseOrdersView extends BaseView {
         this.controller = controller;
     }
 
-    async loadOrdersTabla(ordenes) {
-        let tbody = document.querySelector('.table tbody');
+    async cargarTablaOrdenes(ordenes) {
+        let tbody = document.getElementById("body-table-order");
         tbody.innerHTML = '';
         if (ordenes.length === 0) {
             let tr = document.createElement('tr');
@@ -42,11 +42,21 @@ export default class PurchaseOrdersView extends BaseView {
         }
     }
 
+    async cargarSelectProveedores(proveedores){
+        let select = document.getElementById("select-proveedores");
+        proveedores.forEach(proveedor => {
+            const option = document.createElement('option');
+            option.value = proveedor.nombre;
+            option.textContent = proveedor.nombre;
+            select.appendChild(option);
+        });
+    }
+
 
     async listPurchaseOrdersRenderPartialView(ordenes) {
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
 
-        this.loadOrdersTabla(ordenes);
+        this.cargarTablaOrdenes(ordenes);
 
         document.getElementById('btn-nueva-orden').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
@@ -82,8 +92,9 @@ export default class PurchaseOrdersView extends BaseView {
 
     }
 
-    async newPurchaseOrderRenderPartialView() {
+    async newPurchaseOrderRenderPartialView(proveedores) {
         await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
+        this.cargarSelectProveedores(proveedores);
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });

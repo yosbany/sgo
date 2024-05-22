@@ -2,10 +2,23 @@
     <i class="mdi mdi-step-backward"></i>
     Regresar
 </button>
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="select-proveedores">
     <option selected>Seleccione...</option>
     <option value="1">Proveedor One</option>
     <option value="2">Proveedor Two</option>
     <option value="3">Proveedor Three</option>
   </select>
   <hr>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th style="text-align: right;">Stock</th>
+      </tr>
+    </thead>
+    <tbody id="productosTableBody">
+      <!-- Dinamic -->
+    </tbody>
+  </table>
