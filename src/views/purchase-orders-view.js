@@ -105,7 +105,7 @@ export default class PurchaseOrdersView extends BaseView {
                         <span class="badge bg-secondary precio-row">$ ${articulo.precio_compra}</span>
                     </td>
                     <td style="text-align: right;">
-                        <input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;text-align: right;" ${soloLectura ? 'disabled' : ''} value=${articulo.stock_deseado}>
+                        <input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;text-align: right;" disabled value=${articulo.stock_deseado}>
                     </td>
                 `;
                 tbody.appendChild(tr);
