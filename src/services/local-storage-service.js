@@ -45,7 +45,7 @@ class LocalStorageService {
     getData(path, defaultValue = null) {
         try {
             const storedData = localStorage.getItem(path);
-            return storedData !== null ? JSON.parse(storedData) : defaultValue;
+            return storedData !== null ? storedData : defaultValue;
         } catch (error) {
             throw new Error('Error al leer de localStorage: ' + error.message);
         }
@@ -53,7 +53,7 @@ class LocalStorageService {
 
     setData(path, data) {
         try {
-            localStorage.setItem(path, JSON.stringify(data));
+            localStorage.setItem(path, data);
         } catch (error) {
             throw new Error('Error al escribir en localStorage: ' + error.message);
         }
