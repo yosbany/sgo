@@ -4,14 +4,14 @@ import LocalStorageServiceInstance from "../services/local-storage-service.js";
 const ENTITIES = {
     USUARIOS: 'usuarios',
     PROVEEDORES: 'proveedores',
+    ORDENES: 'ordenes',
     CLIENTES: 'clientes',
     ARTICULOS: 'articulos',
     NOMINAS: 'nominas',
     MOVIMIENTOS: 'movimientos',
     RECETAS: 'recetas',
     TAREAS: 'tareas',
-    EMPLEADOS: 'empleados',
-    PEDIDOS: 'pedidos'
+    EMPLEADOS: 'empleados'
 }
 
 export default class DataPersistenceModel {
@@ -74,7 +74,11 @@ export default class DataPersistenceModel {
     }
 
     async getProveedores() {
-        return await this.storageService.getData(ENTITIES.PROVEEDORES);
+        return await this.storageService.getData(ENTITIES.ORDENES);
+    }
+
+    async getOrdenesCompra() {
+        return await this.storageService.getData(ENTITIES.PROVEEDORES, []);
     }
 
     async getArticulosXProveedor(proveedor) {

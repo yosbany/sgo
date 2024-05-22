@@ -7,8 +7,41 @@ export default class PurchaseOrdersView extends BaseView {
         this.controller = controller;
     }
 
-    async listPurchaseOrdersRenderPartialView() {
+    async loadOrdersTabla(ordenes) {
+        let tbody = document.getElementById("body-table-order");
+        tbody.innerHTML = ''; 
+        ordenes.forEach(row => {
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                    <th scope="col" style="vertical-align: middle;">${row.fecha}</th>
+                    <th scope="col" style="vertical-align: middle;">${row.proveedor}</th>
+                    <th scope="col" style="vertical-align: middle;">${row.importe}</th>
+                    <th scope="col" style="vertical-align: middle;">
+                        <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
+                            <button type="button" class="view btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1" id-row-data-bind="${row.id}">
+                                <i class="mdi mdi-eye"></i>
+                            </button>
+                            <button type="button" class="edit btn btn-primary btn-sm table-action-btn mb-1 mb-md-0 me-md-1" id-row-data-bind="${row.id}">
+                                <i class="mdi mdi-table-edit"></i>
+                            </button>
+                            <button type="button" class="delete btn btn-danger btn-sm table-action-btn" id-row-data-bind="${row.id}">
+                                <i class="mdi mdi-delete"></i>
+                            </button>
+                        </div>
+                    </th>
+                `;
+            tbody.appendChild(tr);
+        });
+
+
+    }
+
+
+    async listPurchaseOrdersRenderPartialView(ordenes) {
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
+        
+        this.loadOrdersTabla(ordenes);
+
         document.getElementById('btn-nueva-orden').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
         });

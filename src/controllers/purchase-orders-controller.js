@@ -15,7 +15,7 @@ export default class PurchaseOrdersController extends BaseController {
 
     //route: #list-purchase-orders
     async listPurchaseOrders(){
-        this.view.listPurchaseOrdersRenderPartialView();
+        this.view.listPurchaseOrdersRenderPartialView(this.dataPersistenceModel.getOrdenesCompra());
     }
 
     //route: #new-purchase-order
