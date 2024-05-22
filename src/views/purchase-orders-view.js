@@ -84,7 +84,7 @@ export default class PurchaseOrdersView extends BaseView {
                   <td style="vertical-align: middle;"><input class="form-check-input checkbox-row" type="checkbox" style="scale: 1.6;"></td>
                   <td style="vertical-align: middle;"><h5 data-bs-toggle="tooltip" title="COMPRAS X ${articulo.pack_compra}" style="margin-bottom: 0px !important;cursor: pointer;" data-bind="${articulo.pack_compra}">${articulo.nombre}</h5></td>
                   <td style="vertical-align: middle;"><span class="badge bg-secondary">$ ${articulo.precio_compra}</span></td>
-                  <td style="text-align: right;"><input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;" disabled value=${articulo.stock_deseado}></td>
+                  <td style="text-align: right;"><input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;text-align: right;" disabled value=${articulo.stock_deseado}></td>
                 `;
                 tbody.appendChild(tr);
 

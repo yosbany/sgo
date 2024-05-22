@@ -3,19 +3,29 @@
     Regresar
 </button>
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="select-proveedores">
-        <!-- Dinamic -->
+    <!-- Dinamic -->
 </select>
-  <hr>
-  <table class="table table-borderless">
+<hr>
+<table class="table table-borderless">
     <thead>
-      <tr>
-        <th></th>
-        <th>Producto</th>
-        <th>Precio</th>
-        <th style="text-align: right;">Stock</th>
-      </tr>
+        <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th style="text-align: right;">Stock</th>
+        </tr>
     </thead>
     <tbody id="body-tabla-articulos-proveedor">
-      <!-- Dinamic -->
+        <!-- Dinamic -->
     </tbody>
-  </table>
+</table>
+<hr>
+<label for="resumen-pedido" class="mt-4">Resumen del Pedido:</label>
+<textarea class="form-control mb-4" rows="5" id="resumen-pedido"></textarea>
+<div class="row">
+    <div class="col-12">
+        <button type="button" class="btn btn-primary" id="btn-copiar">Copiar</button>
+        <button type="button" class="btn btn-primary" id="btn-imprimir">Imprimir</button>
+        <button type="button" class="btn btn-primary" id="btn-guardar">Guardar</button>
+    </div>
+</div>
