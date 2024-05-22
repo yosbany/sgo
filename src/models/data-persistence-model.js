@@ -88,8 +88,21 @@ export default class DataPersistenceModel {
     }
 
     async saveOrden(orden) {
+        // Obtener todas las órdenes existentes
         const ordenes = await this.storageService.getData(ENTITIES.ORDENES, []);
-        ordenes.push(orden);
+    
+        // Verificar si la orden ya existe en la lista
+        const index = ordenes.findIndex(o => o.id === orden.id);
+    
+        if (index !== -1) {
+            // Si la orden ya existe, actualizarla
+            ordenes[index] = orden;
+        } else {
+            // Si la orden no existe, agregarla a la lista
+            ordenes.push(orden);
+        }
+    
+        // Guardar las órdenes actualizadas en el almacenamiento
         await this.storageService.setData(ENTITIES.ORDENES, ordenes);
     }
 

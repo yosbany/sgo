@@ -385,16 +385,12 @@ export default class PurchaseOrdersView extends BaseView {
                 return;
             }
 
-            const datosAGuardar = {
-                id: (new Date()).getTime(),
-                fecha: new Date(),
-                proveedor: proveedorSeleccionado,
-                articulos: articulosMarcados,
-                resumen: resumenPedido,
-                importe: 0
-            };
+            order.articulos = articulosMarcados;
+            order.resumen = resumenPedido;
+            order.importe = 0;
+
             try {
-                await this.controller.guardarOrdenDeCompraAction(datosAGuardar);
+                await this.controller.guardarOrdenDeCompraAction(order);
                 toastr.success("Orden de compra guardada correctamente.");
                 this.redirectToPage('#list-purchase-orders');
             } catch (error) {
