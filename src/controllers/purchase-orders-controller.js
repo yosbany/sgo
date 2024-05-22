@@ -29,14 +29,16 @@ export default class PurchaseOrdersController extends BaseController {
     async viewPurchaseOrder(params){
         const idOrden = params ? params.idOrden : null;
         const orden = await this.dataPersistenceModel.getOrden(idOrden);
-        this.view.viewPurchaseOrderRenderPartialView(orden);
+        const proveedores = await this.dataPersistenceModel.getProveedores();
+        this.view.viewPurchaseOrderRenderPartialView(proveedores, orden);
     }
 
     //route: #edit-purchase-order
     async editPurchaseOrder(params){
         const idOrden = params ? params.idOrden : null;
         const orden = await this.dataPersistenceModel.getOrden(idOrden);
-        this.view.editPurchaseOrderRenderPartialView(orden);
+        const proveedores = await this.dataPersistenceModel.getProveedores();
+        this.view.editPurchaseOrderRenderPartialView(proveedores, orden);
     }
 
     async deletePurchaseOrderAction(idOrder){

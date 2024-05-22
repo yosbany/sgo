@@ -281,7 +281,7 @@ export default class PurchaseOrdersView extends BaseView {
         
     }
 
-    async viewPurchaseOrderRenderPartialView(order) {
+    async viewPurchaseOrderRenderPartialView(proveedores, order) {
         await this.getPartials('view-purchase-order.html', 'Ver - Orden de Compra');
         
         this.cargarSelectProveedores(proveedores, order.proveedor);
@@ -353,7 +353,7 @@ export default class PurchaseOrdersView extends BaseView {
         });
     }
 
-    async editPurchaseOrderRenderPartialView(order) {
+    async editPurchaseOrderRenderPartialView(proveedores, order) {
         await this.getPartials('edit-purchase-order.html', 'Editar - Orden de Compra');
         this.cargarSelectProveedores(proveedores, order.proveedor);
         const articulos = await this.controller.getArticulosXProveedorAction(order.proveedor);
