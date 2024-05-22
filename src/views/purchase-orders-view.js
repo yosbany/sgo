@@ -70,14 +70,17 @@ export default class PurchaseOrdersView extends BaseView {
 
     async cargarTablaArticulosXProveedor(articulos){
         let tbody = document.getElementById("body-tabla-articulos-proveedor");
+        const divordenpie = document.getElementById("orden-pie");
         tbody.innerHTML = '';
         if (articulos.length === 0) {
+            divordenpie.style.display = 'block'
             let tr = document.createElement('tr');
             tr.innerHTML = `
                 <th colspan="4" style="text-align: center;"><b>No hay registros<b></th>
             `;
             tbody.appendChild(tr);
         } else {
+            divordenpie.style.display = 'block'
             articulos.forEach(articulo => {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
