@@ -74,11 +74,11 @@ export default class DataPersistenceModel {
     }
 
     async getProveedores() {
-        return await this.storageService.getData(ENTITIES.ORDENES, []);
+        return await this.storageService.getData(ENTITIES.PROVEEDORES, []);
     }
 
     async getOrdenesCompra() {
-        return await this.storageService.getData(ENTITIES.PROVEEDORES, []);
+        return await this.storageService.getData(ENTITIES.ORDENES, []);
     }
 
     async getArticulosXProveedor(proveedor) {

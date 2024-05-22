@@ -44,12 +44,20 @@ export default class PurchaseOrdersView extends BaseView {
 
     async cargarSelectProveedores(proveedores){
         let select = document.getElementById("select-proveedores");
-        proveedores.forEach(proveedor => {
+        select.innerHTML = '';
+        if (proveedores.length === 0) {
             const option = document.createElement('option');
-            option.value = proveedor.nombre;
-            option.textContent = proveedor.nombre;
+            option.value = '';
+            option.textContent = 'No hay proveedores disponibles';
             select.appendChild(option);
-        });
+        } else {
+            proveedores.forEach(proveedor => {
+                const option = document.createElement('option');
+                option.value = proveedor.nombre;
+                option.textContent = proveedor.nombre;
+                select.appendChild(option);
+            });
+        }
     }
 
 
