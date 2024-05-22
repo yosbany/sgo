@@ -86,7 +86,7 @@ export default class PurchaseOrdersView extends BaseView {
                 tr.innerHTML = `
                   <td style="vertical-align: middle;"><input class="form-check-input checkbox-row" type="checkbox" style="scale: 1.6;"></td>
                   <td style="vertical-align: middle;"><h5 data-bs-toggle="tooltip" title="COMPRAS X ${articulo.pack_compra}" style="margin-bottom: 0px !important;cursor: pointer;" data-bind="${articulo.pack_compra}">${articulo.nombre}</h5></td>
-                  <td style="vertical-align: middle;"><span class="badge bg-secondary">$ ${articulo.precio_compra}</span></td>
+                  <td style="vertical-align: middle;"><span class="badge bg-secondary precio-row">$ ${articulo.precio_compra}</span></td>
                   <td style="text-align: right;"><input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;text-align: right;" disabled value=${articulo.stock_deseado}></td>
                 `;
                 tbody.appendChild(tr);
@@ -228,28 +228,21 @@ export default class PurchaseOrdersView extends BaseView {
             }
         });
         document.getElementById('btn-guardar').addEventListener('click', async () => {
-            // Obtener el proveedor seleccionado
             const proveedorSeleccionado = document.getElementById('select-proveedores').value;
-        
-            // Obtener los artículos marcados
             let tbody = document.getElementById('body-tabla-articulos-proveedor');
             const articulosMarcados = Array.from(tbody.querySelectorAll('.checkbox-row:checked')).map(checkbox => {
                 const row = checkbox.closest('tr');
                 const nombre = row.querySelector('td:nth-child(2)').textContent.trim();
                 const stockDeseado = row.querySelector('input[type="number"]').value || 0;
-                const elementWithDataBind = row.querySelector('[data-bind]');
-                const contenido = elementWithDataBind ? elementWithDataBind.getAttribute('data-bind') : '';
+                const precioCompra = row.querySelector(".precio-row").textConten.trim();
                 return {
                     nombre: nombre,
-                    stockDeseado: stockDeseado,
-                    contenido: contenido
+                    precio_compra: precioCompra,
+                    stock_deseado: stockDeseado
                 };
             });
-        
-            // Obtener el resumen del pedido
             const resumenPedido = document.getElementById('resumen-pedido').value;
-        
-            // Verificar que haya un proveedor seleccionado y artículos marcados
+            
             if (!proveedorSeleccionado) {
                 toastr.error("Por favor, seleccione un proveedor.");
                 return;
@@ -259,11 +252,13 @@ export default class PurchaseOrdersView extends BaseView {
                 return;
             }
         
-            // Datos a guardar
             const datosAGuardar = {
+                id: (new Date()).getTime(),
+                fecha: new Date(),
                 proveedor: proveedorSeleccionado,
                 articulos: articulosMarcados,
-                resumen: resumenPedido
+                resumen: resumenPedido,
+                importe: 0
             };
         
             // Llamar al controlador para guardar los datos
