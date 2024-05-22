@@ -95,7 +95,7 @@ export default class DataPersistenceModel {
 
     async getOrden(idOrden){
         const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
-        const obj = Object.values(ordenes).find(orden => orden.id.toString() === idOrden.toString());
+        const obj = Object.values(ordenes).find(orden => String(orden.id) === String(idOrden));
         return obj || null;
     }
 
