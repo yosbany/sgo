@@ -51,6 +51,11 @@ export default class PurchaseOrdersView extends BaseView {
             option.textContent = 'No hay proveedores disponibles';
             select.appendChild(option);
         } else {
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Seleccione un proveedor';
+            select.appendChild(defaultOption);
+
             proveedores.forEach(proveedor => {
                 const option = document.createElement('option');
                 option.value = proveedor.nombre;
@@ -62,9 +67,66 @@ export default class PurchaseOrdersView extends BaseView {
             });
         }
     }
+
+    async cargarTablaArticulosXProveedor(articulos){
+        let tbody = document.getElementById("body-tabla-articulos-proveedor");
+        tbody.innerHTML = '';
+        if (articulos.length === 0) {
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                <th colspan="4" style="text-align: center;"><b>No hay registros<b></th>
+            `;
+            tbody.appendChild(tr);
+        } else {
+            articulos.forEach(articulo => {
+                let tr = document.createElement('tr');
+                tr.innerHTML = `
+                  <td style="vertical-align: middle;"><input class="form-check-input checkbox-row" type="checkbox" style="scale: 1.6;"></td>
+                  <td style="vertical-align: middle;"><h5 data-bs-toggle="tooltip" title="COMPRAS X ${articulo.pack_compra}" style="margin-bottom: 0px !important;cursor: pointer;" data-bind="${articulo.pack_compra}">${articulo.nombre}</h5></td>
+                  <td style="vertical-align: middle;"><span class="badge bg-secondary">$ ${articulo.precio_compra}</span></td>
+                  <td style="text-align: right;"><input type="number" class="form-control stock-deseado-row" style="width: 80px;float: right;" disabled value=${articulo.stock_deseado}></td>
+                `;
+                tbody.appendChild(tr);
+
+                const checkbox = tr.querySelector('.checkbox-row');
+                const stock_deseado = tr.querySelector('.stock-deseado-row');
+                const nombre = tr.cells[1];
+
+                checkbox.addEventListener('change', () => {
+                    stock_deseado.disabled = !checkbox.checked;
+                    stock_deseado.readOnly = !checkbox.checked;
+                    if (checkbox.checked) {
+                        tr.classList.add('table-success');
+                    }
+                    else {
+                        tr.classList.remove('table-success');
+                    }
+                    //this.actualizarResumenPedido();
+                });
+                stock_deseado.addEventListener('input', () => {
+                    //this.actualizarResumenPedido();
+                });
+                stock_deseado.addEventListener('focus', () => {
+                    stock_deseado.value = '';
+                });
+                stock_deseado.addEventListener('blur', () => {
+                    if (stock_deseado.value === '') {
+                        stock_deseado.value = articulo.stock_deseado;
+                    }
+                });
+
+                nombre.addEventListener('click', () => {
+                    if (checkbox.checked) {
+                        tr.classList.add('table-success');
+                    }
+                    else {
+                        tr.classList.toggle('table-success');
+                    }
+                });
+            });
+        }
+    }
     
-
-
     async listPurchaseOrdersRenderPartialView(ordenes) {
         await this.getPartials('list-purchase-orders.html', 'Lista - Ordenes de Compra');
 
@@ -104,12 +166,17 @@ export default class PurchaseOrdersView extends BaseView {
 
     }
 
-    async newPurchaseOrderRenderPartialView(proveedores) {
+    async newPurchaseOrderRenderPartialView(proveedores, articulos) {
         await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
         this.cargarSelectProveedores(proveedores);
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });
+        document.getElementById('select-proveedores').addEventListener('change', event => {
+            const proveedorSeleccionado = event.target.value;
+            this.cargarTablaArticulosXProveedor(proveedorSeleccionado);
+        });
+
     }
 
     async viewPurchaseOrderRenderPartialView(order) {
