@@ -33,7 +33,7 @@ export default class DataPersistenceModel {
             .then(data => {
                 for (const key in data) {
                     if (data.hasOwnProperty(key)) {
-                        this.storageService.setData(key, JSON.stringify(data[key]));
+                        this.storageService.setData(key, data[key]);
                     }
                 }
                 console.log('Datos JSON cargados y guardados en Local Storage.');
@@ -74,7 +74,7 @@ export default class DataPersistenceModel {
     }
 
     async getProveedores() {
-        return await this.storageService.getData(ENTITIES.ORDENES);
+        return await this.storageService.getData(ENTITIES.ORDENES, []);
     }
 
     async getOrdenesCompra() {
