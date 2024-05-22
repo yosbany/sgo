@@ -136,7 +136,7 @@ export default class PurchaseOrdersView extends BaseView {
         let tbody = document.getElementById("body-tabla-articulos-proveedor");
         const resumenPedido = document.getElementById("resumen-pedido");
 
-        const articulosMarcados = Array.from(tbody.querySelectorAll('.checkbox-row'))
+        const articulosMarcados = Array.from(tbody.querySelectorAll('.checkbox-row:checked'))
             .map(checkbox => {
                 const row = checkbox.closest('tr');
                 const nombre = row.querySelector('td:nth-child(2)').textContent.trim();
