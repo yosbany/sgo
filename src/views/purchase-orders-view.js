@@ -309,48 +309,6 @@ export default class PurchaseOrdersView extends BaseView {
                 console.log('No hay contenido para imprimir.');
             }
         });
-        document.getElementById('btn-guardar').addEventListener('click', async () => {
-            const proveedorSeleccionado = document.getElementById('select-proveedores').value;
-            let tbody = document.getElementById('body-tabla-articulos-proveedor');
-            const articulosMarcados = Array.from(tbody.querySelectorAll('.checkbox-row:checked')).map(checkbox => {
-                const row = checkbox.closest('tr');
-                const nombre = row.querySelector('td:nth-child(2)').textContent.trim();
-                const stockDeseado = row.querySelector('input[type="number"]').value || 0;
-                const precioCompra = row.querySelector(".precio-row").textConten;
-                return {
-                    nombre: nombre,
-                    precio_compra: precioCompra,
-                    stock_deseado: stockDeseado
-                };
-            });
-            const resumenPedido = document.getElementById('resumen-pedido').value;
-            
-            if (!proveedorSeleccionado) {
-                toastr.error("Por favor, seleccione un proveedor.");
-                return;
-            }
-            if (articulosMarcados.length === 0) {
-                toastr.error("Por favor, marque al menos un artículo.");
-                return;
-            }
-        
-            const datosAGuardar = {
-                id: (new Date()).getTime(),
-                fecha: new Date(),
-                proveedor: proveedorSeleccionado,
-                articulos: articulosMarcados,
-                resumen: resumenPedido,
-                importe: 0
-            };
-            try {
-                await this.controller.guardarOrdenDeCompraAction(datosAGuardar);
-                toastr.success("Orden de compra guardada correctamente.");
-                this.redirectToPage('#list-purchase-orders');
-            } catch (error) {
-                console.error('Error guardando la orden de compra:', error);
-                toastr.error("Hubo un error al guardar la orden de compra. Por favor, intente nuevamente.");
-            }
-        });
     }
 
     async editPurchaseOrderRenderPartialView(proveedores, order) {
