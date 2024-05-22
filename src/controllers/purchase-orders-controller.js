@@ -29,6 +29,7 @@ export default class PurchaseOrdersController extends BaseController {
     async viewPurchaseOrder(params){
         const idOrden = params ? params.idOrden : null;
         const orden = await this.dataPersistenceModel.getOrden(idOrden);
+        console.log("orden: ",orden)
         const proveedores = await this.dataPersistenceModel.getProveedores();
         this.view.viewPurchaseOrderRenderPartialView(proveedores, orden);
     }
