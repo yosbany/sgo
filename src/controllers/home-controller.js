@@ -1,5 +1,7 @@
 import BaseController from './base-controller.js';
 import HomeView from '../views/home-view.js';
+import DataPersistenceModel from '../models/data-persistence-model.js';
+
 
 
 export default class HomeController extends BaseController {
@@ -7,6 +9,7 @@ export default class HomeController extends BaseController {
     constructor() {
         super();
         this.view = new HomeView(this);
+        this.dataPersistenceModel = new DataPersistenceModel();
     }
 
     async init() {
@@ -21,7 +24,7 @@ export default class HomeController extends BaseController {
     }
 
     async loadDataAction(){
-       
+       this.dataPersistenceModel.loadData();
     }
     
     //route: #home

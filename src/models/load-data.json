@@ -1,0 +1,2800 @@
+{
+    "articulos": [
+      {
+        "nombre": "CARNE PICADA ESPECIAL",
+        "pack_compra": "KG",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "BONDIOLA",
+        "pack_compra": "PIEZA",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "POLLO ENTERO",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "POLLO MUSLO 1/4",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 20
+      },
+      {
+        "nombre": "MILANESA DE CARNE",
+        "pack_compra": "KG",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "MILANESA DE POLLO",
+        "pack_compra": "KG",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "MILANESA DE CERDO",
+        "pack_compra": "KG",
+        "precio_compra": 0,
+        "proveedores": [
+          "CARNELANDIA",
+          "CARNICERÍA DEL SUR"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "CREMA DE LECHE COLONIAL 250ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "CREMA DE LECHE COLONIAL 500ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DULCE LECHE COLONIAL 250GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DULCE LECHE COLONIAL 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GELATINA COLONIAL 120GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "MUZZARELLA COLONIAL",
+        "pack_compra": "BARRA",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "QUESO DE UNTAR ECOMEL 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "YOGURT COLONIAL 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DULCE LEHCE COLONIAL BLANDO 5KG",
+        "pack_compra": "TARRO",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DULCE LEHCE COLONIAL DURO 5KG",
+        "pack_compra": "TARRO",
+        "precio_compra": 0,
+        "proveedores": [
+          "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ACEITE DE ARROZ SAMAN 900ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "ACEITE DE GIRASOL URUGUAY 900ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ACEITE DE OLIVA OLIVARES DE ROCHA 250ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "ACEITE DE OLIVA OLIVARES DE ROCHA 500ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "ACEITE DE SOJA CONDESA 900ML",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ACEITE FRITADOR SARANDÍ 5LT",
+        "pack_compra": "BIDON",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "AVENA PURITAS 400GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "POROTO NEGRO LA ABUNDANCIA 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "LENTEJONES REVELACION 400GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "PURE DE PAPA PURITAS 125G",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "POLENTA PURITAS 400GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GRASA URUGUAY 400GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ALMIDON DE MAIZ HORNEX 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "FIDEO LAS ACACIAS AL HUEVO SPAGUETIS 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "FIDEO LAS ACACIAS AL HUEVO TIRABUZONES 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "FIDEO LAS ACACIAS AL HUEVO CORBATITAS 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "FIDEO LAS ACACIAS AL HUEVO RIGATTI 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "FIDEO LAS ACACIAS AL HUEVO MOÑITAS 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "KETCHUP HELMANS 60GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "MAYONESA HELLMANNS 125CC",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "MAYONESA URUGUAY 125GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "MAYONESA URUGUAY 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "TOMATE PELADO P.GRANJA LATA.380GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "PULPA DE TOMATE DE LEY 1020GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PULPA DE TOMATE GOURMET 1030GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PULPA DE TOMATE GOURMET 206GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "PULPA NAPOLITANA GOURMET 206GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "HARINA SAN TELMO 0 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "HARINA PRIMOROSA 000 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "HARINA SUPREMA 0000 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ARROZ BLANCO SAMAN 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ARROZ BLANCO SAMAN 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ARROZ BLANCO ARUBA 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ARROZ PARBOLED ARUBA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "AZUCAR BLANCA PURITA 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "AZUCAR BLANCA AZUCARLITO 1KG",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "AZUCAR RUBIO AZUCARLITO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "AZUCAR IMPALPABLE HORNEX 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "PASAS DE UVA REVELACIÓN 180GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "ACEITUNAS GIBUR CON CAROZO 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ACEITUNAS GIBUR SIN CAROZO 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ACEITUNAS GIBUR CON CAROZO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ACEITUNAS GIBUR SIN CAROZO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DURAZNO EN ALMIBAR AIDA 830GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "ANANA EN ALMIBAR ODERICH",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "CHAMPIÑONES ENTEROS EN LATA 425GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "PALMITO ENTERO P. GRANJA LATA.400GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ARVEJA Y ZANAHORIAS ODERICH LATA 300GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ARVEJA Y CHOCLO ODERICH LATA 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ARVEJA ODERICH LATA 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "CHOCLO DESGRANADO ODERICH LATA 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "CREMA DE CHOCLO ODERICH LATA 350GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "JARDINERA ODERICH LATA 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ACEITUNA RELLENA SALMON",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "ACEITUNA RELLENA ANCHOA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "ACEITUNA RELLENA MORON",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "VINAGRE GAMBERONI MANZANA 500ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "VINAGRE GAMBERONI ALCOHOL 500ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DESINFECTANTE BEA ROJO 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DESINFECTANTE BEA AZUL 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DESINFECTANTE BEA VERDE 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "PAPEL HIGIÉNICO HIGIENOL 60MT X 12UN",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PAPEL HIGIÉNICO HIGIENOL TEXTURADO 30MT X 4UN",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "PAPEL HIGIENICO SUBLIME D.HOJA 50MT X 4UN",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "JABÓN POLVO SKIP 600GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "JABÓN POLVO SKIP 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "JABÓN POLVO DRIVE 400GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ALGODÓN NUBE 75GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "PROTECTOR DIARIO LADYSOFT CLASICO 20UN",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "PROTECTOR DIARIO LADYSOFT CLASICO 3 X 2",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "TOALLA FEMENINA LADYSOFT 8UN",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "TOALLA FEMENINA LADYSOFT 16UN",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 8
+      },
+      {
+        "nombre": "DETERGENTE AXION 1.1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DETERGENTE NEVEX AMARILLO 750ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DETERGENTE NEVEX VERDE 750ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DETERGENTE NEVEX AMARILLO 1.25LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DETERGENTE NEVEX VERDE 1.25LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "JABÓN LIQUIDO IARA P/MANO 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "JABÓN BARRA BULL DOG LAVAR 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "JABÓN BARRA DOVE 90GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "JABÓN BARRA SENSUS 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "CREMA DENTAL COLGATE 90GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "MIEL DON FELIPE 180GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 8
+      },
+      {
+        "nombre": "ESENCIA DE VAINILLA HORNEX 30ML",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "TURRON ALMENDRA GRAN DUQUE 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "TURRON MANI GRAN DUQUE 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. ADOBO 25GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. AJO DESHIDRATADO 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. AJO Y PEREJIL 25GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. CANELA EN RAMA 25GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. CLAVO DE OLOR 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. COMINO MOLIDO 25GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. CURRY 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. OREGANO 25GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. PIMENTON 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. PIMIENTA B. MOLIDA 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. CANELA MOLIDA 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESP. NUEZ MOZCADA 20GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "DESODORANTE DOVE ORIGINAL AEROSOL",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE DOVE GO FRESH AEROSOL",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE DOVE INVISIBLE DRY AEROSOL",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE AXE APOLLO 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE AXE MARINE 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE AXE BLACK 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE AXE MUSK 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DESODORANTE REXONA ROLLON 65GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "BOLSA DE RESIDUOS EDIFICIO 70 X 100 CM",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "BOLSA DE RESIDUOS 50 X 55 JUPITER CM",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "COCOA COPACABANA 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 15
+      },
+      {
+        "nombre": "COCOA COPACABANA 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "COCOA COPACABANA 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "COCOA VASCOLET 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "COCOA VASCOLET 200GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "COCOA VASCOLET 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 15
+      },
+      {
+        "nombre": "TE HORNIMANNS SOBRE",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "POLVO DE HORNEAR HORNEX 30GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "SALSA BLANCA HORNEX 32GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "SOPA FIDEO INSTANTANEA KNORR POLLO",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "SOPA FIDEO INSTANTANEA KNORR VEGETALES",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "SOPA LETRA INSTANTANEA KNORR VEGETALES",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "GELATINA HORNEX 8.PORC 50GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GELATINA LIGHT HORNEX 8.PORC 25GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "CHANTILLY HORNEX 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "VINO ESTANCIA MENDOZA TINTO BOTELLA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "VINO ESTANCIA MENDOZA BLANCO BOTELLA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "YERBA DEL CEBADOR CLASICO 70GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "YERBA DEL CEBADOR INTENSO 70GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "YERBA DEL CEBADOR CLASICO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "YERBA DEL CEBADOR INTENSO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "YERBA DEL CEBADOR CLASICO 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "YERBA DEL CEBADOR INTENSO 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "BALDE NEGRO 10LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "ESCOBA CON PALO GRAN BARRIDO",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "LAMPASO CON PALO",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "MAQUINA DE AFEITAR PRESTO BARBA 3 HOJA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "MERMELADA RINCÓN DEL GIGANTE FRUTILLA 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "MERMELADA RINCÓN DEL GIGANTE ARANDANOS 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "MERMELADA RINCÓN DEL GIGANTE ZAPALLO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "MERMELADA RINCÓN DEL GIGANTE DURAZNO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "MERMELADA RINCÓN DEL GIGANTE HIGO 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "DULCE RINCON DEL GIGANTE MEMBRILLO BARRA 900GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "DULCE RINCON DEL GIGANTE ZAPALLO BARRA 900GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "CERVEZA DADOBIER 473ML",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO LIMOL POMELO 2LT",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO LIMOL COLA 2LT",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO LIMOL MANDARINA 2LT",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO LIMOL LIMON 2LT",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "VINO FAISAN CAJA TINTO 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "VINO FAISAN CAJA TINTO DULCE 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "VINO FAISAN CAJA BLANCO DULCE 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "VINO FAISAN CAJA ROSADO DULCE 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ESPUMANTES CANCILLER BOTELLA.750ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "SIDRA NOCHEBUENA 1.5LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "SIDRA SANTA ROSA 910ML",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "LAYS PACK PICADA COMPLETA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS 235GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS 95GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 8
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS STAX ORIGINAL 160GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS STAX BARBACOA 160GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS STAX CHEDDAR 160GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "PAPAS FRITA LAYS STAX CEBOLLA 160GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "PALI CHIPS LAYS 30GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "PALI CHIPS LAYS 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "MANI PELADO MANIX 50GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "MANI JAPONES MANIX 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "MANI PELADO MANIX 150GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "COMBO PALI CHIPS / MANI JAPONES",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "ALIMENTO PARA GATOS 8KG",
+        "pack_compra": "BOLSA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ALIMENTO PARA PERRO 8KG",
+        "pack_compra": "BOLSA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GALLETAS MARIA FAMOSA 300GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "CHICLE BELDENT/TOPLINE NEGRO 10GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CHICLE BELDENT/TOPLINE VERDE 10GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CHICLE BELDENT/TOPLINE AZUL 10GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CARAMELOS MENTOLADOS NEGROS",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CARAMELOS MENTOLADOS VERDES",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CARAMELOS MENTOLADOS AZULES",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "WAFLE MY BIT CHOCOLATE 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "WAFLE MY BIT DULCE LECHE 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "WAFLE MY BIT FRUTILLA 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "WAFLE MY BIT FLOCOS 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "WAFLE MY BIT LIMON 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "WAFLE SENSACION 180GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "TABLETA CHOCOLATE MILKA 55GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "TABLETA CHOCOLATE MEDIO AMARGO FLORESTAL 80GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "TABLETA CHOCOLATE CAFE FLORESTAL 80GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GALLETA MY BIT RELLENA CHOCOLATE 125GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GALLETA MY BIT RELLENA DULCE LECHE 125GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GALLETA MY BIT RELLENA FRUTILLA 125GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GALLETA MY BIT RELLENA VAINILLA 125GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GALLETAS OREO REGULAR 118GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "CARAMELOS DE YOGURT",
+        "pack_compra": "BOLSA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "TUBO DE CARAMELO GOMILONA 10UN",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PALETA DE CARAMELO",
+        "pack_compra": "FUNDA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CHUPETIN PICO DULCE",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ENDULCORANTE SPLENDA 700UN",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "HUEVO CON SORPRESA CIRCUS",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "HUEVO CON SORPRESA LITTLE FARM",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CARAMELOS DE MIEL Y GUACO",
+        "pack_compra": "BOLSA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "LEVADURA SAF INSTANTEA 10GR",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PETACA WHISKY GREGSON'S",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 3
+      },
+      {
+        "nombre": "PAPEL REGALO",
+        "pack_compra": "PACK",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "SHAMPOO SEDAL SOBRE.10ML",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ACONDICIONADOR SEDAL SOBRE.10ML",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "SHAMPOO DOVE SOBRE.10ML",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ACONDICIONADOR DOVE SOBRE.10ML",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 FRUTIILA",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 MIX FRUTAS",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 LIMON",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 NARANJA MANGO",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 DURAZNO",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 ANANA",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 PERA",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO RINDE 2 NARANJA",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO CLIGHT NARANJA",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO CLIGHT MANZANA",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "REFRESCO EN POLVO CLIGHT LIMON",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PILA ALCALINA PANASONIC AA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "PILA ALCALINA PANASONIC AAA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ENCENDEDOR ECONÓMICO",
+        "pack_compra": "CAJA",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ENCENDEDOR BIC GRANDE",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 12
+      },
+      {
+        "nombre": "PALITO DENTAL GANBOARDI",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PINZA PRENDEDOR PALILLO PLÁSTICO 12U",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ADHESIVO ECCOLE",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "ADHESIVO LA GOTITA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "PAÑUELO ELITE",
+        "pack_compra": "PACK",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "VELAS COMUNES LISA",
+        "pack_compra": "PACK",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "VELAS CUMPLEAÑOS",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 4
+      },
+      {
+        "nombre": "FOSFOROS FRAGATA",
+        "pack_compra": "PACK",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GUANTE ADULTO LISO GRANDE",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "GUANTE ADULTO LISO MEDIANOS",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "BOLSAS TIPO CAMISETA REFORZADA 6",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 50
+      },
+      {
+        "nombre": "CINTA ADHESIVA",
+        "pack_compra": "PACK",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CURITAS ADHESIVAS",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "LÁMPARA LED BOMBITAS PHILIPS 12W",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "LÁMPARA LED BOMBITAS PHILIPS 15W",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 10
+      },
+      {
+        "nombre": "ROLLO FILM PVC 15MT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ROLLO PAPEL ALUMINIO 4MT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "ROLLO PAPEL MANTECA 7.5MT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "JABÓN LIQUIDO COTTONMAX P/LAVAR 3LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "COCO RALLADO HORNEX 100GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "NACIROL"
+        ],
+        "stock_deseado": 5
+      },
+      {
+        "nombre": "GRASA ONDIL CAJA 15KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "OREGANO BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "AJO Y PEREJIL BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "AJO GRANULADO BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CANELA MOLIDA BOLSA 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PIMENTON ROJO BOLSA 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ]
+      },
+      {
+        "nombre": "GELATINA CON SABOR BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "BICARBONATO DE AMONIO BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "AZUCAR IMPALPABLE BOLSA 5KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "FECULAS DE MAIZ BOLSA 5KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PLACA HOJALDRE SINA",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "JALEA DE MANZANA ENVASADA BOLSA 5KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "HARINA INTEGRAL BOLSA 5KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "PASTA DE MEMBRILLO CAJA 5KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CHOCOLATE NEGRO SEMI AMARGO SELECTA BARRA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "CHOCOLATE BLANCO SELECTA X GOTAS 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CHISPA DE CHOCOLATE ENVASADO 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GRANA DE MANI ENVASADO 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GRAJEA DE COLORES ENVASADO 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "GRAJEA DE CHOCOLATE ENVASADO 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "COCO RALLADO ENVASADO BOLSA 1 KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ACEITUNAS EN ARITOS X BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "QUESO RALLADO GRANJA BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ECENCIA DE MANTECA CHIAVETTA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ECENCIA DE FRUTILLA CHIAVETTA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "ECENCIA DE COCO CHIAVETTA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "COLOR ROJO CHIAVETTA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "COLOR AMARILLO CHIAVETTA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "COLOR NEGRO CHIAVETTA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "POLVO DE HORNEAR HORNEX BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "MEJORADOR PARALEVA X BOLSA 500GR",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 8
+      },
+      {
+        "nombre": "HARINA DE MAIZ POLENTA BOLSA 1KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 6
+      },
+      {
+        "nombre": "CHICHARON MANTEX CAJA 5KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "UVAS PASAS CAJA 10KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "LEVADURA PARALEVA X CAJA 20UN",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "QUESO PIAMONTINO X BARRA 4KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "MEMBRILLO ISLA X BARRA 4KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "SALSA PICERA RIGBY BOLSA 3KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 2
+      },
+      {
+        "nombre": "MAYONESA URUGUAY BOLSA 3KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "CHANTILLY CAJA 1LT",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "MANTECA  PORCIONADA",
+        "pack_compra": "KG",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 8
+      },
+      {
+        "nombre": "AZUCAR COMUN BOLSA 25KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "SAL FINA BOLSA 25KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 1
+      },
+      {
+        "nombre": "HARINA 0 SANTA ROSA BOLSA 25 KG",
+        "pack_compra": "UN",
+        "precio_compra": 0,
+        "proveedores": [
+          "BLANCOR S A"
+        ],
+        "stock_deseado": 0
+      }
+    ],
+    "movimientos": [
+      {
+        "concepto": "Seguro accidente de trabajo",
+        "contacto": "YOSBANY",
+        "descripcion": "njnj",
+        "fecha": "2024-05-11",
+        "importePago": 78,
+        "referencia": ""
+      }
+    ],
+    "proveedores": [
+      {
+        "nombre": "CARNELANDIA"
+      },
+      {
+        "nombre": "CARNICERÍA DEL SUR"
+      },
+      {
+        "nombre": "DISTRIBUIDORA CUAREIM S.R.L. (PONTEVEDRA)"
+      },
+      {
+        "nombre": "FERNANDO DANIEL DELGADO PEREZ (COLONIAL)"
+      },
+      {
+        "nombre": "FRUTAS Y VERDURA (UAM)"
+      },
+      {
+        "nombre": "IRAZU DISTRIBUIDORA"
+      },
+      {
+        "nombre": "KALTER (NIX)"
+      },
+      {
+        "nombre": "MUNDO FROZZEN"
+      },
+      {
+        "nombre": "NACIROL"
+      },
+      {
+        "nombre": "SAMECA"
+      },
+      {
+        "nombre": "MONTEVIDEO REFRESCOS SRL (COCA COLA)"
+      },
+      {
+        "nombre": "ESTABLECIMIENTOS JUAN SARUBBI S A"
+      },
+      {
+        "nombre": "SEOR SOCIEDAD ANONIMA (DON TOTO)"
+      },
+      {
+        "nombre": "DISTRIBUIDORA OFERTON"
+      },
+      {
+        "nombre": "SOSA RODRIGUEZ JORGE HECTOR (NESTLE)"
+      },
+      {
+        "nombre": "BLANCOR S A"
+      },
+      {
+        "nombre": "COMITAN S A"
+      },
+      {
+        "nombre": "MALATIC (SALUS)"
+      },
+      {
+        "nombre": "ARIAS RICHARD ANIBAL (SUBPRODUCTO CONAPROLE)"
+      },
+      {
+        "nombre": "LA NUEVA CERRO S.A. (ADRIA)"
+      }
+    ]
+  }

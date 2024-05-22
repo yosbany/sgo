@@ -18,12 +18,19 @@ class LocalStorageService {
     async login(email, password) {
         try {
             if (email === 'nriodor@gmail.com' && password === 'NuevaR1oDor') {
-                await this.registerCurrentUserInDatabase();
                 return this.getCurrentUser();
             }
             throw new Error('Error al iniciar sesión');
         } catch (error) {
             throw new Error('Error al iniciar sesión: ' + error.message);
+        }
+    }
+
+    async logout() {
+        try {
+            await signOut(this.auth);
+        } catch (error) {
+            throw new Error('Error al cerrar sesión: ' + error.message);
         }
     }
 

@@ -21,6 +21,29 @@ export default class DataPersistenceModel {
 
     isLocalStorage = true;
 
+    async loadData() {
+        const jsonPath = './load-data.json';
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        this.storageService.setData(key, JSON.stringify(data[key]));
+                    }
+                }
+                console.log('Datos JSON cargados y guardados en Local Storage.');
+            })
+            .catch(error => {
+                console.error('Hubo un problema con la petición Fetch:', error);
+            });
+
+    }
+
     async registerCurrentUserInDatabase() {
         try {
             const currentUser = this.storageService.getCurrentUser();
