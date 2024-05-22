@@ -178,13 +178,13 @@ export default class PurchaseOrdersView extends BaseView {
         document.querySelectorAll('.view').forEach(button => {
             button.addEventListener('click', (event) => {
                 const rowId = button.getAttribute('id-row-data-bind');
-                this.redirectToPage('#view-purchase-order', 'idOrder', rowId);
+                this.redirectToPage('#view-purchase-order', 'idOrden', rowId);
             });
         });
         document.querySelectorAll('.edit').forEach(button => {
             button.addEventListener('click', (event) => {
                 const rowId = button.getAttribute('id-row-data-bind');
-                this.redirectToPage('#edit-purchase-order', 'idOrder', rowId);
+                this.redirectToPage('#edit-purchase-order', 'idOrden', rowId);
             });
         });
         let deleteRowId = null;
