@@ -227,9 +227,56 @@ export default class PurchaseOrdersView extends BaseView {
                 console.log('No hay contenido para imprimir.');
             }
         });
-        document.getElementById('btn-guardar').addEventListener('click', () => {
-            
+        document.getElementById('btn-guardar').addEventListener('click', async () => {
+            // Obtener el proveedor seleccionado
+            const proveedorSeleccionado = document.getElementById('select-proveedores').value;
+        
+            // Obtener los artículos marcados
+            let tbody = document.getElementById('body-tabla-articulos-proveedor');
+            const articulosMarcados = Array.from(tbody.querySelectorAll('.checkbox-row:checked')).map(checkbox => {
+                const row = checkbox.closest('tr');
+                const nombre = row.querySelector('td:nth-child(2)').textContent.trim();
+                const stockDeseado = row.querySelector('input[type="number"]').value || 0;
+                const elementWithDataBind = row.querySelector('[data-bind]');
+                const contenido = elementWithDataBind ? elementWithDataBind.getAttribute('data-bind') : '';
+                return {
+                    nombre: nombre,
+                    stockDeseado: stockDeseado,
+                    contenido: contenido
+                };
+            });
+        
+            // Obtener el resumen del pedido
+            const resumenPedido = document.getElementById('resumen-pedido').value;
+        
+            // Verificar que haya un proveedor seleccionado y artículos marcados
+            if (!proveedorSeleccionado) {
+                toastr.error("Por favor, seleccione un proveedor.");
+                return;
+            }
+            if (articulosMarcados.length === 0) {
+                toastr.error("Por favor, marque al menos un artículo.");
+                return;
+            }
+        
+            // Datos a guardar
+            const datosAGuardar = {
+                proveedor: proveedorSeleccionado,
+                articulos: articulosMarcados,
+                resumen: resumenPedido
+            };
+        
+            // Llamar al controlador para guardar los datos
+            try {
+                await this.controller.guardarOrdenDeCompraAction(datosAGuardar);
+                toastr.success("Orden de compra guardada correctamente.");
+                this.redirectToPage('#list-purchase-orders');
+            } catch (error) {
+                console.error('Error guardando la orden de compra:', error);
+                toastr.error("Hubo un error al guardar la orden de compra. Por favor, intente nuevamente.");
+            }
         });
+        
     }
 
     async viewPurchaseOrderRenderPartialView(order) {

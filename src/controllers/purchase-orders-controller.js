@@ -43,6 +43,10 @@ export default class PurchaseOrdersController extends BaseController {
        return await this.dataPersistenceModel.getArticulosXProveedor(proveedor);
     }
 
+    async guardarOrdenDeCompraAction(orden){
+        this.dataPersistenceModel.saveOrden(orden);
+    }
+
 }
 
 
