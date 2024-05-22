@@ -84,6 +84,7 @@ export default class DataPersistenceModel {
     async getArticulosXProveedor(proveedor) {
         const articulos = await this.storageService.getData(ENTITIES.ARTICULOS);
         const filtered = Object.values(articulos).filter(articulo => Array.isArray(articulo.proveedores) && articulo.proveedores.includes(proveedor));
+        console.log(filtered);
         return filtered;
     }
 
@@ -96,6 +97,7 @@ export default class DataPersistenceModel {
     async getOrden(idOrden){
         const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
         const object = Object.values(ordenes).find(orden => orden.id === idOrden);
+        console.log(object);
         return object || null;
     }
 

@@ -27,7 +27,9 @@ export default class PurchaseOrdersController extends BaseController {
 
     //route: #view-purchase-order
     async viewPurchaseOrder(params){
-        this.view.viewPurchaseOrderRenderPartialView();
+        const idOrden = params ? params.idOrden : null;
+        const orden = await this.dataPersistenceModel.getOrden(idOrden);
+        this.view.viewPurchaseOrderRenderPartialView(orden);
     }
 
     //route: #edit-purchase-order
