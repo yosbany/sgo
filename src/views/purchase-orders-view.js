@@ -10,7 +10,6 @@ export default class PurchaseOrdersView extends BaseView {
     async loadOrdersTabla(ordenes) {
         let tbody = document.querySelector('.table tbody');
         tbody.innerHTML = '';
-
         if (ordenes.length === 0) {
             let tr = document.createElement('tr');
             tr.innerHTML = `
