@@ -234,7 +234,7 @@ export default class PurchaseOrdersView extends BaseView {
                 const row = checkbox.closest('tr');
                 const nombre = row.querySelector('td:nth-child(2)').textContent.trim();
                 const stockDeseado = row.querySelector('input[type="number"]').value || 0;
-                const precioCompra = row.querySelector(".precio-row").textConten.trim();
+                const precioCompra = row.querySelector(".precio-row").textConten;
                 return {
                     nombre: nombre,
                     precio_compra: precioCompra,
