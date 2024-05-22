@@ -172,11 +172,11 @@ export default class PurchaseOrdersView extends BaseView {
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
         });
-        document.getElementById('select-proveedores').addEventListener('change', event => {
+        document.getElementById('select-proveedores').addEventListener('change', async (event) => {
             const proveedorSeleccionado = event.target.value;
-            this.cargarTablaArticulosXProveedor(proveedorSeleccionado);
+            const articulos = await this.controller.getArticulosXProveedor(proveedorSeleccionado);
+            this.cargarTablaArticulosXProveedor(articulos);
         });
-
     }
 
     async viewPurchaseOrderRenderPartialView(order) {

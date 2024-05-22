@@ -39,6 +39,10 @@ export default class PurchaseOrdersController extends BaseController {
        
     }
 
+    async getArticulosXProveedorAction(proveedor){
+       return await this.dataPersistenceModel.getArticulosXProveedor(proveedor);
+    }
+
 }
 
 
