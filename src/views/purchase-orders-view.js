@@ -104,10 +104,10 @@ export default class PurchaseOrdersView extends BaseView {
                     else {
                         tr.classList.remove('table-success');
                     }
-                    //this.actualizarResumenPedido();
+                    this.actualizarResumen();
                 });
                 stock_deseado.addEventListener('input', () => {
-                    //this.actualizarResumenPedido();
+                    this.actualizarResumen();
                 });
                 stock_deseado.addEventListener('focus', () => {
                     stock_deseado.value = '';
@@ -116,6 +116,7 @@ export default class PurchaseOrdersView extends BaseView {
                     if (stock_deseado.value === '') {
                         stock_deseado.value = articulo.stock_deseado;
                     }
+                    this.actualizarResumen();
                 });
                 nombre.addEventListener('click', () => {
                     if (checkbox.checked) {
