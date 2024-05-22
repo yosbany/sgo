@@ -2,9 +2,33 @@
   <i class="mdi mdi-step-backward"></i>
   Regresar
 </button>
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg disabled">
-    <option selected>Proveedor One</option>
-    <option value="2">Proveedor Two</option>
-    <option value="3">Proveedor Three</option>
-  </select>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="select-proveedores" disabled>
+  <!-- Dinamic -->
+</select>
+<hr>
+<table class="table table-borderless">
+  <thead>
+      <tr>
+          <th></th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th style="text-align: right;">Stock</th>
+      </tr>
+  </thead>
+  <tbody id="body-tabla-articulos-proveedor">
+      <th colspan="4" style="text-align: center;"><b>No hay registros<b></th>
+      <!-- Dinamic -->
+  </tbody>
+</table>
+<div id="orden-pie" style="display: none;">
   <hr>
+  <label for="resumen-pedido" class="mt-4">Resumen del Pedido:</label>
+  <textarea class="form-control mb-4" rows="5" id="resumen-pedido"></textarea>
+  <div class="row">
+      <div class="col-12">
+          <button type="button" class="btn btn-secondary" id="btn-copiar">Copiar</button>
+          <button type="button" class="btn btn-info" id="btn-imprimir">Imprimir</button>
+          <button type="button" class="btn btn-primary" id="btn-guardar">Guardar</button>
+      </div>
+  </div>
+</div>

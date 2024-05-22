@@ -32,7 +32,9 @@ export default class PurchaseOrdersController extends BaseController {
 
     //route: #edit-purchase-order
     async editPurchaseOrder(params){
-        this.view.editPurchaseOrderRenderPartialView();
+        const idOrden = params ? params.idOrden : null;
+        const orden = await this.dataPersistenceModel.getOrden(idOrden);
+        this.view.editPurchaseOrderRenderPartialView(orden);
     }
 
     async deletePurchaseOrderAction(idOrder){

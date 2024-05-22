@@ -93,6 +93,12 @@ export default class DataPersistenceModel {
         await this.storageService.setData(ENTITIES.ORDENES, ordenes);
     }
 
+    async getOrden(idOrden){
+        const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
+        const object = Object.values(ordenes).find(orden => orden.id === idOrden);
+        return object || null;
+    }
+
     async saveMovimiento(movimiento) {
         const movimientos = await this.storageService.getData(ENTITIES.MOVIMIENTOS, []);
         movimientos.push(movimiento);
