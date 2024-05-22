@@ -22,7 +22,7 @@ export default class PurchaseOrdersController extends BaseController {
     //route: #new-purchase-order
     async newPurchaseOrder(){
         const proveedores = await this.dataPersistenceModel.getProveedores();
-        this.view.newPurchaseOrderRenderPartialView(proveedores, articulos);
+        this.view.newPurchaseOrderRenderPartialView(proveedores);
     }
 
     //route: #view-purchase-order

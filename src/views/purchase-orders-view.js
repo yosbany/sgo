@@ -166,7 +166,7 @@ export default class PurchaseOrdersView extends BaseView {
 
     }
 
-    async newPurchaseOrderRenderPartialView(proveedores, articulos) {
+    async newPurchaseOrderRenderPartialView(proveedores) {
         await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
         this.cargarSelectProveedores(proveedores);
         document.getElementById('link-regresar').addEventListener('click', (event) => {
