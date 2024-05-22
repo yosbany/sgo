@@ -93,39 +93,10 @@ export default class DataPersistenceModel {
         await this.storageService.setData(ENTITIES.ORDENES, ordenes);
     }
 
-    async getOrden(idOrden) {
-        try {
-            // Obtener las órdenes
-            const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
-            console.log("Datos obtenidos:", ordenes);
-
-            // Verificar que ordenes no sea null o undefined
-            if (!ordenes) {
-                console.error("No se han obtenido órdenes.");
-                return null;
-            }
-
-            // Convertir ordenes a un array si es necesario
-            const ordenesArray = Array.isArray(ordenes) ? ordenes : Object.values(ordenes);
-            console.log("Datos como array:", ordenesArray);
-
-            // Convertir idOrden a número
-            const idOrdenNumber = parseInt(idOrden);
-            if (isNaN(idOrdenNumber)) {
-                console.error("idOrden no es un número válido:", idOrden);
-                return null;
-            }
-
-            // Buscar la orden por ID utilizando find
-            const obj = ordenesArray.find(orden => orden.id === idOrdenNumber);
-            console.log("Objeto encontrado:", obj);
-
-            // Retornar el objeto encontrado o null si no existe
-            return obj || null;
-        } catch (error) {
-            console.error("Error al obtener las órdenes:", error);
-            return null;
-        }
+    async getOrden(idOrden){
+        const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
+        const obj = Object.values(ordenes).find(orden => orden.id.toString() === idOrden.toString());
+        return obj || null;
     }
 
     async saveMovimiento(movimiento) {
