@@ -110,7 +110,7 @@ export default class DataPersistenceModel {
             console.log("Datos como array:", ordenesArray);
 
             // Convertir idOrden a número
-            const idOrdenNumber = Number(idOrden);
+            const idOrdenNumber = parseInt(idOrden);
             if (isNaN(idOrdenNumber)) {
                 console.error("idOrden no es un número válido:", idOrden);
                 return null;
