@@ -214,9 +214,9 @@ export default class PurchaseOrdersView extends BaseView {
                 confirmDeleteModal.show();
             });
         });
-        document.getElementById('btn-confirm-delete').addEventListener('click', (event) => {
+        document.getElementById('btn-confirm-delete').addEventListener('click', async (event) => {
             if (deleteRowId) {
-                this.controller.deletePurchaseOrderAction(deleteRowId);
+                await this.controller.deletePurchaseOrderAction(deleteRowId);
                 deleteRowId = null;
                 const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
                 confirmDeleteModal.hide();
