@@ -26,14 +26,13 @@ export default class HomeView extends BaseView {
 
     async homeRenderPartialView() {
         await this.getPartials('home.html', 'Inicio');
-        this.createMenu();
         
         document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', async (event) =>{
+            card.addEventListener('click', async (event) => {
                 const cardId = event.currentTarget.id;
-                console.log("event: "+event);
-                console.log("cardId.currentTarget: "+event.currentTarget);
-                console.log("cardId: "+cardId);
+                console.log("event: " + event);
+                console.log("cardId.currentTarget: " + event.currentTarget);
+                console.log("cardId: " + cardId);
                 switch (cardId) {
                     case 'card1':
                         alert('Nueva Orden de Compra');
@@ -62,40 +61,7 @@ export default class HomeView extends BaseView {
         });
     }
 
-    createMenu() {
-        const sidebarNav = document.getElementById('sidebarnav');
-        let menuHTML = '';
-
-        MENUITEM.forEach(item => {
-            const isSelected = item.route === '#home' ? 'selected' : '';
-            const isActive = item.route === '#home' ? 'active' : '';
     
-            menuHTML += `
-                <li class="sidebar-item ${isSelected}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link ${isActive}" href="${item.route}" aria-expanded="false">
-                        <i class="mdi ${item.icon}"></i>
-                        <span class="hide-menu">${item.name}</span>
-                    </a>
-                </li>`;
-        });
-    
-        sidebarNav.innerHTML = menuHTML;
-        // Añadir evento click a los elementos del menú
-        const menuItemsElements = sidebarNav.querySelectorAll('.sidebar-item');
-        menuItemsElements.forEach(item => {
-            const link = item.querySelector('.sidebar-link');
-            item.addEventListener('click', () => {
-                // Remover las clases 'selected' y 'active' de todos los elementos del menú
-                menuItemsElements.forEach(item => {
-                    item.classList.remove('selected');
-                    item.querySelector('.sidebar-link').classList.remove('active');
-                });
-                // Agregar las clases 'selected' y 'active' al elemento clicado
-                item.classList.add('selected');
-                link.classList.add('active');
-            });
-        });
-    }
 
     initEventView() {
 

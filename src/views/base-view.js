@@ -2,7 +2,7 @@ import { redirectTo, showLoaderPage, showLoaderApp, hideLoaderPage, hideLoaderAp
 
 export default class BaseView {
     constructor() {
-
+        this.eventHandlerMenu();
     }
 
     getContent(elementId) {
@@ -12,6 +12,27 @@ export default class BaseView {
         }
         else {
             alert("No se encontro el elemento " + elementId);
+        }
+    }
+
+    eventHandlerMenu() {
+        const sidebarNav = document.getElementById('sidebarnav');
+        if (sidebarNav) {
+            // Añadir evento click a los elementos del menú
+            const menuItemsElements = sidebarNav.querySelectorAll('.sidebar-item');
+            menuItemsElements.forEach(item => {
+                const link = item.querySelector('.sidebar-link');
+                item.addEventListener('click', () => {
+                    // Remover las clases 'selected' y 'active' de todos los elementos del menú
+                    menuItemsElements.forEach(item => {
+                        item.classList.remove('selected');
+                        item.querySelector('.sidebar-link').classList.remove('active');
+                    });
+                    // Agregar las clases 'selected' y 'active' al elemento clicado
+                    item.classList.add('selected');
+                    link.classList.add('active');
+                });
+            });
         }
     }
 
