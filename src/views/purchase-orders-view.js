@@ -157,8 +157,6 @@ export default class PurchaseOrdersView extends BaseView {
         }
     }
 
-
-
     async actualizarResumen() {
         const proveedorSeleccionado = document.getElementById("select-proveedores").value;
         const fechaActual = new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
@@ -222,6 +220,7 @@ export default class PurchaseOrdersView extends BaseView {
                 deleteRowId = null;
                 const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
                 confirmDeleteModal.hide();
+                toastr.success("Orden eliminada correctamente.");
             }
         });
 

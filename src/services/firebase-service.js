@@ -85,14 +85,6 @@ class FirebaseService {
         }
     }
 
-    async deleteData(path) {
-        try {
-            await this.db.ref(path).remove();
-        } catch (error) {
-            throw new Error('Error al eliminar datos de la base de datos: ' + error.message);
-        }
-    }
-
 }
 
 const FirebaseServiceInstance = FirebaseService.getInstance();

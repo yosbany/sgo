@@ -43,7 +43,7 @@ export default class PurchaseOrdersController extends BaseController {
     }
 
     async deletePurchaseOrderAction(idOrder){
-       
+       await this.dataPersistenceModel.deleteOrden(idOrder);
     }
 
     async getArticulosXProveedorAction(proveedor){

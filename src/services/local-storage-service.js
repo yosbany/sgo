@@ -61,13 +61,6 @@ class LocalStorageService {
         }
     }
 
-    deleteData(path) {
-        try {
-            localStorage.removeItem(path);
-        } catch (error) {
-            throw new Error('Error al eliminar de localStorage: ' + error.message);
-        }
-    }
 }
 
 const LocalStorageServiceInstance = LocalStorageService.getInstance();

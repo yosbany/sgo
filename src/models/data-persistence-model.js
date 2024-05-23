@@ -134,9 +134,13 @@ export default class DataPersistenceModel {
         }
     }
 
+    async deleteOrden(idOrden){
+        const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
+        const filtered = Object.values(ordenes).filter(orden => String(orden.id) !== String(idOrden));
+        await this.storageService.setData(ENTITIES.ORDENES, filtered);
+    }
+
     async saveMovimiento(movimiento) {
-        const movimientos = await this.storageService.getData(ENTITIES.MOVIMIENTOS, []);
-        movimientos.push(movimiento);
-        await this.storageService.setData(ENTITIES.MOVIMIENTOS, movimientos);
+        
     }
 }
