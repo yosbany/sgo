@@ -220,6 +220,7 @@ export default class PurchaseOrdersView extends BaseView {
                 deleteRowId = null;
                 const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
                 confirmDeleteModal.hide();
+                this.redirectToPage('#list-purchase-orders');
                 toastr.success("Orden eliminada correctamente.");
             }
         });
