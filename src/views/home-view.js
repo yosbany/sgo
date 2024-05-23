@@ -35,8 +35,7 @@ export default class HomeView extends BaseView {
                 console.log("cardId: " + cardId);
                 switch (cardId) {
                     case 'card1':
-                        alert('Nueva Orden de Compra');
-                        // Lógica específica para la card 1
+                        this.redirectToPage("#new-purchase-order");
                         break;
                     case 'card2':
                         alert('Nuevo Movimiento Contable');
