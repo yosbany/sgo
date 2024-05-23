@@ -138,6 +138,7 @@ export default class DataPersistenceModel {
         const ordenes = await this.storageService.getData(ENTITIES.ORDENES);
         const filtered = Object.values(ordenes).filter(orden => String(orden.id) !== String(idOrden));
         await this.storageService.setData(ENTITIES.ORDENES, filtered);
+        return filtered;
     }
 
     async saveMovimiento(movimiento) {

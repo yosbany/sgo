@@ -216,11 +216,11 @@ export default class PurchaseOrdersView extends BaseView {
         });
         document.getElementById('btn-confirm-delete').addEventListener('click', async (event) => {
             if (deleteRowId) {
-                await this.controller.deletePurchaseOrderAction(deleteRowId);
+                const ordenes = await this.controller.deletePurchaseOrderAction(deleteRowId);
+                this.cargarTablaOrdenes(ordenes)
                 deleteRowId = null;
                 const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
                 confirmDeleteModal.hide();
-                this.redirectToPage('#list-purchase-orders');
                 toastr.success("Orden eliminada correctamente.");
             }
         });
