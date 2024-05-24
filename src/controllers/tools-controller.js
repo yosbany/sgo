@@ -1,5 +1,5 @@
-import ToolsViewInstance from '../views/tools-view.js';
 import BaseController from './base-controller.js';
+import ToolsView from '../views/tools-view.js';
 
 
 class ToolsController extends BaseController {
@@ -12,7 +12,7 @@ class ToolsController extends BaseController {
     }
     constructor() {
         super();
-        this.view = ToolsViewInstance;
+        this.view = new ToolsView(this);
         ToolsController.instance = this;
     }
 

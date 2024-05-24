@@ -1,22 +1,20 @@
-import ToolsControllerInstance from '../controllers/tools-controller.js';
 import BaseView from './base-view.js';
 
 class ToolsView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!ToolsView.instance) {
-            ToolsView.instance = new ToolsView();
+            ToolsView.instance = new ToolsView(controller);
         }
         return ToolsView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.controller = ToolsControllerInstance;
+        this.controller = controller;
         ToolsView.instance = this;
     }
 
 }
-
-const ToolsViewInstance = ToolsView.getInstance();
-export default ToolsViewInstance;
+const ToolsView = ToolsView.getInstance();
+export default ToolsView;
 

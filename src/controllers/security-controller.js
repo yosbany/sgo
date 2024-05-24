@@ -1,6 +1,6 @@
 import BaseController from './base-controller.js';
 import SecurityServiceInstance from '../services/security-service.js';
-import SecurityViewInstance from '../views/security-view.js';
+import SecurityView from '../views/security-view.js';
 
 
 class SecurityController extends BaseController {
@@ -13,7 +13,7 @@ class SecurityController extends BaseController {
     }
     constructor() {
         super();
-        this.view = SecurityViewInstance;
+        this.view = new SecurityView(this);
         SecurityController.instance = this;
     }
     

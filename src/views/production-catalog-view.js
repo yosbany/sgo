@@ -1,17 +1,16 @@
-import ProductionCatalogControllerInstance from '../controllers/production-catalog-controller.js';
 import BaseView from './base-view.js';
 
 class ProductionCatalogView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!ProductionCatalogView.instance) {
-            ProductionCatalogView.instance = new ProductionCatalogView();
+            ProductionCatalogView.instance = new ProductionCatalogView(controller);
         }
         return ProductionCatalogView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.contoller = ProductionCatalogControllerInstance
+        this.controller = controller;
         ProductionCatalogView.instance = this;
     }
 
@@ -21,5 +20,5 @@ class ProductionCatalogView extends BaseView {
     }
 }
 
-const ProductionCatalogViewInstance = ProductionCatalogView.getInstance();
-export default ProductionCatalogViewInstance;
+const ProductionCatalogView = ProductionCatalogView.getInstance();
+export default ProductionCatalogView;

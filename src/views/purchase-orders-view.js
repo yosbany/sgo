@@ -1,17 +1,16 @@
-import PurchaseOrdersControllerInstance from '../controllers/purchase-orders-controller.js';
 import BaseView from './base-view.js';
 
 class PurchaseOrdersView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!PurchaseOrdersView.instance) {
-            PurchaseOrdersView.instance = new PurchaseOrdersView();
+            PurchaseOrdersView.instance = new PurchaseOrdersView(controller);
         }
         return PurchaseOrdersView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.controller = PurchaseOrdersControllerInstance;
+        this.controller = controller;
         PurchaseOrdersView.instance = this;
     }
 
@@ -400,5 +399,5 @@ class PurchaseOrdersView extends BaseView {
 }
 
 
-const PurchaseOrdersViewInstance = PurchaseOrdersView.getInstance();
-export default PurchaseOrdersViewInstance;
+const PurchaseOrdersView = PurchaseOrdersView.getInstance();
+export default PurchaseOrdersView;

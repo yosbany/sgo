@@ -1,5 +1,5 @@
+import PayrollsView from '../views/payrolls-view.js';
 import BaseController from './base-controller.js';
-import PayrollsViewInstance from '../views/payrolls-view.js';
 
 class PayrollsController extends BaseController {
     static instance = null;
@@ -11,7 +11,7 @@ class PayrollsController extends BaseController {
     }
     constructor() {
         super();
-        this.view = PayrollsViewInstance;
+        this.view = new PayrollsView(this);
         PayrollsController.instance = this;
     }
 

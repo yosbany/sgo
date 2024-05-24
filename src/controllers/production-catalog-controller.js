@@ -1,5 +1,6 @@
 import BaseController from './base-controller.js';
 import ProductionCatalogViewInstance from '../views/production-catalog-view.js';
+import ProductionCatalogView from '../views/production-catalog-view.js';
 
 class ProductionCatalogController extends BaseController {
     static instance = null;
@@ -11,7 +12,7 @@ class ProductionCatalogController extends BaseController {
     }
     constructor() {
         super();
-        this.view = ProductionCatalogViewInstance;
+        this.view = new ProductionCatalogView(this);
         ProductionCatalogController.instance = this;
     }
 

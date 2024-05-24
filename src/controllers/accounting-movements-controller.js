@@ -1,6 +1,6 @@
+import AccountingMovementsView from '../views/accounting-movements-view.js';
 import BaseController from './base-controller.js';
-import AccountingMovementsViewInstance from '../views/accounting-movements-view.js';
-import DataPersistenceServiceInstance from '../services/data-persistence-service.js';
+
 
 class AccountingMovementsController extends BaseController {
     static instance = null;
@@ -12,8 +12,10 @@ class AccountingMovementsController extends BaseController {
     }
     constructor() {
         super();
+        this.view = new AccountingMovementsView(this);
         AccountingMovementsController.instance = this;
     }
+    
     //route: #list-accounting-movements
     async listAccountingMovements(){
         

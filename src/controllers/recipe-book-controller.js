@@ -1,5 +1,5 @@
 import BaseController from './base-controller.js';
-import RecipeBookViewInstance from '../views/recipe-book-view.js';
+import RecipeBookView from '../views/recipe-book-view.js'
 
 class RecipeBookController extends BaseController {
     static instance = null;
@@ -11,7 +11,7 @@ class RecipeBookController extends BaseController {
     }
     constructor() {
         super();
-        this.view = RecipeBookViewInstance;
+        this.view = new RecipeBookView(this);
         RecipeBookController.instance = this;
     }
 

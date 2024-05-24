@@ -1,4 +1,3 @@
-import ProceduresViewInstance from '../views/procedures-view.js';
 import BaseController from './base-controller.js';
 
 class ProceduresController extends BaseController {

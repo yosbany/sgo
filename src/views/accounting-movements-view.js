@@ -1,22 +1,22 @@
 import BaseView from './base-view.js';
 
 
-class AccountingMovementsView extends BaseView {
+class AccountingMovementsViewAccountingMovementsView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!AccountingMovementsView.instance) {
-            AccountingMovementsView.instance = new AccountingMovementsView();
+            AccountingMovementsView.instance = new AccountingMovementsView(controller);
         }
         return AccountingMovementsView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
+        this.controller = controller;
         AccountingMovementsView.instance = this;
     }
 
     
 
 }
-
-const AccountingMovementsViewInstance = AccountingMovementsView.getInstance();
-export default AccountingMovementsViewInstance;
+const AccountingMovementsView = AccountingMovementsView.getInstance();
+export default AccountingMovementsView;

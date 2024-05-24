@@ -1,17 +1,16 @@
-import ErrorControllerInstance from '../controllers/errors-controller.js';
 import BaseView from './base-view.js';
 
 class ErrorsView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!ErrorsView.instance) {
-            ErrorsView.instance = new ErrorsView();
+            ErrorsView.instance = new ErrorsView(controller);
         }
         return ErrorsView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.controller = ErrorControllerInstance;
+        this.controller = controller;
         ErrorsView.instance = this;
     }
 
@@ -24,5 +23,5 @@ class ErrorsView extends BaseView {
     }
 }
 
-const ErrorsViewInstance = ErrorsView.getInstance();
-export default ErrorsViewInstance;
+const ErrorsView =  ErrorsView.getInstance();
+export default ErrorsView;

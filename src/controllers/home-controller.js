@@ -1,6 +1,7 @@
 import BaseController from './base-controller.js';
+import HomeView from '../views/home-view.js';
 import DataPersistenceServiceInstance from '../services/data-persistence-service.js';
-import HomeViewInstance from '../views/home-view.js';
+
 
 class HomeController extends BaseController {
     static instance = null;
@@ -12,10 +13,10 @@ class HomeController extends BaseController {
     }
     constructor() {
         super();
-        this.view = HomeViewInstance;
+        this.view = new HomeView(this);
         HomeController.instance = this;
     }
-    
+
     //route: #index
     async index() {
         this.view.homeRenderPartialView();

@@ -1,17 +1,16 @@
-import HomeControllerInstance from '../controllers/home-controller.js';
 import BaseView from './base-view.js';
 
 class HomeView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!HomeView.instance) {
-            HomeView.instance = new HomeView();
+            HomeView.instance = new HomeView(controller);
         }
         return HomeView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.controller = HomeControllerInstance;
+        this.controller = controller;
         HomeView.instance = this;
     }
 
@@ -57,5 +56,6 @@ class HomeView extends BaseView {
 
 }
 
-const HomeViewInstance = HomeView.getInstance();
-export default HomeViewInstance;
+
+const HomeView =  HomeView.getInstance();
+export default HomeView;

@@ -1,9 +1,6 @@
 import BaseController from './base-controller.js';
 import DataPersistenceServiceInstance from '../services/data-persistence-service.js';
-import PurchaseOrdersViewInstance from '../views/purchase-orders-view.js';
-
-
-
+import PurchaseOrdersView from '../views/purchase-orders-view.js'
 
 
 class PurchaseOrdersController extends BaseController {
@@ -16,7 +13,7 @@ class PurchaseOrdersController extends BaseController {
     }
     constructor() {
         super();
-        this.view = PurchaseOrdersViewInstance;
+        this.view = new PurchaseOrdersView(this)
         PurchaseOrdersController.instance = this;
     }
 

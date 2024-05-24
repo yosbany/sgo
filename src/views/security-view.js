@@ -1,18 +1,17 @@
-import SecurityControllerInstance from '../controllers/security-controller.js';
 import BaseView from './base-view.js';
 
 
 class SecurityView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!SecurityView.instance) {
-            SecurityView.instance = new SecurityView();
+            SecurityView.instance = new SecurityView(controller);
         }
         return SecurityView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.controller = SecurityControllerInstance;
+        this.controller = controller;
         SecurityView.instance = this;
     }
 
@@ -27,5 +26,5 @@ class SecurityView extends BaseView {
 
 }
 
-const SecurityViewInstance = SecurityView.getInstance();
-export default SecurityViewInstance;
+const SecurityView = SecurityView.getInstance();
+export default SecurityView;

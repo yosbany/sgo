@@ -1,4 +1,4 @@
-import ErrorsViewInstance from '../views/errors-view.js';
+import ErrorsView from '../views/errors-view.js';
 import BaseController from './base-controller.js';
 
 
@@ -12,7 +12,7 @@ class ErrorController extends BaseController {
     }
     constructor() {
         super();
-        this.view = ErrorsViewInstance;
+        this.view = new ErrorsView(this);
         ErrorController.instance = this;
     }
 

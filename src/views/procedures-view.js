@@ -1,20 +1,19 @@
-import ProceduresControllerInstance from '../controllers/procedures-controller.js';
 import BaseView from './base-view.js';
 
 class ProceduresView extends BaseView {
     static instance = null;
-    static getInstance() {
+    static getInstance(controller) {
         if (!ProceduresView.instance) {
-            ProceduresView.instance = new ProceduresView();
+            ProceduresView.instance = new ProceduresView(controller);
         }
         return ProceduresView.instance;
     }
-    constructor() {
+    constructor(controller) {
         super();
-        this.contoller = ProceduresControllerInstance
+        this.controller = controller;
         ProceduresView.instance = this;
     }
 }
 
-const ProceduresViewInstance = ProceduresView.getInstance();
-export default ProceduresViewInstance;
+const ProceduresView = ProceduresView.getInstance();
+export default ProceduresView;
