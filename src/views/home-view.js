@@ -38,6 +38,18 @@ export default class HomeView extends BaseView {
                     case 'card5':
                         this.redirectToPage("#list-restore");
                         break;
+                    case 'card6':
+                        alert('Buscador de Costos');
+                        // Lógica específica para la card 6
+                        break;
+                    case 'card7':
+                        alert('Turnos Mostrados');
+                        // Lógica específica para la card 7
+                        break;
+                    case 'card8':
+                        alert('Plan de Compras');
+                        // Lógica específica para la card 8
+                        break;
                     default:
                         console.log('Card desconocida');
                 }
