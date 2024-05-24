@@ -106,7 +106,7 @@ export default async function router() {
             const currentUser = await SecurityServiceInstance.getCurrentUser();
             if (!currentUser) {
                 // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
-                redirectTo("login.html");
+                //redirectTo("login.html");
                 return;
             }
             // Si el usuario está autenticado, ejecutar el controlador
