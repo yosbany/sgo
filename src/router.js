@@ -52,7 +52,7 @@ const routes = {
 };
 
 function isRoutePublic(key) {
-    const publicRoutes = ['login.html', 'error-404.html', 'error-500.html'];
+    const publicRoutes = ['login', 'error-404', 'error-500'];
     return publicRoutes.includes(key);
 }
 
