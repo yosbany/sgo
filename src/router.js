@@ -9,6 +9,7 @@ import ProceduresControllerInstance from './controllers/procedures-controller.js
 import AccountingMovementsControllerInstance from './controllers/accounting-movements-controller.js';
 import RecipeBookControllerInstance from './controllers/recipe-book-controller.js';
 import PayrollsControllerInstance from './controllers/payrolls-controller.js';
+import SecurityServiceInstance from './services/security-service.js';
 
 
 
