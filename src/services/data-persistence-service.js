@@ -12,7 +12,6 @@ class DataPersistenceService {
     }
     constructor() {
         this.storageService = this.ISLOCALSTORAGE ? LocalStorageServiceInstance : FirebaseServiceInstance;
-        this.xmlProcesor = XmlProcessorServiceInstance;
         DataPersistenceService.instance = this;
     }
 
