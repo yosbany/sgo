@@ -1,45 +1,44 @@
 class LocalStorageService {
     static instance = null;
-
     static getInstance() {
         if (!LocalStorageService.instance) {
             LocalStorageService.instance = new LocalStorageService();
         }
         return LocalStorageService.instance;
     }
-
     constructor() {
-        if (!LocalStorageService.instance) {
-            LocalStorageService.instance = this;
-        }
-        return LocalStorageService.instance;
+        LocalStorageService.instance = this;
     }
 
     async login(email, password) {
-        try {
-            if (email === 'nriodor@gmail.com' && password === 'NuevaR1oDor') {
-                return this.getCurrentUser();
+        // Simulación de la verificación de credenciales
+        if (email === 'nriodor@gmail.com' && password === 'NuevaR1oDor') {
+            const user = {
+                email: 'nriodor@gmail.com',
+                uid: String((new Date()).getTime())
+            };
+            const users = this.getData("usuarios", []);
+            const index = users.findIndex(item => item.email === user.email);
+            if (index === -1) {
+                users[index] = user;
+            } else {
+                user.role = 'empleado';
+                users.push(user);
             }
-            throw new Error('Error al iniciar sesión');
-        } catch (error) {
-            throw new Error('Error al iniciar sesión: ' + error.message);
+            this.setData("usuarios", users)
+            return this.getCurrentUser();
         }
+        throw new Error('Credenciales incorrectas');
     }
 
     async logout() {
-        try {
-            await signOut(this.auth);
-        } catch (error) {
-            throw new Error('Error al cerrar sesión: ' + error.message);
-        }
+        this.setData("usuarios", []);
     }
 
-    getCurrentUser() {
-        return {
-            email: 'nriodor@gmail.com',
-            role: 'empleado',
-            uid: 'k7cMqBzSkHVKBtTmTVV3p06RywI3'
-        };
+    async getCurrentUser() {
+        const users = await this.getData("usuarios", []);
+        const user = users.length > 0 ? users[0] : null;
+        return user || null;
     }
 
     getData(path, defaultValue = null) {

@@ -2,35 +2,31 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.1/fireba
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js';
 import { getDatabase, ref, set, get, push } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js';
 
-const FIREBASECONFIG = {
-    apiKey: "AIzaSyCOKQBJthEjqji2GxPsjcEZtUu965wtc1c",
-    authDomain: "nrd-firebase.firebaseapp.com",
-    databaseURL: "https://nrd-firebase-default-rtdb.firebaseio.com",
-    projectId: "nrd-firebase",
-    storageBucket: "nrd-firebase.appspot.com",
-    messagingSenderId: "840023356475",
-    appId: "1:840023356475:web:a7411b9b5808ac51d8581e"
-};
 
 class FirebaseService {
     static instance = null;
-
     static getInstance() {
         if (!FirebaseService.instance) {
             FirebaseService.instance = new FirebaseService();
         }
         return FirebaseService.instance;
     }
-
     constructor() {
-        if (!FirebaseService.instance) {
-            const app = initializeApp(FIREBASECONFIG);
-            this.auth = getAuth(app);
-            this.db = getDatabase(app);
-            FirebaseService.instance = this;
-        }
-        return FirebaseService.instance;
+        const app = initializeApp(FIREBASECONFIG);
+        this.auth = getAuth(app);
+        this.db = getDatabase(app);
+        FirebaseService.instance = this;
     }
+
+    FIREBASECONFIG = {
+        apiKey: "AIzaSyCOKQBJthEjqji2GxPsjcEZtUu965wtc1c",
+        authDomain: "nrd-firebase.firebaseapp.com",
+        databaseURL: "https://nrd-firebase-default-rtdb.firebaseio.com",
+        projectId: "nrd-firebase",
+        storageBucket: "nrd-firebase.appspot.com",
+        messagingSenderId: "840023356475",
+        appId: "1:840023356475:web:a7411b9b5808ac51d8581e"
+    };
 
     async login(email, password) {
         try {

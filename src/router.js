@@ -1,8 +1,7 @@
 import { redirectTo } from './util.js';
-import DataPersistenceModel from './models/data-persistence-model.js';
+import DataPersistenceModel from './services/data-persistence-service.js';
 import HomeController from './controllers/home-controller.js';
 import LoginController from './controllers/login-controller.js';
-import AccountingTransactionsController from './controllers/accounting-transactions-controller.js';
 import BudgetLunchController from './controllers/budget-lunch-controller.js';
 import CalculatePriceController from './controllers/calculate-price-controller.js';
 import CounterShiftsController from './controllers/counter-shifts-controller.js';
@@ -18,6 +17,7 @@ import Error404Controller from './controllers/error-404-controller.js';
 import Error500Controller from './controllers/error-500-controller.js';
 import PurchaseOrdersController from './controllers/purchase-orders-controller.js';
 import ProductionCatalogController from './controllers/production-catalog-controller.js';
+import AccountingMovementsControllerInstance from './controllers/accounting-movements-controller.js';
 
 const BASE_PATH = '/nrd/';
 
@@ -34,7 +34,7 @@ const routes = {
     'exit': new HomeController(),
     'load-data': new HomeController(),
 
-    'accounting-transactions': new AccountingTransactionsController(),
+    'accounting-transactions': AccountingMovementsControllerInstance,
     'budget-lunch': new BudgetLunchController(),
     'calculate-price': new CalculatePriceController(),
     'counter-shifts': new CounterShiftsController(),

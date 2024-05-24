@@ -1,0 +1,98 @@
+import FirebaseServiceInstance from "./firebase-service.js";
+import LocalStorageServiceInstance from "./local-storage-service.js";
+
+
+class DataPersistenceService {
+    static instance = null;
+    static getInstance() {
+        if (!DataPersistenceService.instance) {
+            DataPersistenceService.instance = new DataPersistenceService();
+        }
+        return DataPersistenceService.instance;
+    }
+    constructor() {
+        this.storageService = ISLOCALSTORAGE ? LocalStorageServiceInstance : FirebaseServiceInstance;
+        this.xmlProcesor = XmlProcessorServiceInstance;
+        DataPersistenceService.instance = this;
+    }
+
+    ENTITIES = {
+        USUARIOS: 'usuarios',
+        PROVEEDORES: 'proveedores',
+        ORDENES: 'ordenes',
+        CLIENTES: 'clientes',
+        ARTICULOS: 'articulos',
+        NOMINAS: 'nominas',
+        MOVIMIENTOS: 'movimientos',
+        RECETAS: 'recetas',
+        TAREAS: 'tareas',
+        EMPLEADOS: 'empleados'
+    }
+
+    ISLOCALSTORAGE = true;
+
+    async loadData() {
+        const jsonPath = './data/load-data.json';
+        fetch(jsonPath)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        this.storageService.setData(key, data[key]);
+                    }
+                }
+                console.log('Datos cargados y guardados en el Local Storage correctamente.');
+            })
+            .catch(error => {
+                console.error('Hubo un problema cargando los datos en el Local Storage:', error);
+            });
+
+    }
+
+    async getProveedores() {
+        return await this.storageService.getData(ENTITIES.PROVEEDORES, []);
+    }
+
+    async getOrdenes() {
+        return await this.storageService.getData(ENTITIES.ORDENES, []);
+    }
+
+    async getArticulosXProveedor(proveedor) {
+        const articulos = await this.storageService.getData(ENTITIES.ARTICULOS);
+        const filtered = Object.values(articulos).filter(articulo => Array.isArray(articulo.proveedores) && articulo.proveedores.includes(proveedor));
+        return filtered;
+    }
+
+    async saveOrden(orden) {
+        const ordenes = await this.storageService.getData(ENTITIES.ORDENES, []);
+        const index = ordenes.findIndex(orden => orden.id === orden.id);
+        if (index !== -1) {
+            ordenes[index] = orden;
+        } else {
+            ordenes.push(orden);
+        }
+        await this.storageService.setData(ENTITIES.ORDENES, ordenes);
+    }
+
+    async getOrden(id) {
+        const ordenes = await this.storageService.getData(ENTITIES.ORDENES,[]);
+        const orden = ordenesArray.find(orden => orden.id === id);
+        return orden || null;
+    }
+
+    async deleteOrden(id){
+        const ordenes = await this.storageService.getData(ENTITIES.ORDENES, []);
+        const filtered = ordenes.filter(orden => orden.id !== id);
+        await this.storageService.setData(ENTITIES.ORDENES, filtered);
+        return filtered;
+    }
+
+    async saveMovimiento(movimiento) {
+        
+    }
+}
+
+const DataPersistenceServiceInstance = DataPersistenceService.getInstance();
+export default DataPersistenceServiceInstance;

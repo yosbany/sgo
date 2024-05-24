@@ -6,7 +6,7 @@ export default class PurchaseOrdersView extends BaseView {
         super();
         this.controller = controller;
     }
-
+    
     async cargarTablaOrdenes(ordenes) {
         let tbody = document.getElementById("body-table-order");
         tbody.innerHTML = '';

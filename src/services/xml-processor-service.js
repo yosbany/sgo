@@ -1,6 +1,13 @@
-export default class XmlProcessorModel {
-    constructor(pathBase) {
-        this.pathBase = pathBase;
+class XmlProcessorService {
+    static instance = null;
+    static getInstance() {
+        if (!XmlProcessorService.instance) {
+            XmlProcessorService.instance = new XmlProcessorService();
+        }
+        return XmlProcessorService.instance;
+    }
+    constructor() {
+        XmlProcessorService.instance = this;
     }
 
     itemNoInclude(item) {
@@ -16,6 +23,7 @@ export default class XmlProcessorModel {
             'ACTIVO F1'
         ].includes(item.trim());
     }
+
     proovedorNoInclude(proveedor) {
         return [
             'Monte Real Srl',
@@ -136,4 +144,11 @@ export default class XmlProcessorModel {
             return [];
         }
     }
+
 }
+
+const XmlProcessorServiceInstance = XmlProcessorService.instance;
+export default XmlProcessorServiceInstance;
+
+
+

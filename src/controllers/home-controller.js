@@ -1,6 +1,6 @@
 import BaseController from './base-controller.js';
 import HomeView from '../views/home-view.js';
-import DataPersistenceModel from '../models/data-persistence-model.js';
+import DataPersistenceModel from '../services/data-persistence-service.js';
 
 
 
