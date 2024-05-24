@@ -19,7 +19,7 @@ class LocalStorageService {
             };
             const users = this.getData("usuarios", []);
             const index = users.findIndex(item => item.email === user.email);
-            if (index === -1) {
+            if (index !== -1) {
                 users[index] = user;
             } else {
                 user.role = 'empleado';
