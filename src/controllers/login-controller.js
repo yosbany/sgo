@@ -17,8 +17,10 @@ export default class LoginController extends BaseController {
 
     async loginAction(email, password){
         try{
-            await SecurityServiceInstance.login(email, password);
-            this.redirectToPage("index.html");
+            const user = await SecurityServiceInstance.login(email, password);
+            if(user){
+                this.redirectToPage("index.html");
+            }
         }
         catch(error){
             console.log("No se pudo autenticar");
