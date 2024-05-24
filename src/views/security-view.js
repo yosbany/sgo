@@ -8,7 +8,7 @@ export default class SecurityView extends BaseView {
         this.controller = controller;
     }
 
-    async login(){
+    async loginRenderView(){
         document.getElementById('btn-submit').addEventListener('click', async (event) => {
             event.preventDefault();
             const email = document.getElementById('email').value;

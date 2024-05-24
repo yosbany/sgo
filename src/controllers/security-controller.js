@@ -20,8 +20,7 @@ class SecurityController extends BaseController {
     
     //route: #login
     async login() {
-        console.log("LoginController init");
-        this.view.renderView();
+        this.view.loginRenderView();
     }
 
     async loginAction(email, password){
