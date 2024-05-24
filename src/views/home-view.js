@@ -36,8 +36,7 @@ export default class HomeView extends BaseView {
                         // Lógica específica para la card 4
                         break;
                     case 'card5':
-                        await this.controller.loadDataAction();
-                        toastr.success("Datos cargados correctamente.");
+                        this.redirectToPage("#list-restore");
                         break;
                     default:
                         console.log('Card desconocida');
@@ -46,6 +45,6 @@ export default class HomeView extends BaseView {
         });
     }
 
-    
+
 
 }
