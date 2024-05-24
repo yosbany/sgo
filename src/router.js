@@ -60,7 +60,7 @@ function getKeyFromHashAndPath() {
     const hash = window.location.hash.slice(1).split('?')[0];
     const path = window.location.pathname.slice(BASE_PATH.length).split('?')[0];
     const dotIndex = path.indexOf('.');
-    if (dotIndex !== -1) {
+    if (path && dotIndex !== -1) {
         path = path.slice(0, dotIndex);
     }
     return hash || path || '';
