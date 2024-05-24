@@ -18,13 +18,13 @@ const BASE_PATH = '/nrd/';
 
 const routes = {
     //Public
-    'error-404.html': ErrorControllerInstance,
-    'error-500.html': ErrorControllerInstance,
-    'login.html': SecurityControllerInstance,
+    'error-404': ErrorControllerInstance,
+    'error-500': ErrorControllerInstance,
+    'login': SecurityControllerInstance,
     //Private
     //HomeController
     '': HomeControllerInstance,
-    'index.html': HomeControllerInstance,
+    'index': HomeControllerInstance,
     'home': HomeControllerInstance,
     'exit': HomeControllerInstance,
     'load-data': HomeControllerInstance,
@@ -59,6 +59,10 @@ function isRoutePublic(key) {
 function getKeyFromHashAndPath() {
     const hash = window.location.hash.slice(1).split('?')[0];
     const path = window.location.pathname.slice(BASE_PATH.length).split('?')[0];
+    const dotIndex = path.indexOf('.');
+    if (dotIndex !== -1) {
+        path = path.slice(0, dotIndex);
+    }
     return hash || path || '';
 }
 
@@ -106,7 +110,7 @@ export default async function router() {
             const currentUser = await SecurityServiceInstance.getCurrentUser();
             if (!currentUser) {
                 // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
-                //redirectTo("login.html");
+                redirectTo("login.html");
                 return;
             }
             // Si el usuario está autenticado, ejecutar el controlador
