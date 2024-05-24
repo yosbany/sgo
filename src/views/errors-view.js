@@ -23,5 +23,4 @@ class ErrorsView extends BaseView {
     }
 }
 
-const ErrorsView =  ErrorsView.getInstance();
-export default ErrorsView;
+export default ErrorsView.getInstance();;

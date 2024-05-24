@@ -15,5 +15,4 @@ class ProceduresView extends BaseView {
     }
 }
 
-const ProceduresView = ProceduresView.getInstance();
-export default ProceduresView;
+export default ProceduresView.getInstance();

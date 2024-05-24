@@ -1,7 +1,7 @@
 import BaseView from './base-view.js';
 
 
-class AccountingMovementsViewAccountingMovementsView extends BaseView {
+class AccountingMovementsView extends BaseView {
     static instance = null;
     static getInstance(controller) {
         if (!AccountingMovementsView.instance) {
@@ -18,5 +18,6 @@ class AccountingMovementsViewAccountingMovementsView extends BaseView {
     
 
 }
-const AccountingMovementsView = AccountingMovementsView.getInstance();
-export default AccountingMovementsView;
+
+
+export default AccountingMovementsView.getInstance();

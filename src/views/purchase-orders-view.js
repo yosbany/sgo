@@ -399,5 +399,4 @@ class PurchaseOrdersView extends BaseView {
 }
 
 
-const PurchaseOrdersView = PurchaseOrdersView.getInstance();
-export default PurchaseOrdersView;
+export default PurchaseOrdersView.getInstance();

@@ -20,5 +20,4 @@ class ProductionCatalogView extends BaseView {
     }
 }
 
-const ProductionCatalogView = ProductionCatalogView.getInstance();
-export default ProductionCatalogView;
+export default ProductionCatalogView.getInstance();

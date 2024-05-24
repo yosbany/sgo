@@ -57,5 +57,4 @@ class HomeView extends BaseView {
 }
 
 
-const HomeView =  HomeView.getInstance();
-export default HomeView;
+export default HomeView.getInstance();

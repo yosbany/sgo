@@ -26,5 +26,4 @@ class SecurityView extends BaseView {
 
 }
 
-const SecurityView = SecurityView.getInstance();
-export default SecurityView;
+export default SecurityView.getInstance();

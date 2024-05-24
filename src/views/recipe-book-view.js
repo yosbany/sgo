@@ -15,5 +15,5 @@ class RecipeBookView extends BaseView {
     }
 
 }
-const RecipeBookView = RecipeBookView.getInstance();
-export default RecipeBookView;
+
+export default RecipeBookView.getInstance();

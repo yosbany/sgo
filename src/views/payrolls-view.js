@@ -17,5 +17,4 @@ class PayrollsView extends BaseView {
 }
 
 
-const PayrollsView =  PayrollsView.getInstance();
-export default PayrollsView;
+export default PayrollsView.getInstance();

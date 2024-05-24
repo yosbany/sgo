@@ -15,6 +15,6 @@ class ToolsView extends BaseView {
     }
 
 }
-const ToolsView = ToolsView.getInstance();
-export default ToolsView;
+
+export default ToolsView.getInstance();
 
