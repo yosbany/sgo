@@ -59,14 +59,14 @@ class DataPersistenceService {
     }
 
     async getArticulosXProveedor(proveedor) {
-        const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS);
-        const filtered = Object.values(articulos).filter(articulo => Array.isArray(articulo.proveedores) && articulo.proveedores.includes(proveedor));
+        const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
+        const filtered = articulos.filter(item => Array.isArray(item.proveedores) && item.proveedores.includes(proveedor));
         return filtered;
     }
 
     async saveOrden(orden) {
         const ordenes = await this.storageService.getData(this.ENTITIES.ORDENES, []);
-        const index = ordenes.findIndex(orden => orden.id === orden.id);
+        const index = ordenes.findIndex(item => item.id === orden.id);
         if (index !== -1) {
             ordenes[index] = orden;
         } else {
@@ -77,20 +77,18 @@ class DataPersistenceService {
 
     async getOrden(id) {
         const ordenes = await this.storageService.getData(this.ENTITIES.ORDENES,[]);
-        const orden = ordenesArray.find(orden => orden.id === id);
+        const orden = ordenes.find(item => item.id === id);
         return orden || null;
     }
 
     async deleteOrden(id){
         const ordenes = await this.storageService.getData(this.ENTITIES.ORDENES, []);
-        const filtered = ordenes.filter(orden => orden.id !== id);
+        const filtered = ordenes.filter(item => item.id !== id);
         await this.storageService.setData(this.ENTITIES.ORDENES, filtered);
         return filtered;
     }
 
-    async saveMovimiento(movimiento) {
-        
-    }
+    
 }
 
 const DataPersistenceServiceInstance = DataPersistenceService.getInstance();
