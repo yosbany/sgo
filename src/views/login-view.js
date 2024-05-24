@@ -15,7 +15,7 @@ export default class LoginView extends BaseView {
             event.preventDefault();
             const email = document.getElementById('text-field-hero-input-email').value;
             const password = document.getElementById('text-field-hero-input-password').value;
-            this.controller.login(email, password);
+            this.controller.loginAction(email, password);
         });
     }
 }

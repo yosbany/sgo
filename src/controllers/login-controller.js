@@ -1,6 +1,7 @@
 import BaseController from './base-controller.js';
 import LoginView from '../views/login-view.js';
-import FirebaseServiceInstance from '../services/firebase-service.js';
+import SecurityServiceInstance from '../services/security-service.js';
+
 
 export default class LoginController extends BaseController {
 
@@ -14,9 +15,9 @@ export default class LoginController extends BaseController {
         this.view.renderView();
     }
 
-    async login(email, password){
+    async loginAction(email, password){
         try{
-            await FirebaseServiceInstance.login(email, password);
+            await SecurityServiceInstance.login(email, password);
             this.redirectToPage("index.html");
         }
         catch(error){

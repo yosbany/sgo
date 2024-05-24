@@ -1,5 +1,4 @@
 import { redirectTo } from './util.js';
-import DataPersistenceModel from './services/data-persistence-service.js';
 import HomeController from './controllers/home-controller.js';
 import LoginController from './controllers/login-controller.js';
 import BudgetLunchController from './controllers/budget-lunch-controller.js';
@@ -18,6 +17,9 @@ import Error500Controller from './controllers/error-500-controller.js';
 import PurchaseOrdersController from './controllers/purchase-orders-controller.js';
 import ProductionCatalogController from './controllers/production-catalog-controller.js';
 import AccountingMovementsControllerInstance from './controllers/accounting-movements-controller.js';
+import SecurityServiceInstance from './services/security-service.js';
+
+
 
 const BASE_PATH = '/nrd/';
 
@@ -111,8 +113,7 @@ export default async function router() {
             }
         } else {
             // Si es privada, verificar la autenticación del usuario
-            const dataPersistenceModel =  new DataPersistenceModel();
-            const currentUser = await dataPersistenceModel.storageService.getCurrentUser();
+            const currentUser = await SecurityServiceInstance.getCurrentUser();
             if (!currentUser) {
                 // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
                 redirectTo("login.html");
