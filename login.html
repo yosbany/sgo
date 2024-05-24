@@ -58,7 +58,7 @@
                     <span class="input-group-text bg-success text-white h-100" id="basic-addon1"><i
                         class="mdi mdi-email fs-4"></i></span>
                   </div>
-                  <input type="text" class="form-control form-control-lg" placeholder="Correo Electrónico" aria-label="Correo Electrónico"
+                  <input type="text" id="email" class="form-control form-control-lg" placeholder="Correo Electrónico" aria-label="Correo Electrónico"
                     aria-describedby="basic-addon1" required="" />
                 </div>
                 <div class="input-group mb-3">
@@ -66,7 +66,7 @@
                     <span class="input-group-text bg-warning text-white h-100" id="basic-addon2"><i
                         class="mdi mdi-lock fs-4"></i></span>
                   </div>
-                  <input type="text" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña"
+                  <input type="password" id="password" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña"
                     aria-describedby="basic-addon1" required="" />
                 </div>
               </div>
@@ -75,7 +75,7 @@
               <div class="col-12">
                 <div class="form-group">
                   <div class="pt-3">
-                    <button class="btn btn-success float-end text-white" type="submit">
+                    <button class="btn btn-success float-end text-white" type="submit" id="btn-submit">
                       Entrar
                     </button>
                   </div>
@@ -109,23 +109,6 @@
   <!-- Bootstrap tether Core JavaScript -->
   <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="./src/app.js"></script>
-  <!-- ============================================================== -->
-  <!-- This page plugin js -->
-  <!-- ============================================================== -->
-  <script>
-    $(".preloader").fadeOut();
-    // ==============================================================
-    // Login and Recover Password
-    // ==============================================================
-    $("#to-recover").on("click", function () {
-      $("#loginform").slideUp();
-      $("#recoverform").fadeIn();
-    });
-    $("#to-login").click(function () {
-      $("#recoverform").hide();
-      $("#loginform").fadeIn();
-    });
-  </script>
 </body>
 
 </html>

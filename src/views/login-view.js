@@ -11,10 +11,10 @@ export default class LoginView extends BaseView {
     }
 
     initEventsView() {
-        document.getElementById('submitBtn').addEventListener('click', async (event) => {
+        document.getElementById('btn-submit').addEventListener('click', async (event) => {
             event.preventDefault();
-            const email = document.getElementById('text-field-hero-input-email').value;
-            const password = document.getElementById('text-field-hero-input-password').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
             this.controller.loginAction(email, password);
         });
     }
