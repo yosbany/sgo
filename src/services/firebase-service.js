@@ -12,7 +12,7 @@ class FirebaseService {
         return FirebaseService.instance;
     }
     constructor() {
-        const app = initializeApp(FIREBASECONFIG);
+        const app = initializeApp(this.FIREBASECONFIG);
         this.auth = getAuth(app);
         this.db = getDatabase(app);
         FirebaseService.instance = this;
