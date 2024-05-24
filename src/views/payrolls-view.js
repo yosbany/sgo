@@ -1,20 +1,10 @@
 import BaseView from './base-view.js';
 
-class PayrollsView extends BaseView {
-    static instance = null;
-    static getInstance(controller) {
-        if (!PayrollsView.instance) {
-            PayrollsView.instance = new PayrollsView(controller);
-        }
-        return PayrollsView.instance;
-    }
+export default class PayrollsView extends BaseView {
+    
     constructor(controller) {
         super();
         this.controller = controller;
-        PayrollsView.instance = this;
     }
 
 }
-
-
-export default PayrollsView.getInstance();

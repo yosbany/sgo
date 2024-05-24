@@ -1,17 +1,9 @@
 import BaseView from './base-view.js';
 
-class HomeView extends BaseView {
-    static instance = null;
-    static getInstance(controller) {
-        if (!HomeView.instance) {
-            HomeView.instance = new HomeView(controller);
-        }
-        return HomeView.instance;
-    }
+export default class HomeView extends BaseView {
     constructor(controller) {
         super();
         this.controller = controller;
-        HomeView.instance = this;
     }
 
     async index(){
@@ -55,6 +47,3 @@ class HomeView extends BaseView {
     }
 
 }
-
-
-export default HomeView.getInstance();

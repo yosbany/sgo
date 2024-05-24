@@ -1,17 +1,11 @@
 import BaseView from './base-view.js';
 
-class ProductionCatalogView extends BaseView {
-    static instance = null;
-    static getInstance(controller) {
-        if (!ProductionCatalogView.instance) {
-            ProductionCatalogView.instance = new ProductionCatalogView(controller);
-        }
-        return ProductionCatalogView.instance;
-    }
+
+export default  class ProductionCatalogView extends BaseView {
+    
     constructor(controller) {
         super();
         this.controller = controller;
-        ProductionCatalogView.instance = this;
     }
 
     async listProductionCatalogRenderPartialView() {
@@ -19,5 +13,3 @@ class ProductionCatalogView extends BaseView {
         this.initEventView();
     }
 }
-
-export default ProductionCatalogView.getInstance();

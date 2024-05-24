@@ -1,18 +1,11 @@
 import BaseView from './base-view.js';
 
 
-class SecurityView extends BaseView {
-    static instance = null;
-    static getInstance(controller) {
-        if (!SecurityView.instance) {
-            SecurityView.instance = new SecurityView(controller);
-        }
-        return SecurityView.instance;
-    }
+export default class SecurityView extends BaseView {
+    
     constructor(controller) {
         super();
         this.controller = controller;
-        SecurityView.instance = this;
     }
 
     async login(){
@@ -25,5 +18,3 @@ class SecurityView extends BaseView {
     }
 
 }
-
-export default SecurityView.getInstance();
