@@ -1,9 +1,18 @@
+import RecipeBookControllerInstance from '../controllers/recipe-book-controller.js';
 import BaseView from './base-view.js';
 
-export default class RecipeBookView extends BaseView {
-
+class RecipeBookView extends BaseView {
+    static instance = null;
+    static getInstance() {
+        if (!RecipeBookView.instance) {
+            RecipeBookView.instance = new RecipeBookView();
+        }
+        return RecipeBookView.instance;
+    }
     constructor() {
         super();
+        this.controller = RecipeBookControllerInstance;
+        RecipeBookView.instance = this;
     }
 
     async renderView() {
@@ -15,3 +24,6 @@ export default class RecipeBookView extends BaseView {
 
     }
 }
+
+const RecipeBookViewInstance = RecipeBookView.getInstance();
+export default RecipeBookViewInstance;

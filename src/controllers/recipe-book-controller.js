@@ -1,21 +1,26 @@
 import BaseController from './base-controller.js';
-import RecipeBookView from '../views/recipe-book-view.js';
+import RecipeBookViewInstance from '../views/recipe-book-view.js';
 
-export default class RecipeBookController extends BaseController {
+class RecipeBookController extends BaseController {
+    static instance = null;
+    static getInstance() {
+        if (!RecipeBookController.instance) {
+            RecipeBookController.instance = new RecipeBookController();
+        }
+        return RecipeBookController.instance;
+    }
     constructor() {
         super();
-        this.view = new RecipeBookView();
-        this.initEventsController();
+        this.view = RecipeBookViewInstance;
+        RecipeBookController.instance = this;
     }
 
-    initEventsController(){
+    //route: #list-recipe-book
+    async listRecipeBook(){
         
     }
-
-    async recipeBook() {
-        console.log("RecipeBookController recipeBook");
-        this.view.renderView();
-    }
-
-    
 }
+
+const RecipeBookControllerInstance = RecipeBookController.getInstance();
+export default RecipeBookControllerInstance;
+

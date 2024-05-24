@@ -1,27 +1,22 @@
+import HomeControllerInstance from '../controllers/home-controller.js';
 import BaseView from './base-view.js';
 
-const MENUITEM = [
-    { name: 'Inicio', icon: 'home', route: '#home' },
-    { name: 'Ordenes de Compra', icon: 'mdi-view-dashboard', route: '#list-purchase-orders' },
-    { name: 'Lanch para Fiestas', icon: 'mdi-chart-bubble', route: '#budget-lunch' },
-    { name: 'Movimientos', icon: 'mdi-blur-linear', route: '#accounting-transactions' },
-    { name: 'Nóminas', icon: 'mdi-note-outline', route: '#rrhh' },
-    { name: 'Recetario', icon: 'mdi-relative-scale', route: '#recipe-book' },
-    { name: 'Catálogo de Producción', icon: 'mdi-pencil', route: '#list-production-catalog' },
-    { name: 'Procedimientos', icon: 'mdi-multiplication-box', route: '#procedures' },
-    { name: 'Plan de Compras', icon: 'mdi-alert', route: '#purchase-plan' },
-    { name: 'Turnos Mostrados', icon: 'mdi-bulletin-board', route: '#counter-shifts' },
-    { name: 'Calcular Precios', icon: 'mdi-alert-octagon', route: '#calculate-price' },
-    { name: 'Buscador de Costos', icon: 'mdi-bulletin-board', route: '#purchase-price' },
-    { name: 'Imprimir Precios', icon: 'mdi-all-inclusive', route: '#print-price' },
-    { name: 'Generar Carteles', icon: 'mdi-all-inclusive', route: '#posters' }
-];
-
-export default class HomeView extends BaseView {
-
-    constructor(controller) {
+class HomeView extends BaseView {
+    static instance = null;
+    static getInstance() {
+        if (!HomeView.instance) {
+            HomeView.instance = new HomeView();
+        }
+        return HomeView.instance;
+    }
+    constructor() {
         super();
-        this.controller = controller;
+        this.controller = HomeControllerInstance;
+        HomeView.instance = this;
+    }
+
+    async index(){
+       this.homeRenderPartialView();
     }
 
     async homeRenderPartialView() {
@@ -60,11 +55,7 @@ export default class HomeView extends BaseView {
         });
     }
 
-    
-
-    initEventView() {
-
-    }
-
-
 }
+
+const HomeViewInstance = HomeView.getInstance();
+export default HomeViewInstance;

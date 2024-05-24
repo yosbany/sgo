@@ -1,16 +1,27 @@
 import BaseController from './base-controller.js';
-import ProductionCatalogView from '../views/production-catalog-view.js';
+import ProductionCatalogViewInstance from '../views/production-catalog-view.js';
 
-export default class ProductionCatalogController extends BaseController {
+class ProductionCatalogController extends BaseController {
+    static instance = null;
+    static getInstance() {
+        if (!ProductionCatalogController.instance) {
+            ProductionCatalogController.instance = new ProductionCatalogController();
+        }
+        return ProductionCatalogController.instance;
+    }
     constructor() {
         super();
-        this.view = new ProductionCatalogView();
+        this.view = ProductionCatalogViewInstance;
+        ProductionCatalogController.instance = this;
     }
 
+    //route: #list-production-catalog
     async listProductionCatalog(){
-        console.log("ProductionCatalogController listProductionCatalog");
         this.view.listProductionCatalogRenderPartialView();
     }
 
     
 }
+
+const ProductionCatalogControllerInstance = ProductionCatalogController.getInstance();
+export default ProductionCatalogControllerInstance;

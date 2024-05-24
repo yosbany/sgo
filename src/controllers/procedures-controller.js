@@ -1,17 +1,26 @@
+import ProceduresViewInstance from '../views/procedures-view.js';
 import BaseController from './base-controller.js';
-import ProceduresView from '../views/procedures-view.js';
 
-export default class ProceduresController extends BaseController {
+class ProceduresController extends BaseController {
+    static instance = null;
+    static getInstance() {
+        if (!ProceduresController.instance) {
+            ProceduresController.instance = new ProceduresController();
+        }
+        return ProceduresController.instance;
+    }
     constructor() {
         super();
-        this.view = new ProceduresView();
+        this.view = ProceduresViewInstance;
+        ProceduresController.instance = this;
+    }
+
+    //route: #list-procedures
+    async listProcedures(){
         
     }
-
-    
-
-    async procedures() {
-        console.log("ProceduresController procedures");
-        this.view.renderView();
-    }
 }
+
+
+const ProceduresControllerInstance = ProceduresController.getInstance();
+export default ProceduresControllerInstance;

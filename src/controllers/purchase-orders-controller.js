@@ -1,16 +1,23 @@
 import BaseController from './base-controller.js';
-import PurchaseOrdersView from '../views/purchase-orders-view.js';
 import DataPersistenceServiceInstance from '../services/data-persistence-service.js';
+import PurchaseOrdersViewInstance from '../views/purchase-orders-view.js';
 
 
 
 
 
-export default class PurchaseOrdersController extends BaseController {
-    
+class PurchaseOrdersController extends BaseController {
+    static instance = null;
+    static getInstance() {
+        if (!PurchaseOrdersController.instance) {
+            PurchaseOrdersController.instance = new PurchaseOrdersController();
+        }
+        return PurchaseOrdersController.instance;
+    }
     constructor() {
         super();
-        this.view = new PurchaseOrdersView(this);
+        this.view = PurchaseOrdersViewInstance;
+        PurchaseOrdersController.instance = this;
     }
 
     //route: #list-purchase-orders
@@ -57,4 +64,5 @@ export default class PurchaseOrdersController extends BaseController {
 
 }
 
-
+const PurchaseOrdersControllerInstance = PurchaseOrdersController.getInstance();
+export default PurchaseOrdersControllerInstance;

@@ -14,7 +14,7 @@ class AccountingMovementsController extends BaseController {
         super();
         AccountingMovementsController.instance = this;
     }
-
+    //route: #list-accounting-movements
     async listAccountingMovements(){
         
     }

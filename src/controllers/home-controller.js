@@ -1,19 +1,23 @@
 import BaseController from './base-controller.js';
-import HomeView from '../views/home-view.js';
 import DataPersistenceServiceInstance from '../services/data-persistence-service.js';
+import HomeViewInstance from '../views/home-view.js';
 
-
-
-
-export default class HomeController extends BaseController {
-
+class HomeController extends BaseController {
+    static instance = null;
+    static getInstance() {
+        if (!HomeController.instance) {
+            HomeController.instance = new HomeController();
+        }
+        return HomeController.instance;
+    }
     constructor() {
         super();
-        this.view = new HomeView(this);
+        this.view = HomeViewInstance;
+        HomeController.instance = this;
     }
-
-    async init() {
-        console.log("HomeController init");
+    
+    //route: #index
+    async index() {
         this.view.homeRenderPartialView();
     }
 
@@ -40,3 +44,6 @@ export default class HomeController extends BaseController {
     }
 
 }
+
+const HomeControllerInstance = HomeController.getInstance();
+export default HomeControllerInstance;

@@ -1,10 +1,18 @@
+import PurchaseOrdersControllerInstance from '../controllers/purchase-orders-controller.js';
 import BaseView from './base-view.js';
 
-export default class PurchaseOrdersView extends BaseView {
-
-    constructor(controller) {
+class PurchaseOrdersView extends BaseView {
+    static instance = null;
+    static getInstance() {
+        if (!PurchaseOrdersView.instance) {
+            PurchaseOrdersView.instance = new PurchaseOrdersView();
+        }
+        return PurchaseOrdersView.instance;
+    }
+    constructor() {
         super();
-        this.controller = controller;
+        this.controller = PurchaseOrdersControllerInstance;
+        PurchaseOrdersView.instance = this;
     }
 
     async cargarTablaOrdenes(ordenes) {
@@ -390,3 +398,7 @@ export default class PurchaseOrdersView extends BaseView {
         });
     }
 }
+
+
+const PurchaseOrdersViewInstance = PurchaseOrdersView.getInstance();
+export default PurchaseOrdersViewInstance;

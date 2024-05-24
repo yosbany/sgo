@@ -1,16 +1,25 @@
 import BaseController from './base-controller.js';
-import LoginView from '../views/login-view.js';
 import SecurityServiceInstance from '../services/security-service.js';
+import SecurityViewInstance from '../views/security-view.js';
 
 
-export default class LoginController extends BaseController {
-
+class SecurityController extends BaseController {
+    static instance = null;
+    static getInstance() {
+        if (!SecurityController.instance) {
+            SecurityController.instance = new SecurityController();
+        }
+        return SecurityController.instance;
+    }
     constructor() {
         super();
-        this.view = new LoginView(this);
+        this.view = SecurityViewInstance;
+        SecurityController.instance = this;
     }
-
-    async init() {
+    
+    
+    //route: #login
+    async login() {
         console.log("LoginController init");
         this.view.renderView();
     }
@@ -29,3 +38,6 @@ export default class LoginController extends BaseController {
         
     }
 }
+
+const SecurityControllerInstance = SecurityController.getInstance();
+export default SecurityControllerInstance;

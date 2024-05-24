@@ -87,8 +87,6 @@ class DataPersistenceService {
         await this.storageService.setData(this.ENTITIES.ORDENES, filtered);
         return filtered;
     }
-
-    
 }
 
 const DataPersistenceServiceInstance = DataPersistenceService.getInstance();

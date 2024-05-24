@@ -1,23 +1,15 @@
 import { redirectTo } from './util.js';
-import HomeController from './controllers/home-controller.js';
-import LoginController from './controllers/login-controller.js';
-import BudgetLunchController from './controllers/budget-lunch-controller.js';
-import CalculatePriceController from './controllers/calculate-price-controller.js';
-import CounterShiftsController from './controllers/counter-shifts-controller.js';
-import PostersController from './controllers/posters-controller.js';
-import PrintPriceController from './controllers/print-price-controller.js';
-import ProfileController from './controllers/profile-controller.js';
-import PurchasePlanController from './controllers/purchase-plan-controller.js';
-import PurchasePriceController from './controllers/purchase-price-controller.js';
-import ProceduresController from './controllers/procedures-controller.js';
-import RecipeBookController from './controllers/recipe-book-controller.js';
-import RrhhController from './controllers/rrhh-controller.js';
-import Error404Controller from './controllers/error-404-controller.js';
-import Error500Controller from './controllers/error-500-controller.js';
-import PurchaseOrdersController from './controllers/purchase-orders-controller.js';
-import ProductionCatalogController from './controllers/production-catalog-controller.js';
+import ErrorControllerInstance from './controllers/errors-controller.js';
+import SecurityControllerInstance from './controllers/security-controller.js';
+import HomeControllerInstance from './controllers/home-controller.js';
+import PurchaseOrdersControllerInstance from './controllers/purchase-orders-controller.js';
+import ProductionCatalogControllerInstance from './controllers/production-catalog-controller.js';
+import ToolsControllerInstance from './controllers/tools-controller.js';
+import ProceduresControllerInstance from './controllers/procedures-controller.js';
 import AccountingMovementsControllerInstance from './controllers/accounting-movements-controller.js';
-import SecurityServiceInstance from './services/security-service.js';
+import RecipeBookControllerInstance from './controllers/recipe-book-controller.js';
+import PayrollsControllerInstance from './controllers/payrolls-controller.js';
+
 
 
 
@@ -25,36 +17,37 @@ const BASE_PATH = '/nrd/';
 
 const routes = {
     //Public
-    'error-404.html': new Error404Controller(),
-    'error-500.html': new Error500Controller(),
-    'login.html': new LoginController(),
+    'error-404.html': ErrorControllerInstance,
+    'error-500.html': ErrorControllerInstance,
+    'login.html': SecurityControllerInstance,
     //Private
     //HomeController
-    '': new HomeController(),
-    'index.html': new HomeController(),
-    'home': new HomeController(),
-    'exit': new HomeController(),
-    'load-data': new HomeController(),
+    '': HomeControllerInstance,
+    'index.html': HomeControllerInstance,
+    'home': HomeControllerInstance,
+    'exit': HomeControllerInstance,
+    'load-data': HomeControllerInstance,
 
-    'accounting-transactions': AccountingMovementsControllerInstance,
-    'budget-lunch': new BudgetLunchController(),
-    'calculate-price': new CalculatePriceController(),
-    'counter-shifts': new CounterShiftsController(),
+    'list-accounting-movements': AccountingMovementsControllerInstance,
+    
     //PurchaseOrdersController
-    'list-purchase-orders': new PurchaseOrdersController(),
-    'new-purchase-order': new PurchaseOrdersController(),
-    'view-purchase-order': new PurchaseOrdersController(),
-    'edit-purchase-order': new PurchaseOrdersController(),
+    'list-purchase-orders': PurchaseOrdersControllerInstance,
+    'new-purchase-order': PurchaseOrdersControllerInstance,
+    'view-purchase-order': PurchaseOrdersControllerInstance,
+    'edit-purchase-order': PurchaseOrdersControllerInstance,
 
-    'list-production-catalog': new ProductionCatalogController(),
-    'posters': new PostersController(),
-    'print-price': new PrintPriceController(),
-    'profile': new ProfileController(),
-    'purchase-plan': new PurchasePlanController(),
-    'purchase-price': new PurchasePriceController(),
-    'procedures': new ProceduresController(),
-    'recipe-book': new RecipeBookController(),
-    'rrhh': new RrhhController()
+    'list-production-catalog': ProductionCatalogControllerInstance,
+
+    'posters': ToolsControllerInstance,
+    'print-price': ToolsControllerInstance,
+    'profile': ToolsControllerInstance,
+    'purchase-plan': ToolsControllerInstance,
+    'purchase-price': ToolsControllerInstance,
+
+    'list-procedures': ProceduresControllerInstance,
+
+    'list-recipe-book': RecipeBookControllerInstance,
+    'list-payrolls': PayrollsControllerInstance
 };
 
 function isRoutePublic(key) {
@@ -106,11 +99,7 @@ export default async function router() {
         // Verificar si la ruta es pública
         if (isRoutePublic(key)) {
             // Si es pública, ejecutar el controlador directamente
-            if (!window.location.hash) {
-                executeControllerMethod(controller, 'init', params);
-            } else {
-                executeControllerMethod(controller, getCamelCaseKey(key), params);
-            }
+            executeControllerMethod(controller, getCamelCaseKey(key), params);
         } else {
             // Si es privada, verificar la autenticación del usuario
             const currentUser = await SecurityServiceInstance.getCurrentUser();
@@ -120,8 +109,8 @@ export default async function router() {
                 return;
             }
             // Si el usuario está autenticado, ejecutar el controlador
-            if (!window.location.hash) {
-                executeControllerMethod(controller, 'init', params);
+            if (key === '') {
+                executeControllerMethod(controller, 'index', params);
             } else {
                 executeControllerMethod(controller, getCamelCaseKey(key), params);
             }

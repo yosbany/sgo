@@ -14,6 +14,8 @@ class AccountingMovementsView extends BaseView {
         AccountingMovementsView.instance = this;
     }
 
+    
+
 }
 
 const AccountingMovementsViewInstance = AccountingMovementsView.getInstance();
