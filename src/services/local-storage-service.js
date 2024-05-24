@@ -25,7 +25,7 @@ class LocalStorageService {
                 user.role = 'empleado';
                 users.push(user);
             }
-            this.setData("usuarios", users)
+            this.setData("usuarios", users);
             return this.getCurrentUser();
         }
         throw new Error('Credenciales incorrectas');

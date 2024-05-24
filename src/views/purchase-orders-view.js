@@ -6,7 +6,7 @@ export default class PurchaseOrdersView extends BaseView {
         super();
         this.controller = controller;
     }
-    
+
     async cargarTablaOrdenes(ordenes) {
         let tbody = document.getElementById("body-table-order");
         tbody.innerHTML = '';
@@ -47,7 +47,26 @@ export default class PurchaseOrdersView extends BaseView {
                     </div>
                 </th>
                 `;
+
                 tbody.appendChild(tr);
+
+                tr.querySelector('.view').addEventListener('click', (event) => {
+                    this.redirectToPage('#view-purchase-order', 'idOrden', row.id);
+                });
+                tr.querySelector('.edit').addEventListener('click', (event) => {
+                        this.redirectToPage('#edit-purchase-order', 'idOrden', row.id);
+                });
+                tr.querySelector('.delete').addEventListener('click', (event) => {
+                    const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+                    confirmDeleteModal.show();
+                });
+                document.getElementById('btn-confirm-delete').addEventListener('click', async (event) => {
+                    const ordenes = await this.controller.deletePurchaseOrderAction(row.id);
+                    this.cargarTablaOrdenes(ordenes)
+                    const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
+                    confirmDeleteModal.hide();
+                    toastr.success("Orden eliminada correctamente.");
+                });
             });
         }
     }
@@ -194,36 +213,7 @@ export default class PurchaseOrdersView extends BaseView {
         document.getElementById('btn-nueva-orden').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
         });
-        document.querySelectorAll('.view').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const rowId = button.getAttribute('id-row-data-bind');
-                this.redirectToPage('#view-purchase-order', 'idOrden', rowId);
-            });
-        });
-        document.querySelectorAll('.edit').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const rowId = button.getAttribute('id-row-data-bind');
-                this.redirectToPage('#edit-purchase-order', 'idOrden', rowId);
-            });
-        });
-        let deleteRowId = null;
-        document.querySelectorAll('.delete').forEach(button => {
-            button.addEventListener('click', (event) => {
-                deleteRowId = button.getAttribute('id-row-data-bind');
-                const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-                confirmDeleteModal.show();
-            });
-        });
-        document.getElementById('btn-confirm-delete').addEventListener('click', async (event) => {
-            if (deleteRowId) {
-                const ordenes = await this.controller.deletePurchaseOrderAction(deleteRowId);
-                this.cargarTablaOrdenes(ordenes)
-                deleteRowId = null;
-                const confirmDeleteModal = bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal'));
-                confirmDeleteModal.hide();
-                toastr.success("Orden eliminada correctamente.");
-            }
-        });
+        
 
     }
 
@@ -282,7 +272,7 @@ export default class PurchaseOrdersView extends BaseView {
             }
 
             const datosAGuardar = {
-                id: (new Date()).getTime(),
+                id: String((new Date()).getTime()),
                 fecha: new Date(),
                 proveedor: proveedorSeleccionado,
                 articulos: articulosMarcados,
