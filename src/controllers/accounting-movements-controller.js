@@ -11,6 +11,7 @@ class AccountingMovementsController extends BaseController {
         return AccountingMovementsController.instance;
     }
     constructor() {
+        super();
         AccountingMovementsController.instance = this;
     }
 

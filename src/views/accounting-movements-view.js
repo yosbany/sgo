@@ -10,6 +10,7 @@ class AccountingMovementsView extends BaseView {
         return AccountingMovementsView.instance;
     }
     constructor() {
+        super();
         AccountingMovementsView.instance = this;
     }
 
