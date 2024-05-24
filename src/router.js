@@ -58,7 +58,7 @@ function isRoutePublic(key) {
 
 function getKeyFromHashAndPath() {
     const hash = window.location.hash.slice(1).split('?')[0];
-    const path = window.location.pathname.slice(BASE_PATH.length).split('?')[0];
+    let path = window.location.pathname.slice(BASE_PATH.length).split('?')[0];
     const dotIndex = path ? path.indexOf('.') : -1;
     if (dotIndex !== -1) {
         path = path.slice(0, dotIndex);
