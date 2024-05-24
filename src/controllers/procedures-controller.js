@@ -1,3 +1,4 @@
+import ProceduresView from '../views/procedures-view.js';
 import BaseController from './base-controller.js';
 
 class ProceduresController extends BaseController {
@@ -10,7 +11,7 @@ class ProceduresController extends BaseController {
     }
     constructor() {
         super();
-        this.view = ProceduresViewInstance;
+        this.view = new ProceduresView(this);
         ProceduresController.instance = this;
     }
 
