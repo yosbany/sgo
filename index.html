@@ -374,7 +374,9 @@
   <script type="module" src="./src/app.js"></script>
   <!--This page JavaScript -->
   <script>
-    $(".preloader").fadeOut();
+    $(window).on('load', function() {
+      $(".preloader").fadeOut();
+    });
   </script>
 </body>
 
