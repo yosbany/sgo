@@ -1,3 +1,4 @@
+import { formatDate } from '../util.js';
 import BaseView from './base-view.js';
 
 export default class HomeView extends BaseView {
@@ -74,20 +75,9 @@ export default class HomeView extends BaseView {
             tbody.appendChild(tr);
         } else {
             listBackup.forEach(row => {
-                
-                let fechaFormateada = row.fecha ? new Date(row.fecha).toLocaleString('es-ES', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit'
-                }) : '';
-
-    
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
-                <th scope="col" style="vertical-align: middle;">${fechaFormateada}</th>
+                <th scope="col" style="vertical-align: middle;">${formatDate(row.fecha)}</th>
                 <th scope="col" style="vertical-align: middle;">${row.nombre}</th>
                 <th scope="col" style="vertical-align: middle;">
                     <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
@@ -109,6 +99,7 @@ export default class HomeView extends BaseView {
                     const confirmRestoredBackup = bootstrap.Modal.getInstance(document.getElementById('confirm-restored-backup'));
                     confirmRestoredBackup.hide();
                     toastr.success("Backup restaurado correctamente.");
+                    this.redirectToPage('#home');
                 });
             });
         }
