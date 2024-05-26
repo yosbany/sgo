@@ -40,15 +40,13 @@ class DataPersistenceService {
 
     async getListBackup(){
         const jsonPath = './data/backup/info-list-backup.json';
-        fetch(jsonPath)
-            .then(response => {
-                return response.json();
-            })
-            .then(jsonData => {
-                if (jsonData.hasOwnProperty("backups")) {
-                    return jsonData;
-                }
-            })
+        const response = await fetch(jsonPath);
+        if (response.ok) {
+            const jsonData = await response.json();
+            if (jsonData.hasOwnProperty("backups")) {
+                return jsonData;
+            }
+        }
     }
 
     async restoredBackup(backup) {
