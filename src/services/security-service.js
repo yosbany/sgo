@@ -10,11 +10,9 @@ class SecurityService {
         return SecurityService.instance;
     }
     constructor() {
-        this.storageService = this.ISLOCALSTORAGE ? LocalStorageServiceInstance : FirebaseServiceInstance;
+        this.storageService = window.STORAGE_TYPE === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
         SecurityService.instance = this;
     }
-
-    ISLOCALSTORAGE = true;
 
     async login(email, password){
         const user = await this.storageService.login(email, password);

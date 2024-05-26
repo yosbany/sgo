@@ -12,14 +12,7 @@ class DataPersistenceService {
         return DataPersistenceService.instance;
     }
     constructor() {
-        const user = SecurityServiceInstance.getCurrentUser();
-        console.log(user);
-        if(user === 'nriodor@gmail.com'){
-            this.storageService = FirebaseServiceInstance;
-        }
-        else{
-            this.storageService = LocalStorageServiceInstance;
-        }
+        this.storageService = window.STORAGE_TYPE === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
         DataPersistenceService.instance = this;
     }
 
@@ -35,8 +28,6 @@ class DataPersistenceService {
         TAREAS: 'tareas',
         EMPLEADOS: 'empleados'
     }
-
-    ISLOCALSTORAGE = true;
 
     async getListBackup(){
         const jsonPath = './data/backup/info-list-backup.json';
