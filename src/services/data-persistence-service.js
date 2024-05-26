@@ -43,8 +43,8 @@ class DataPersistenceService {
         const response = await fetch(jsonPath);
         if (response.ok) {
             const jsonData = await response.json();
-            if (jsonData.hasOwnProperty("backups")) {
-                return jsonData;
+            if (jsonData.hasOwnProperty("listBackup")) {
+                return jsonData.listBackup;
             }
         }
     }
