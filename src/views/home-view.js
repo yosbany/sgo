@@ -57,6 +57,62 @@ export default class HomeView extends BaseView {
         });
     }
 
+    async listBackupRenderPartialView(listBackup){
+        await this.getPartials('list-backups.html', 'Lista de Backups');
+        this.reloadTablaBackup(listBackup);
+
+    }
+
+    async reloadTablaBackup(listBackup){
+        let tbody = document.getElementById("body-table-backups");
+        tbody.innerHTML = '';
+        if (listBackup.length === 0) {
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                <th colspan="4" style="text-align: center;"><b>No hay registros<b></th>
+            `;
+            tbody.appendChild(tr);
+        } else {
+            listBackup.forEach(row => {
+                // Formatear la fecha
+                let fechaFormateada = new Date(row.fecha).toLocaleString('es-ES', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+    
+                let tr = document.createElement('tr');
+                tr.innerHTML = `
+                <th scope="col" style="vertical-align: middle;">${fechaFormateada}</th>
+                <th scope="col" style="vertical-align: middle;">${row.nombre}</th>
+                <th scope="col" style="vertical-align: middle;">
+                    <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
+                        <button type="button" class="restore btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1">
+                            <i class="mdi mdi-eye"></i>
+                        </button>
+                    </div>
+                </th>
+                `;
+
+                tbody.appendChild(tr);
+
+                tr.querySelector('.restore').addEventListener('click', (event) => {
+                    const confirmRestoredBackup = new bootstrap.Modal(document.getElementById('confirm-restored-backup'));
+                    confirmRestoredBackup.show();
+                });
+                document.getElementById('btn-confirm-modal').addEventListener('click', async (event) => {
+                    await this.controller.restoredBackup(row.nombre);
+                    const confirmRestoredBackup = bootstrap.Modal.getInstance(document.getElementById('confirm-restored-backup'));
+                    confirmRestoredBackup.hide();
+                    toastr.success("Backup restaurado correctamente.");
+                });
+            });
+        }
+    }
+
 
 
 }

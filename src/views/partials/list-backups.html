@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"><b>Fecha</b></th>
+            <th scope="col"><b>Nombre</b></th>
+            <th scope="col" class="text-end"><b>Acciones</b></th>
+        </tr>
+    </thead>
+    <tbody id="body-table-backups">
+       <!-- Dinamic -->
+    </tbody>
+</table>
+
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="confirm-restored-backup" tabindex="-1" aria-labelledby="confirm-restored-backup-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-restored-backup-label">Confirmar de Restauración</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas restaurar desde este backup?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-modal">Restaurar</button>
+            </div>
+        </div>
+    </div>
+</div>

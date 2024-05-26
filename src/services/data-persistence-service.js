@@ -1,5 +1,6 @@
 import FirebaseServiceInstance from "./firebase-service.js";
 import LocalStorageServiceInstance from "./local-storage-service.js";
+import SecurityServiceInstance from "./security-service.js";
 
 
 class DataPersistenceService {
@@ -11,7 +12,14 @@ class DataPersistenceService {
         return DataPersistenceService.instance;
     }
     constructor() {
-        this.storageService = this.ISLOCALSTORAGE ? LocalStorageServiceInstance : FirebaseServiceInstance;
+        const user = SecurityServiceInstance.getCurrentUser();
+        console.log(user);
+        if(user === 'nriodor@gmail.com'){
+            this.storageService = FirebaseServiceInstance;
+        }
+        else{
+            this.storageService = LocalStorageServiceInstance;
+        }
         DataPersistenceService.instance = this;
     }
 
@@ -30,24 +38,32 @@ class DataPersistenceService {
 
     ISLOCALSTORAGE = true;
 
-    async loadData() {
-        const jsonPath = './data/load-data.json';
+    async getBackups(){
+        const jsonPath = './data/backup/info-backup.json';
         fetch(jsonPath)
             .then(response => {
                 return response.json();
             })
-            .then(data => {
-                for (const key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        this.storageService.setData(key, data[key]);
+            .then(jsonData => {
+                if (jsonData.hasOwnProperty("backups")) {
+                    return jsonData;
+                }
+            })
+    }
+
+    async restoredBackup(backup) {
+        const jsonPath = './data/backup/'+backup+'.json';
+        fetch(jsonPath)
+            .then(response => {
+                return response.json();
+            })
+            .then(jsonData => {
+                for (const key in jsonData) {
+                    if (jsonData.hasOwnProperty(key)) {
+                        this.storageService.setData(key, jsonData[key]);
                     }
                 }
-                console.log('Datos cargados y guardados en el Local Storage correctamente.');
             })
-            .catch(error => {
-                console.error('Hubo un problema cargando los datos en el Local Storage:', error);
-            });
-
     }
 
     async getProveedores() {
