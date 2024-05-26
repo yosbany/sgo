@@ -39,7 +39,7 @@ class DataPersistenceService {
     ISLOCALSTORAGE = true;
 
     async getListBackup(){
-        const jsonPath = './data/backup/info-backup.json';
+        const jsonPath = './data/backup/info-list-backup.json';
         fetch(jsonPath)
             .then(response => {
                 return response.json();
