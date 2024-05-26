@@ -27,7 +27,7 @@ const routes = {
     'index': HomeControllerInstance,
     'home': HomeControllerInstance,
     'exit': HomeControllerInstance,
-    'list-backups': HomeControllerInstance,
+    'list-backup': HomeControllerInstance,
 
     'list-accounting-movements': AccountingMovementsControllerInstance,
     

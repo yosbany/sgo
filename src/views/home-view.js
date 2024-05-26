@@ -36,7 +36,7 @@ export default class HomeView extends BaseView {
                         // Lógica específica para la card 4
                         break;
                     case 'card5':
-                        this.redirectToPage("#list-restore");
+                        this.redirectToPage("#list-backup");
                         break;
                     case 'card6':
                         alert('Buscador de Costos');

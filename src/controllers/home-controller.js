@@ -28,8 +28,8 @@ class HomeController extends BaseController {
         this.loadDataAction();
     }
 
-    //route: #list-backups
-    async listBackups(){
+    //route: #list-backup
+    async listBackup(){
         const listBackup = await DataPersistenceServiceInstance.getListBackup();
         this.view.listBackupRenderPartialView(listBackup);
     }
