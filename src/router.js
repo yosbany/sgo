@@ -10,6 +10,7 @@ import AccountingMovementsControllerInstance from './controllers/accounting-move
 import RecipeBookControllerInstance from './controllers/recipe-book-controller.js';
 import PayrollsControllerInstance from './controllers/payrolls-controller.js';
 import SecurityServiceInstance from './services/security-service.js';
+import DataPersistenceServiceInstance from './services/data-persistence-service.js';
 
 
 
@@ -96,6 +97,11 @@ function executeControllerMethod(controller, methodName, params = {}) {
 }
 
 export default async function router() {
+    window.STORAGE_TYPE = 'firebase';
+    //window.STORAGE_TYPE = 'localstorage';
+    DataPersistenceServiceInstance.loadStorageService();
+    SecurityServiceInstance.loadStorageService();
+
     const key = getKeyFromHashAndPath();
     const params = getUrlParams();
     console.log("go router key: ", key, ", params: "+JSON.stringify(params));
