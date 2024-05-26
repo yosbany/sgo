@@ -44,6 +44,7 @@ class DataPersistenceService {
         if (response.ok) {
             const jsonData = await response.json();
             if (jsonData.hasOwnProperty("listBackup")) {
+                console.log(jsonData.listBackup);
                 return jsonData.listBackup;
             }
         }
