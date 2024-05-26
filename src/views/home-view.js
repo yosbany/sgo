@@ -58,7 +58,7 @@ export default class HomeView extends BaseView {
     }
 
     async listBackupRenderPartialView(listBackup){
-        await this.getPartials('list-backups.html', 'Lista de Backups');
+        await this.getPartials('list-backup.html', 'Lista de Backups');
         this.reloadTablaBackup(listBackup);
 
     }
@@ -74,15 +74,16 @@ export default class HomeView extends BaseView {
             tbody.appendChild(tr);
         } else {
             listBackup.forEach(row => {
-                // Formatear la fecha
-                let fechaFormateada = new Date(row.fecha).toLocaleString('es-ES', {
+                
+                let fechaFormateada = row.fecha ? new Date(row.fecha).toLocaleString('es-ES', {
                     day: '2-digit',
                     month: '2-digit',
                     year: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit'
-                });
+                }) : '';
+
     
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
@@ -91,7 +92,7 @@ export default class HomeView extends BaseView {
                 <th scope="col" style="vertical-align: middle;">
                     <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
                         <button type="button" class="restore btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1">
-                            <i class="mdi mdi-eye"></i>
+                            <i class="mdi mdi-restore"></i>
                         </button>
                     </div>
                 </th>
