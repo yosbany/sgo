@@ -1,6 +1,5 @@
 import FirebaseServiceInstance from "./firebase-service.js";
 import LocalStorageServiceInstance from "./local-storage-service.js";
-import SecurityServiceInstance from "./security-service.js";
 
 
 class DataPersistenceService {
