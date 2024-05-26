@@ -1,6 +1,3 @@
-import FirebaseServiceInstance from "./services/firebase-service";
-import LocalStorageServiceInstance from "./services/local-storage-service";
-
 function toggleElementVisibility(elementId, isVisible) {
     const element = document.getElementById(elementId);
     if (element) {
