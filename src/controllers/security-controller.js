@@ -31,7 +31,7 @@ class SecurityController extends BaseController {
             }
         }
         catch(error){
-            console.log("No se pudo autenticar");
+            throw new Error('No se pudo autenticar: ' + error.message);
         }
         
         

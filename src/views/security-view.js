@@ -13,7 +13,12 @@ export default class SecurityView extends BaseView {
             event.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            this.controller.loginAction(email, password);
+            try {
+                this.controller.loginAction(email, password);
+            } catch (error) {
+                toastr.error(error.message);
+            }
+            
         });
     }
 
