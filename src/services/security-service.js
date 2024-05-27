@@ -10,13 +10,13 @@ class SecurityService {
         return SecurityService.instance;
     }
     constructor() {
-        this.loadStorageService();
+        this.storageService = this.getStorageService();
         SecurityService.instance = this;
     }
 
-    loadStorageService(){
+    getStorageService(){
         const type = 'firebase'
-        this.setStorageService = type === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
+        return type === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
     }
 
     async login(email, password){

@@ -11,13 +11,13 @@ class DataPersistenceService {
         return DataPersistenceService.instance;
     }
     constructor() {
-        this.loadStorageService();
+        this.storageService = this.getStorageService();
         DataPersistenceService.instance = this;
     }
 
-    loadStorageService(){
+    getStorageService(){
         const type = 'firebase'
-        this.setStorageService = type === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
+        return type === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
     }
 
     ENTITIES = {
