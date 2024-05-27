@@ -91,6 +91,7 @@ class FirebaseService {
                 delete obj[key];
             }
         });
+        console.log(obj);
     }
 }
 
