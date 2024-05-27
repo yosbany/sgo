@@ -44,7 +44,8 @@ class LocalStorageService {
 
     setData(path, data) {
         try {
-            localStorage.setItem(path, JSON.stringify(this.cleanObject(data)));
+            this.cleanObject(data);
+            localStorage.setItem(path, JSON.stringify(data));
         } catch (error) {
             throw new Error('Error al escribir en localStorage: ' + error.message);
         }
