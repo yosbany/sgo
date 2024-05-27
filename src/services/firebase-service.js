@@ -30,8 +30,8 @@ class FirebaseService {
 
     async login(email, password) {
         try {
-            const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
-            const user = userCredential.user;
+            await signInWithEmailAndPassword(this.auth, email, password);
+            const user = await this.getCurrentUser();
             const users = await this.getData("usuarios", []);
             const index = users.findIndex(item => item.email === user.email);
             if (index !== -1) {
