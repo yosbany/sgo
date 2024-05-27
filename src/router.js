@@ -45,6 +45,7 @@ const routes = {
     'profile': ToolsControllerInstance,
     'purchase-plan': ToolsControllerInstance,
     'purchase-price': ToolsControllerInstance,
+    'calculate-price':ToolsControllerInstance,
 
     'list-procedures': ProceduresControllerInstance,
 
