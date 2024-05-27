@@ -1,7 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js';
-import { getDatabase, ref, set, get, push } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js';
-
+import { getDatabase, ref, set, get, child } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js';
 
 class FirebaseService {
     static instance = null;
@@ -11,6 +10,7 @@ class FirebaseService {
         }
         return FirebaseService.instance;
     }
+    
     constructor() {
         const app = initializeApp(this.FIREBASECONFIG);
         this.auth = getAuth(app);
@@ -64,9 +64,10 @@ class FirebaseService {
 
     async getData(path, defaultValue = null) {
         try {
-            const snapshot = await this.db.ref(path).once('value');
-            const data = snapshot.val();
-            return data !== null ? data : defaultValue;
+            const dbRef = ref(this.db);
+            const snapshot = await get(child(dbRef, path));
+            const data = snapshot.exists() ? snapshot.val() : defaultValue;
+            return data;
         } catch (error) {
             throw new Error('Error al leer de la base de datos: ' + error.message);
         }
@@ -74,12 +75,12 @@ class FirebaseService {
 
     async setData(path, data) {
         try {
-            await this.db.ref(path).set(data);
+            const dbRef = ref(this.db, path);
+            await set(dbRef, data);
         } catch (error) {
             throw new Error('Error al escribir en la base de datos: ' + error.message);
         }
     }
-
 }
 
 const FirebaseServiceInstance = FirebaseService.getInstance();
