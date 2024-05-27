@@ -13,20 +13,10 @@ class LocalStorageService {
     async login(email, password) {
         // Simulación de la verificación de credenciales
         if (email === 'nriodor@gmail.com' && password === 'NuevaR1oDor') {
-            const user = {
+            return {
                 email: 'nriodor@gmail.com',
                 uid: String((new Date()).getTime())
-            };
-            const users = this.getData("usuarios", []);
-            const index = users.findIndex(item => item.email === user.email);
-            if (index !== -1) {
-                users[index] = user;
-            } else {
-                user.role = 'empleado';
-                users.push(user);
             }
-            this.setData("usuarios", users);
-            return this.getCurrentUser();
         }
         throw new Error('Credenciales incorrectas');
     }
