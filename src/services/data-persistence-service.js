@@ -16,7 +16,8 @@ class DataPersistenceService {
     }
 
     loadStorageService(){
-        this.setStorageService = window.STORAGE_TYPE = 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
+        const type = 'firebase'
+        this.setStorageService = type === 'firebase' ? FirebaseServiceInstance : LocalStorageServiceInstance;
     }
 
     ENTITIES = {

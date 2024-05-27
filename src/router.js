@@ -97,11 +97,6 @@ function executeControllerMethod(controller, methodName, params = {}) {
 }
 
 export default async function router() {
-    window.STORAGE_TYPE = 'firebase';
-    //window.STORAGE_TYPE = 'localstorage';
-    DataPersistenceServiceInstance.loadStorageService();
-    SecurityServiceInstance.loadStorageService();
-
     const key = getKeyFromHashAndPath();
     const params = getUrlParams();
     console.log("go router key: ", key, ", params: "+JSON.stringify(params));
