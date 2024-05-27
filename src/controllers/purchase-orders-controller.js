@@ -55,7 +55,7 @@ class PurchaseOrdersController extends BaseController {
     }
 
     async guardarOrdenDeCompraAction(orden){
-        DataPersistenceServiceInstance.saveOrden(orden);
+       await DataPersistenceServiceInstance.saveOrden(orden);
     }
 
 }
