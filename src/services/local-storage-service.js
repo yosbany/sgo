@@ -53,7 +53,7 @@ class LocalStorageService {
     async cleanObject(obj) {
         Object.keys(obj).forEach(key => {
             if (obj[key] && typeof obj[key] === 'object') {
-                cleanObject(obj[key]);
+                this.cleanObject(obj[key]);
             } else if (obj[key] === undefined) {
                 delete obj[key];
             }
