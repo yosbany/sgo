@@ -39,6 +39,7 @@ class FirebaseService {
             } else {
                 const newUser = {
                     uid: user.uid,
+                    role: 'empleado',
                     email: user.email
                 };
                 users.push(newUser);
