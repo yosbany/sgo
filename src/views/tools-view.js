@@ -7,6 +7,10 @@ export default class ToolsView extends BaseView {
         this.controller = controller;
     }
 
+    async calculatePriceRenderPartialView(){
+        await this.getPartials('calculate-price.html', 'Calculadora de Precios');
+    }
+
 }
 
 

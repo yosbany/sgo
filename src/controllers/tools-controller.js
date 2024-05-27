@@ -16,6 +16,11 @@ class ToolsController extends BaseController {
         ToolsController.instance = this;
     }
 
+    //route: #calculate-price
+    async calculatePrice(){
+        await this.view.calculatePriceRenderPartialView();
+    }
+
 }
 
 const ToolsControllerInstance = ToolsController.getInstance();
