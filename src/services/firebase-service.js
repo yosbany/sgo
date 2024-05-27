@@ -31,7 +31,21 @@ class FirebaseService {
     async login(email, password) {
         try {
             const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
-            return userCredential.user;
+            const user = userCredential.user;
+            const users = this.getData("usuarios", []);
+            const index = users.findIndex(item => item.email === user.email);
+            if (index !== -1) {
+                users[index] = user;
+            } else {
+                const newUser = {
+                    uid: user.uid,
+                    email: user.email,
+                    role: 'empleado'
+                };
+                users.push(newUser);
+            }
+            this.setData("usuarios", users);
+            return this.getCurrentUser();
         } catch (error) {
             throw new Error('Error al iniciar sesión: ' + error.message);
         }
