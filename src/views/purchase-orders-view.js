@@ -1,3 +1,4 @@
+import { formatDate } from '../util.js';
 import BaseView from './base-view.js';
 
 export default class PurchaseOrdersView extends BaseView {
@@ -17,19 +18,9 @@ export default class PurchaseOrdersView extends BaseView {
             tbody.appendChild(tr);
         } else {
             ordenes.forEach(row => {
-                // Formatear la fecha
-                let fechaFormateada = new Date(row.fecha).toLocaleString('es-ES', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit'
-                });
-    
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
-                <th scope="col" style="vertical-align: middle;">${fechaFormateada}</th>
+                <th scope="col" style="vertical-align: middle;">${formatDate(row.fecha)}</th>
                 <th scope="col" style="vertical-align: middle;">${row.proveedor}</th>
                 <th scope="col" style="vertical-align: middle;">${row.importe}</th>
                 <th scope="col" style="vertical-align: middle;">
