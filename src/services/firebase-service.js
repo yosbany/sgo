@@ -32,7 +32,7 @@ class FirebaseService {
         try {
             const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
             const user = userCredential.user;
-            const users = this.getData("usuarios", []);
+            const users = await this.getData("usuarios", []);
             const index = users.findIndex(item => item.email === user.email);
             if (index !== -1) {
                 users[index] = user;
