@@ -76,10 +76,20 @@ class FirebaseService {
     async setData(path, data) {
         try {
             const dbRef = ref(this.db, path);
-            await set(dbRef, data);
+            await set(dbRef, this.cleanObject(data));
         } catch (error) {
             throw new Error('Error al escribir en la base de datos: ' + error.message);
         }
+    }
+
+    async cleanObject(obj) {
+        Object.keys(obj).forEach(key => {
+            if (obj[key] && typeof obj[key] === 'object') {
+                cleanObject(obj[key]);
+            } else if (obj[key] === undefined) {
+                delete obj[key];
+            }
+        });
     }
 }
 

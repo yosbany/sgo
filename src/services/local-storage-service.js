@@ -44,10 +44,20 @@ class LocalStorageService {
 
     setData(path, data) {
         try {
-            localStorage.setItem(path, JSON.stringify(data));
+            localStorage.setItem(path, JSON.stringify(this.cleanObject(data)));
         } catch (error) {
             throw new Error('Error al escribir en localStorage: ' + error.message);
         }
+    }
+
+    async cleanObject(obj) {
+        Object.keys(obj).forEach(key => {
+            if (obj[key] && typeof obj[key] === 'object') {
+                cleanObject(obj[key]);
+            } else if (obj[key] === undefined) {
+                delete obj[key];
+            }
+        });
     }
 
 }
