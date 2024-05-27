@@ -21,7 +21,7 @@ class SecurityService {
 
     async login(email, password){
         const user = await this.storageService.login(email, password);
-        this.registerCurrentUserInDatabase(user);
+        await this.registerCurrentUserInDatabase(user);
         return user;
     }
 
