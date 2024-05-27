@@ -11,7 +11,7 @@ class DataPersistenceService {
         return DataPersistenceService.instance;
     }
     constructor() {
-        this.storageService = null;
+        this.loadStorageService();
         DataPersistenceService.instance = this;
     }
 

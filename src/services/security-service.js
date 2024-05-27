@@ -10,7 +10,7 @@ class SecurityService {
         return SecurityService.instance;
     }
     constructor() {
-        this.storageService = null;
+        this.loadStorageService();
         SecurityService.instance = this;
     }
 
