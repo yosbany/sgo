@@ -33,8 +33,7 @@ export default class HomeView extends BaseView {
                         // Lógica específica para la card 3
                         break;
                     case 'card4':
-                        alert('Calculadora de Precios');
-                        // Lógica específica para la card 4
+                        this.redirectToPage("#calculate-price");
                         break;
                     case 'card5':
                         this.redirectToPage("#list-backup");
