@@ -16,7 +16,7 @@ class ArticlesController extends BaseController {
         ArticlesController.instance = this;
     }
 
-    //route: #list-articules
+    //route: #list-articles
     async listArticles(){
         const articules = await DataPersistenceServiceInstance.getArticles();
         this.view.listArticlesRenderPartialView(articules);

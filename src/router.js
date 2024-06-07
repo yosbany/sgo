@@ -33,7 +33,7 @@ const routes = {
 
     'list-accounting-movements': AccountingMovementsControllerInstance,
 
-    'list-articules': ArticlesControllerInstance,
+    'list-articles': ArticlesControllerInstance,
     
     //PurchaseOrdersController
     'list-purchase-orders': PurchaseOrdersControllerInstance,
