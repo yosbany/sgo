@@ -11,6 +11,7 @@ import RecipeBookControllerInstance from './controllers/recipe-book-controller.j
 import PayrollsControllerInstance from './controllers/payrolls-controller.js';
 import SecurityServiceInstance from './services/security-service.js';
 import DataPersistenceServiceInstance from './services/data-persistence-service.js';
+import ArticlesControllerInstance from './controllers/articles-controller.js';
 
 
 
@@ -31,6 +32,8 @@ const routes = {
     'list-backup': HomeControllerInstance,
 
     'list-accounting-movements': AccountingMovementsControllerInstance,
+
+    'list-articules': ArticlesControllerInstance,
     
     //PurchaseOrdersController
     'list-purchase-orders': PurchaseOrdersControllerInstance,

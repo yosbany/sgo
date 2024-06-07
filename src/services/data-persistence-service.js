@@ -68,6 +68,10 @@ class DataPersistenceService {
         return await this.storageService.getData(this.ENTITIES.ORDENES, []);
     }
 
+    async getArticles() {
+        return await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
+    }
+
     async getArticulosXProveedor(proveedor) {
         const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
         const filtered = articulos.filter(item => Array.isArray(item.proveedores) && item.proveedores.includes(proveedor));

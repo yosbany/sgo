@@ -10,6 +10,5 @@ export default  class ProductionCatalogView extends BaseView {
 
     async listProductionCatalogRenderPartialView() {
         await this.getPartials('list-production-catalog.html', 'Catálogo de Producción');
-        this.initEventView();
     }
 }
