@@ -1,6 +1,7 @@
 
 import ArticlesView from '../views/articles-view.js'
 import BaseController from './base-controller.js';
+import DataPersistenceServiceInstance from '../services/data-persistence-service.js';
 
 class ArticlesController extends BaseController {
     static instance = null;
