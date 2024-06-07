@@ -50,7 +50,6 @@ export default class ArticlesView extends BaseView {
 
     reloadSelect(options, optionsSelected = []) {
         const selectElement = document.getElementById('dynamic-select');
-        selectElement.empty();
         options.forEach(option => {
             const optionElement = $('<option>')
                 .attr('value', option.nombre)
