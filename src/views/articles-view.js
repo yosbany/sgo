@@ -33,6 +33,9 @@ export default class ArticlesView extends BaseView {
                 tbody.appendChild(tr);
 
                 tr.querySelector('.view').addEventListener('click', (event) => {
+                    const nombre = document.getElementById('nombre');
+                    
+                    nombre.value = row.nombre;
                     const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                     modal.show();
                 });
