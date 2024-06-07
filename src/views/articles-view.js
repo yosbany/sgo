@@ -59,7 +59,6 @@ export default class ArticlesView extends BaseView {
             }
             selectElement.append(optionElement);
         });
-        selectElement.trigger('change');
     }
 
     
