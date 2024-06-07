@@ -5,15 +5,15 @@ import BaseController from './base-controller.js';
 class ArticlesController extends BaseController {
     static instance = null;
     static getInstance() {
-        if (!ProceduresController.instance) {
-            ProceduresController.instance = new ProceduresController();
+        if (!ArticlesController.instance) {
+            ArticlesController.instance = new ArticlesController();
         }
-        return ProceduresController.instance;
+        return ArticlesController.instance;
     }
     constructor() {
         super();
         this.view = new ArticlesView();
-        ProceduresController.instance = this;
+        ArticlesController.instance = this;
     }
 
     //route: #list-articules
