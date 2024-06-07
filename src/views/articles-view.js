@@ -35,7 +35,7 @@ export default class ArticlesView extends BaseView {
                 tr.querySelector('.view').addEventListener('click', (event) => {
                     const nombre = document.getElementById('nombre');
                     nombre.value = row.nombre;
-                    updateSelectedOptions(row.proveedores);
+                    this.updateSelectedOptions(row.proveedores);
                     const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                     modal.show();
                 });
