@@ -44,12 +44,12 @@ export default class ArticlesView extends BaseView {
     }
 
     updateSelectedOptions(optionsSelected = []) {
-        const selectElement = $('#dynamic-select');
+        const selectElement = document.getElementById('dynamic-select');
         selectElement.val(optionsSelected).trigger('change');
     }
 
     reloadSelect(options, optionsSelected = []) {
-        const selectElement = $('#dynamic-select');
+        const selectElement = document.getElementById('dynamic-select');
         selectElement.empty();
         options.forEach(option => {
             const optionElement = $('<option>')
@@ -68,7 +68,7 @@ export default class ArticlesView extends BaseView {
     async listArticlesRenderPartialView(articles, proveedores) {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadSelect(proveedores, []);
-        $('#dynamic-select').select2();
+        document.getElementById('dynamic-select').select2();
         this.reloadTableArticles(articles);
     }
 }
