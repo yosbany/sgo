@@ -64,7 +64,6 @@ export default class ArticlesView extends BaseView {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadSelect(proveedores, []);
         $('#dynamic-select').select2({
-            theme: 'bootstrap-5',
             width: '100%'
         });
         this.reloadTableArticles(articles);
