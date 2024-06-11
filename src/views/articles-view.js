@@ -44,7 +44,7 @@ export default class ArticlesView extends BaseView {
     }
 
     updateSelectedOptions(optionsSelected = []) {
-        const selectElement = $('dynamic-select');
+        const selectElement = $('#dynamic-select');
         selectElement.val(optionsSelected).trigger('change');
     }
 
@@ -57,15 +57,13 @@ export default class ArticlesView extends BaseView {
             }
             optgroupElement.append(optionElement);
         });
-        $('dynamic-select').trigger('change');
+        $('#dynamic-select').trigger('change');
     }
-
-    
 
     async listArticlesRenderPartialView(articles, proveedores) {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadSelect(proveedores, []);
-        $('dynamic-select').select2();
+        $('#dynamic-select').select2();
         this.reloadTableArticles(articles);
     }
 }
