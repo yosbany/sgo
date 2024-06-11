@@ -24,7 +24,7 @@ export default class ArticlesView extends BaseView {
                 <th scope="col" style="vertical-align: middle;">
                     <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
                         <button type="button" class="view btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1">
-                            <i class="mdi mdi-eye"></i>
+                            <i class="mdi mdi-details"></i>
                         </button>
                     </div>
                 </th>
@@ -34,8 +34,17 @@ export default class ArticlesView extends BaseView {
 
                 tr.querySelector('.view').addEventListener('click', (event) => {
                     const nombre = document.getElementById('nombre');
+                    const pack_compra = document.getElementById('pack_compra');
+                    const stock_deseado = document.getElementById('stock_deseado');
+                    const precio_compra = document.getElementById('precio_compra');
+
                     nombre.value = row.nombre;
+                    pack_compra.value = row.pack_compra;
+                    stock_deseado.value = row.stock_deseado;
+                    precio_compra.value = row.precio_compra;
+
                     this.updateSelectedOptions(row.proveedores);
+
                     const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                     modal.show();
                 });
