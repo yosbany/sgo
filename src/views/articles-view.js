@@ -53,12 +53,12 @@ export default class ArticlesView extends BaseView {
     }
 
     updateSelectedOptions(optionsSelected = []) {
-        const selectElement = $('#dynamic-select');
+        const selectElement = $('#proveedores');
         selectElement.val(optionsSelected).trigger('change');
     }
 
     reloadSelect(options, optionsSelected = []) {
-        const selectElement =  $('#dynamic-select');
+        const selectElement =  $('#proveedores');
         options.forEach(option => {
             const optionElement = $('<option>').attr('value', option.nombre).text(option.nombre);
             if (optionsSelected.includes(option.nombre)) {
@@ -66,15 +66,13 @@ export default class ArticlesView extends BaseView {
             }
             selectElement.append(optionElement);
         });
-        $('#dynamic-select').trigger('change');
+        $('#proveedores').trigger('change');
     }
 
     async listArticlesRenderPartialView(articles, proveedores) {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadSelect(proveedores, []);
-        $('#dynamic-select').select2({
-            width: '100%'
-        });
+        $('#proveedores').select2();
         this.reloadTableArticles(articles);
     }
 }
