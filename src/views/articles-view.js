@@ -58,6 +58,7 @@ export default class ArticlesView extends BaseView {
                 optionElement.attr('selected', 'selected');
             }
             selectElement.append(optionElement);
+            console.log("optionElement: ",optionElement);
         });
         selectElement.trigger('change');
     }
