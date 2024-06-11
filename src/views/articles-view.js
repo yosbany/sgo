@@ -67,7 +67,7 @@ export default class ArticlesView extends BaseView {
     async listArticlesRenderPartialView(articles, proveedores) {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadSelect(proveedores, []);
-        selectElement.select2();
+        $('dynamic-select').select2();
         this.reloadTableArticles(articles);
     }
 }
