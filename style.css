@@ -23,15 +23,3 @@
     font-weight: bold !important;
 }
 
-.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice {
-    white-space: normal; /* Permite que las etiquetas de selección se ajusten a la línea */
-}
-
-.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.select2-container--bootstrap-5 .select2-selection {
-    min-height: 38px; /* Ajusta la altura mínima del select2 para que coincida con los controles de formulario de Bootstrap */
-}
