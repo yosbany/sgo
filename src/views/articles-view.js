@@ -49,18 +49,14 @@ export default class ArticlesView extends BaseView {
     }
 
     reloadSelect(options, optionsSelected = []) {
-        const selectElement = $('dynamic-select');
+        const optgroupElement = $('#optgroup_multiselect_id');
         options.forEach(option => {
-            const optionElement = $('<option>')
-                .attr('value', option.nombre)
-                .text(option.nombre);
+            const optionElement = $('<option>').attr('value', option.nombre).text(option.nombre);
             if (optionsSelected.includes(option.nombre)) {
                 optionElement.attr('selected', 'selected');
             }
-            selectElement.append(optionElement);
-            console.log("optionElement: ",optionElement);
+            optgroupElement.append(optionElement);
         });
-        selectElement.trigger('change');
     }
 
     
