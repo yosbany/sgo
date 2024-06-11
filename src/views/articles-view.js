@@ -57,6 +57,7 @@ export default class ArticlesView extends BaseView {
             }
             optgroupElement.append(optionElement);
         });
+        $('dynamic-select').trigger('change');
     }
 
     
