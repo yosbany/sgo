@@ -71,6 +71,10 @@ export default class BaseView {
         }
     }
 
+    hideSnipperPage(){
+        $(".preloader").fadeOut();
+    }
+
     showLoaderPage() {
         showLoaderPage();
     }
