@@ -8,10 +8,10 @@ export default class ErrorsView extends BaseView {
     }
 
     async error404(){
-
+        this.hideSnipper();
     }
 
     async error500(){
-        
+        this.hideSnipper();
     }
 }
