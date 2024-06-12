@@ -11,7 +11,7 @@
   <!-- Favicon icon -->
 
   <!-- Custom CSS -->
-  
+
   <link href="./assets/libs/select2/dist/css/select2.min.css" rel="stylesheet" />
 
   <link rel="stylesheet" type="text/css" href="./assets/libs/select2/dist/css/select2.min.css" />
@@ -355,8 +355,17 @@
       <!-- ============================================================== -->
       <!-- Container fluid  -->
       <!-- ============================================================== -->
-      <div class="container-fluid" id="app">
-        <!-- dynamic -->
+      <div class="container-fluid">
+        <div class="preloaderapp">
+          <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+          </div>
+        </div>
+        <div id="app">
+          <!-- Dynamic -->
+        </div>
+
       </div>
       <!-- ============================================================== -->
       <!-- End Container fluid  -->
@@ -397,12 +406,6 @@
   <!--Custom JavaScript -->
   <script src="./dist/js/custom.min.js"></script>
   <script type="module" src="./src/app.js"></script>
-  <!--This page JavaScript -->
-  <script>
-    $(window).on('load', function () {
-      
-    });
-  </script>
 </body>
 
 </html>
