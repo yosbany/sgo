@@ -11,12 +11,16 @@ export default class SecurityView extends BaseView {
     async loginRenderView(){
         document.getElementById('btn-submit').addEventListener('click', async (event) => {
             event.preventDefault();
+            this.showSnipper();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             try {
                 this.controller.loginAction(email, password);
             } catch (error) {
                 toastr.error(error.message);
+            }
+            finally{
+                this.hideSnipper();
             }
             
         });
