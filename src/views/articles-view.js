@@ -23,7 +23,7 @@ export default class ArticlesView extends BaseView {
                 <th scope="col" style="vertical-align: middle;">${row.nombre}</th>
                 <th scope="col" style="vertical-align: middle;">
                     <div class="d-flex flex-column flex-md-row justify-content-end" style="float: right;">
-                        <button type="button" class="view btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1">
+                        <button type="button" class="details btn btn-info btn-sm table-action-btn mb-1 mb-md-0 me-md-1">
                             <i class="mdi mdi-details"></i>
                         </button>
                     </div>
@@ -32,7 +32,7 @@ export default class ArticlesView extends BaseView {
 
                 tbody.appendChild(tr);
 
-                tr.querySelector('.view').addEventListener('click', (event) => {
+                tr.querySelector('.details').addEventListener('click', (event) => {
                     const nombre = document.getElementById('nombre');
                     const pack_compra = document.getElementById('pack_compra');
                     const stock_deseado = document.getElementById('stock_deseado');
@@ -48,6 +48,12 @@ export default class ArticlesView extends BaseView {
                     const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                     modal.show();
                 });
+            });
+            const btn_guardar = document.getElementById("btn_guardar");
+            btn_guardar.addEventListener('click', (event) => {
+                console.log($('#proveedores').find(':selected'))
+                const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
+                modal.hide();
             });
         }
     }
