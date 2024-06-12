@@ -20,7 +20,7 @@ export default class SecurityView extends BaseView {
             }
             
         });
-        this.hideSnipperPage();
+        this.hideSnipper();
     }
 
 }
