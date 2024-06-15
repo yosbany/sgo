@@ -230,7 +230,7 @@ export default class PurchaseOrdersView extends BaseView {
         document.getElementById('btn-imprimir').addEventListener('click', () => {
             const contenido = document.getElementById("resumen-pedido").value;
             if (contenido.trim() !== '') {
-                //this.imprimirContenido(contenido);
+                this.imprimirContenido(contenido);
 
             } else {
                 console.log('No hay contenido para imprimir.');
