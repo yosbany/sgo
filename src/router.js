@@ -1,4 +1,4 @@
-import { redirectTo } from './util.js';
+import { redirectTo, showWaitPlease, hideWaitPlease } from './util.js';
 import ErrorControllerInstance from './controllers/errors-controller.js';
 import SecurityControllerInstance from './controllers/security-controller.js';
 import HomeControllerInstance from './controllers/home-controller.js';
@@ -101,7 +101,7 @@ function executeControllerMethod(controller, methodName, params = {}) {
 }
 
 export default async function router() {
-    $(".preloader").fadeIn();
+    showWaitPlease()
     const key = getKeyFromHashAndPath();
     const params = getUrlParams();
     console.log("go router key: ", key, ", params: "+JSON.stringify(params));

@@ -9,7 +9,19 @@ function toggleElementVisibility(elementId, isVisible) {
             element.classList.add("d-none");
         }
     }
+}
 
+export function showWaitPlease(){
+    const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
+    if(modal){
+        modal.show();
+    }
+}
+export function hideWaitPlease(){
+    const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
+    if(modal){
+        modal.hide();
+    }
 }
 
 export function showLoaderPage() {
