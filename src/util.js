@@ -15,10 +15,11 @@ export function showWaitPlease(){
     document.getElementsByClassName('main-wrapper')[0].style.display = 'none';
     $(".preloader").fadeIn();
 }
+
 export function hideWaitPlease(){
-    document.body.style.display = 'block';
-    document.getElementsByClassName('main-wrapper')[0].style.display = 'block';
-    $(".preloader").fadeOut();
+    $(".preloader").fadeOut(() => {
+        document.getElementsByClassName('main-wrapper')[0].style.display = 'block';
+    });
 }
 
 export function redirectTo(path) {
