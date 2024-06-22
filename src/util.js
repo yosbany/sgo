@@ -12,16 +12,10 @@ function toggleElementVisibility(elementId, isVisible) {
 }
 
 export function showWaitPlease(){
-    const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
-    if(modal){
-        modal.show();
-    }
+    $(".preloader").fadeIn();
 }
 export function hideWaitPlease(){
-    const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
-    if(modal){
-        modal.hide();
-    }
+    $(".preloader").fadeOut();
 }
 
 export function redirectTo(path) {
