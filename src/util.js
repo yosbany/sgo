@@ -12,14 +12,15 @@ function toggleElementVisibility(elementId, isVisible) {
 }
 
 export function showWaitPlease(){
+    document.body.style.display = 'none';
     $(".preloader").fadeIn();
 }
 export function hideWaitPlease(){
+    document.body.style.display = 'block';
     $(".preloader").fadeOut();
 }
 
 export function redirectTo(path) {
-    document.body.style.display = 'none';
     window.location.replace(path);
 }
 
