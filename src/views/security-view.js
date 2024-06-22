@@ -22,7 +22,6 @@ export default class SecurityView extends BaseView {
             finally{
                 this.hideWait();
             }
-            
         });
         this.hideWait();
     }
