@@ -16,25 +16,23 @@ class SecurityController extends BaseController {
         this.view = new SecurityView(this);
         SecurityController.instance = this;
     }
-    
-    
+
+
     //route: #login
     async login() {
         this.view.loginRenderView();
     }
 
-    async loginAction(email, password){
-        try{
+    loginAction(email, password) {
+        return new Promise(async (resolve, reject) => {
             const user = await SecurityServiceInstance.login(email, password);
-            if(user){
+            if (user) {
                 this.redirectToPage("index.html");
+                resolve(user); 
+            } else {
+                reject(new Error('No se pudo autenticar: usuario no encontrado'));
             }
-        }
-        catch(error){
-            throw new Error('No se pudo autenticar: ' + error.message);
-        }
-        
-        
+        });
     }
 }
 
