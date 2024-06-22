@@ -82,6 +82,6 @@ export default class ArticlesView extends BaseView {
             width: '100%'
         });
         this.reloadTableArticles(articles);
-        this.hideSnipper();
+        this.hideWait();
     }
 }

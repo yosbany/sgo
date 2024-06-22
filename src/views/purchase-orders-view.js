@@ -209,6 +209,7 @@ export default class PurchaseOrdersView extends BaseView {
 
     async newPurchaseOrderRenderPartialView(proveedores) {
         await this.getPartials('new-purchase-order.html', 'Nueva - Orden de Compra');
+
         this.cargarSelectProveedores(proveedores);
         document.getElementById('link-regresar').addEventListener('click', (event) => {
             this.redirectToPage('#list-purchase-orders');
@@ -236,6 +237,7 @@ export default class PurchaseOrdersView extends BaseView {
                 console.log('No hay contenido para imprimir.');
             }
         });
+        
         document.getElementById('btn-guardar').addEventListener('click', async () => {
             const proveedorSeleccionado = document.getElementById('select-proveedores').value;
             let tbody = document.getElementById('body-tabla-articulos-proveedor');
