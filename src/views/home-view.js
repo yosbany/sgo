@@ -55,7 +55,7 @@ export default class HomeView extends BaseView {
                 }
             });
         });
-        this.hideSnipper();
+        this.hideWait();
     }
 
     async listBackupRenderPartialView(listBackup){

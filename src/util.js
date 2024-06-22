@@ -12,16 +12,16 @@ function toggleElementVisibility(elementId, isVisible) {
 }
 
 export function showWaitPlease(){
-    /*const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
+    const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
     if(modal){
         modal.show();
-    }*/
+    }
 }
 export function hideWaitPlease(){
-    /*const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
+    const modal = new bootstrap.Modal(document.getElementById('modal-wait-please'));
     if(modal){
         modal.hide();
-    }*/
+    }
 }
 
 export function redirectTo(path) {

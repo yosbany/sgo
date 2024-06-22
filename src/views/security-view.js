@@ -20,11 +20,11 @@ export default class SecurityView extends BaseView {
                 toastr.error(error.message);
             }
             finally{
-                this.hideSnipper();
+                this.hideWait();
             }
             
         });
-        this.hideSnipper();
+        this.hideWait();
     }
 
 }

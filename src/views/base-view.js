@@ -71,29 +71,13 @@ export default class BaseView {
         }
     }
 
-    hideSnipper(){
-        $(".preloader").fadeOut();
+    showWait(){
+        showWaitPlease();
     }
-    showSnipper(){
-        $(".preloader").fadeIn();
+    hideWait(){
+        hideWaitPlease()
     }
    
-
-    showLoaderPage() {
-        showLoaderPage();
-    }
-
-    showLoaderApp() {
-        showLoaderApp();
-    }
-
-    hideLoaderPage() {
-        hideLoaderPage();
-    }
-    hideLoaderApp() {
-        hideLoaderApp();
-    }
-
     imprimirContenido(contenido) {
         // Divide el contenido por líneas
         const lineas = contenido.split('\n');
