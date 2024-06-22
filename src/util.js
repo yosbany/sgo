@@ -24,26 +24,6 @@ export function hideWaitPlease(){
     }*/
 }
 
-export function showLoaderPage() {
-    toggleElementVisibility("loaderPage", true);
-    toggleElementVisibility("page", false);
-}
-
-export function hideLoaderPage() {
-    toggleElementVisibility("loaderPage", false);
-    toggleElementVisibility("page", true);
-}
-
-export function showLoaderApp() {
-    toggleElementVisibility("loaderApp", true);
-    toggleElementVisibility("app", false);
-}
-
-export function hideLoaderApp() {
-    toggleElementVisibility("loaderApp", false);
-    toggleElementVisibility("app", true);
-}
-
 export function redirectTo(path) {
     window.location.href = path;
 }
