@@ -12,13 +12,21 @@ function toggleElementVisibility(elementId, isVisible) {
 }
 
 export function showWaitPlease(){
-    document.getElementsByClassName('main-wrapper')[0].style.display = 'none';
+    var content = document.getElementsByClassName('main-wrapper')[0];
+    if(!content){
+        content = document.body;
+    }
+    content.style.display = 'none';
     $(".preloader").fadeIn();
 }
 
 export function hideWaitPlease(){
     $(".preloader").fadeOut(() => {
-        document.getElementsByClassName('main-wrapper')[0].style.display = 'block';
+        var content = document.getElementsByClassName('main-wrapper')[0];
+        if(!content){
+            content = document.body;
+        }
+        content.style.display = 'block';
     });
 }
 
