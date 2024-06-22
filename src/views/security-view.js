@@ -11,7 +11,7 @@ export default class SecurityView extends BaseView {
     async loginRenderView(){
         document.getElementById('btn-submit').addEventListener('click', async (event) => {
             event.preventDefault();
-            this.showSnipper();
+            this.showWait();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             try {
