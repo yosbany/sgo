@@ -280,7 +280,7 @@ export default class PurchaseOrdersView extends BaseView {
             }
         });
 
-        this.hideSnipper();
+        this.hideWait();
 
     }
 
@@ -312,7 +312,7 @@ export default class PurchaseOrdersView extends BaseView {
                 console.log('No hay contenido para imprimir.');
             }
         });
-        this.hideSnipper();
+        this.hideWait();
     }
 
     async editPurchaseOrderRenderPartialView(proveedores, order) {
@@ -382,7 +382,7 @@ export default class PurchaseOrdersView extends BaseView {
             }
         });
 
-        this.hideSnipper();
+        this.hideWait();
     }
 
 
