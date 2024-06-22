@@ -1,4 +1,4 @@
-import { redirectTo, showLoaderPage, showLoaderApp, hideLoaderPage, hideLoaderApp } from '../util.js'
+import { redirectTo, showWaitPlease, hideWaitPlease } from '../util.js'
 
 export default class BaseView {
     constructor() {
