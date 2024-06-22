@@ -19,7 +19,8 @@ export function hideWaitPlease(){
 }
 
 export function redirectTo(path) {
-    window.location.href = path;
+    document.body.style.display = 'none';
+    window.location.replace(path);
 }
 
 export function delay(ms) {
