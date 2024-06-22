@@ -203,7 +203,7 @@ export default class PurchaseOrdersView extends BaseView {
         document.getElementById('btn-nueva-orden').addEventListener('click', (event) => {
             this.redirectToPage('#new-purchase-order');
         });
-        this.hideSnipper();
+        this.hideWait();
 
     }
 

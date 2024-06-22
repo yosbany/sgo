@@ -1,6 +1,8 @@
 import BaseController from './base-controller.js';
 import RecipeBookView from '../views/recipe-book-view.js'
 
+
+
 class RecipeBookController extends BaseController {
     static instance = null;
     static getInstance() {
