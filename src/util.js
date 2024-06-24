@@ -12,8 +12,11 @@ function toggleElementVisibility(elementId, isVisible) {
 }
 
 export function showWaitPlease(){
+    console.log("showWaitPlease");
     var content = document.getElementsByClassName('main-wrapper')[0];
+    console.log("content", content);
     if(!content){
+        console.log("showWaitPlease not main-wrapper set content body");
         content = document.body;
     }
     content.style.display = 'none';
@@ -21,9 +24,12 @@ export function showWaitPlease(){
 }
 
 export function hideWaitPlease(){
+    console.log("hideWaitPlease");
     $(".preloader").fadeOut(() => {
         var content = document.getElementsByClassName('main-wrapper')[0];
+        console.log("content",content);
         if(!content){
+            console.log("hideWaitPlease not main-wrapper set content body");
             content = document.body;
         }
         content.style.display = 'block';
