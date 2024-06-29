@@ -128,6 +128,7 @@ export default class PurchaseOrdersView extends BaseView {
                     tr.classList.add('table-success');
                     stock_deseado.disabled = soloLectura ? true : false;
                     stock_deseado.readOnly = soloLectura ? true : false;
+                    stock_deseado.value = a.stock_deseado;
                 }
 
                 if (!soloLectura) {
