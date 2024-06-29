@@ -124,11 +124,12 @@ export default class PurchaseOrdersView extends BaseView {
                 const nombre = tr.cells[1];
 
                 if (articulosSeleccionados && articulosSeleccionados.some(a => a.nombre === articulo.nombre)) {
+                    const articuloSeleccionado = articulosSeleccionados.find(a => a.nombre === articulo.nombre);
                     checkbox.checked = true;
                     tr.classList.add('table-success');
                     stock_deseado.disabled = soloLectura ? true : false;
                     stock_deseado.readOnly = soloLectura ? true : false;
-                    stock_deseado.value = a.stock_deseado;
+                    stock_deseado.value = articuloSeleccionado.stock_deseado;
                 }
 
                 if (!soloLectura) {
