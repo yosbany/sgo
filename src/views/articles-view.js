@@ -51,7 +51,10 @@ export default class ArticlesView extends BaseView {
             });
             const btn_guardar = document.getElementById("btn_guardar");
             btn_guardar.addEventListener('click', (event) => {
-                console.log($('#proveedores').find(':selected'))
+                $('#proveedores').find(':selected').each(function() {
+                    var label = $(this).label();
+                    console.log(label);
+                });
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                 modal.hide();
             });
