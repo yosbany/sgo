@@ -27,6 +27,16 @@ class ArticlesController extends BaseController {
     async guardarArticuloAction(articulo){
         await DataPersistenceServiceInstance.saveArticulo(articulo);
     }
+    async eliminarArticuloAction(articulo){
+        await DataPersistenceServiceInstance.deleteArticulo(articulo);
+    }
+
+    async eliminarArticuloAction(idArticulo){
+        const articulos = await DataPersistenceServiceInstance.deleteArticulo(idArticulo);
+        return articulos;
+     }
+
+    
 }
 
 

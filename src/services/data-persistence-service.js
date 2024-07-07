@@ -112,8 +112,15 @@ class DataPersistenceService {
 
     async deleteOrden(id){
         const ordenes = await this.storageService.getData(this.ENTITIES.ORDENES, []);
-        const filtered = ordenes.filter(item => item.id !== id);
+        const filtered = ordenes.filter(item => item.hasOwnProperty('id') && item.id !== id);
         await this.storageService.setData(this.ENTITIES.ORDENES, filtered);
+        return filtered;
+    }
+
+    async deleteArticulo(id){
+        const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
+        const filtered = articulos.filter(item => item.hasOwnProperty('id') && item.id !== id);
+        await this.storageService.setData(this.ENTITIES.ARTICULOS, filtered);
         return filtered;
     }
 }

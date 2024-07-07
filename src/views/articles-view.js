@@ -49,17 +49,19 @@ export default class ArticlesView extends BaseView {
                     modal.show();
                 });
             });
-            const btn_guardar = document.getElementById("btn_guardar");
-            btn_guardar.addEventListener('click', async () => {
+            document.getElementById("btn_guardar").addEventListener('click', async () => {
                 var proveedores = [];
+
                 $('#proveedores').find(':selected').each(function() {
                     var text = $(this).text();
                     proveedores.push(text);
                 });
+
                 const nombre = document.getElementById('nombre');
                 const pack_compra = document.getElementById('pack_compra');
                 const stock_deseado = document.getElementById('stock_deseado');
                 const precio_compra = document.getElementById('precio_compra');
+
                 var articulo = {
                     nombre: nombre.value,
                     pack_compra: pack_compra.value,
@@ -67,6 +69,7 @@ export default class ArticlesView extends BaseView {
                     precio_compra: precio_compra.value,
                     proveedores: proveedores
                 }
+
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                 try {
                     await this.controller.guardarArticuloAction(articulo);
@@ -79,6 +82,17 @@ export default class ArticlesView extends BaseView {
                 
                
             });
+            document.getElementById("btn_eliminar").addEventListener('click', async () => {
+                const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
+                try {
+                    await this.controller.eliminarArticuloAction(row.id);
+                    toastr.success("Artículo eliminado correctamente.");
+                    modal.hide();
+                } catch (error) {
+                    console.error('Error eliminando el artíclo:', error);
+                    toastr.error("Hubo un error al eliminar el artículo. Por favor, intente nuevamente.");
+                }
+            })
         }
     }
 
