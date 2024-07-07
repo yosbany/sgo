@@ -53,8 +53,8 @@ export default class ArticlesView extends BaseView {
             btn_guardar.addEventListener('click', async (event) => {
                 var proveedores = [];
                 $('#proveedores').find(':selected').each(function() {
-                    var label = $(this).label();
-                    proveedores.push(label);
+                    var text = $(this).text();
+                    proveedores.push(text);
                 });
                 const nombre = document.getElementById('nombre');
                 const pack_compra = document.getElementById('pack_compra');
