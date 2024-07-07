@@ -102,7 +102,7 @@ class DataPersistenceService {
             articulo.id = time;
             articulos.push(articulo);
         }
-        await this.storageService.setData(this.ENTITIES.ARTICULOS, articulo);
+        await this.storageService.setData(this.ENTITIES.ARTICULOS, articulos);
     }
 
     async getOrden(id) {
