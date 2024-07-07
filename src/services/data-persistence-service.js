@@ -94,7 +94,8 @@ class DataPersistenceService {
     async saveArticulo(articulo) {
         const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
         const index = articulos.findIndex(item => item.hasOwnProperty('id') && item.id === articulo.id);
-
+        console.log(index);
+        console.log(articulos);
         if (index !== -1) {
             articulos[index] = articulo;
         } else {
@@ -102,7 +103,9 @@ class DataPersistenceService {
             articulo.id = time;
             articulos.push(articulo);
         }
-        await this.storageService.setData(this.ENTITIES.ARTICULOS, articulos);
+        console.log(index);
+        console.log(articulos);
+        //await this.storageService.setData(this.ENTITIES.ARTICULOS, articulos);
     }
 
     async getOrden(id) {
