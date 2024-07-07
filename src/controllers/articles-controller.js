@@ -13,7 +13,7 @@ class ArticlesController extends BaseController {
     }
     constructor() {
         super();
-        this.view = new ArticlesView();
+        this.view = new ArticlesView(this);
         ArticlesController.instance = this;
     }
 
@@ -26,7 +26,7 @@ class ArticlesController extends BaseController {
 
     async guardarArticuloAction(articulo){
         await DataPersistenceServiceInstance.saveArticulo(articulo);
-     }
+    }
 }
 
 
