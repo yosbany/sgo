@@ -61,10 +61,10 @@ export default class ArticlesView extends BaseView {
                 const stock_deseado = document.getElementById('stock_deseado');
                 const precio_compra = document.getElementById('precio_compra');
                 var articulo = {
-                    nombre: nombre,
-                    pack_compra: pack_compra,
-                    stock_deseado: stock_deseado,
-                    precio_compra: precio_compra,
+                    nombre: nombre.value,
+                    pack_compra: pack_compra.value,
+                    stock_deseado: stock_deseado.value,
+                    precio_compra: precio_compra.value,
                     proveedores: proveedores
                 }
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
