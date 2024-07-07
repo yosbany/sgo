@@ -84,7 +84,22 @@ class DataPersistenceService {
         if (index !== -1) {
             ordenes[index] = orden;
         } else {
+            const time = (new Date()).getTime();
+            orden.id = time;
             ordenes.push(orden);
+        }
+        await this.storageService.setData(this.ENTITIES.ORDENES, ordenes);
+    }
+
+    async saveArticulo(articulo) {
+        const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
+        const index = articulos.findIndex(item => item.id === articulo.id);
+        if (index !== -1) {
+            articulos[index] = articulo;
+        } else {
+            const time = (new Date()).getTime();
+            articulo.id = time;
+            articulos.push(articulo);
         }
         await this.storageService.setData(this.ENTITIES.ORDENES, ordenes);
     }

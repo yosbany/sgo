@@ -23,6 +23,10 @@ class ArticlesController extends BaseController {
         const proveedores = await DataPersistenceServiceInstance.getProveedores();
         this.view.listArticlesRenderPartialView(articules, proveedores);
     }
+
+    async guardarArticuloAction(articulo){
+        await DataPersistenceServiceInstance.saveArticulo(articulo);
+     }
 }
 
 

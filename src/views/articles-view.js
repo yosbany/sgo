@@ -50,13 +50,34 @@ export default class ArticlesView extends BaseView {
                 });
             });
             const btn_guardar = document.getElementById("btn_guardar");
-            btn_guardar.addEventListener('click', (event) => {
+            btn_guardar.addEventListener('click', async (event) => {
+                var proveedores = [];
                 $('#proveedores').find(':selected').each(function() {
                     var label = $(this).label();
-                    console.log(label);
+                    proveedores.push(label);
                 });
+                const nombre = document.getElementById('nombre');
+                const pack_compra = document.getElementById('pack_compra');
+                const stock_deseado = document.getElementById('stock_deseado');
+                const precio_compra = document.getElementById('precio_compra');
+                var articulo = {
+                    nombre: nombre,
+                    pack_compra: pack_compra,
+                    stock_deseado: stock_deseado,
+                    precio_compra: precio_compra,
+                    proveedores: proveedores
+                }
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
-                modal.hide();
+                try {
+                    await this.controller.guardarArticuloAction(articulo);
+                    toastr.success("Articulo guardado correctamente.");
+                    modal.hide();
+                } catch (error) {
+                    console.error('Error guardando el articlo:', error);
+                    toastr.error("Hubo un error al guardar el articulo. Por favor, intente nuevamente.");
+                }
+                
+               
             });
         }
     }
