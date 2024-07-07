@@ -93,7 +93,8 @@ class DataPersistenceService {
 
     async saveArticulo(articulo) {
         const articulos = await this.storageService.getData(this.ENTITIES.ARTICULOS, []);
-        const index = articulos.findIndex(item => item.id === articulo.id);
+        const index = articulos.findIndex(item => item.hasOwnProperty('id') && item.id === articulo.id);
+
         if (index !== -1) {
             articulos[index] = articulo;
         } else {
