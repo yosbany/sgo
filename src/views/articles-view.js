@@ -50,7 +50,7 @@ export default class ArticlesView extends BaseView {
                 });
             });
             const btn_guardar = document.getElementById("btn_guardar");
-            btn_guardar.addEventListener('click', async (event) => {
+            btn_guardar.addEventListener('click', async () => {
                 var proveedores = [];
                 $('#proveedores').find(':selected').each(function() {
                     var text = $(this).text();
