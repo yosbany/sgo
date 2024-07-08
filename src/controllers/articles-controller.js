@@ -35,7 +35,6 @@ class ArticlesController extends BaseController {
         const articulos = await DataPersistenceServiceInstance.deleteArticulo(idArticulo);
         return articulos;
      }
-
     
 }
 
