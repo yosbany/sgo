@@ -33,11 +33,13 @@ export default class ArticlesView extends BaseView {
                 tbody.appendChild(tr);
 
                 tr.querySelector('.details').addEventListener('click', (event) => {
+                    const id_articulo = document.getElementById('id_articulo');
                     const nombre = document.getElementById('nombre');
                     const pack_compra = document.getElementById('pack_compra');
                     const stock_deseado = document.getElementById('stock_deseado');
                     const precio_compra = document.getElementById('precio_compra');
 
+                    id_articulo.value = row.hasOwnProperty('id') ? row.id : row.nombre;
                     nombre.value = row.nombre;
                     pack_compra.value = row.pack_compra;
                     stock_deseado.value = row.stock_deseado;
@@ -57,12 +59,14 @@ export default class ArticlesView extends BaseView {
                     proveedores.push(text);
                 });
 
+                const id_articulo = document.getElementById('id_articulo');
                 const nombre = document.getElementById('nombre');
                 const pack_compra = document.getElementById('pack_compra');
                 const stock_deseado = document.getElementById('stock_deseado');
                 const precio_compra = document.getElementById('precio_compra');
 
                 var articulo = {
+                    id: id_articulo.value,    
                     nombre: nombre.value,
                     pack_compra: pack_compra.value,
                     stock_deseado: stock_deseado.value,
