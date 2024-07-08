@@ -88,8 +88,10 @@ export default class ArticlesView extends BaseView {
             });
             document.getElementById("btn_eliminar").addEventListener('click', async () => {
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
+                const id_articulo = document.getElementById('id_articulo');
                 try {
-                    await this.controller.eliminarArticuloAction(row.id);
+                    
+                    await this.controller.eliminarArticuloAction(id_articulo.value);
                     toastr.success("Artículo eliminado correctamente.");
                     modal.hide();
                 } catch (error) {
