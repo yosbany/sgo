@@ -39,7 +39,7 @@ export default class ArticlesView extends BaseView {
                     const stock_deseado = document.getElementById('stock_deseado');
                     const precio_compra = document.getElementById('precio_compra');
 
-                    id_articulo.value = row.hasOwnProperty('id') ? row.id : row.nombre;
+                    id_articulo.value = row.hasOwnProperty('id') ? row.id : (new Date()).getTime();
                     nombre.value = row.nombre;
                     pack_compra.value = row.pack_compra;
                     stock_deseado.value = row.stock_deseado;
@@ -91,7 +91,8 @@ export default class ArticlesView extends BaseView {
                 const id_articulo = document.getElementById('id_articulo');
                 try {
                     
-                    await this.controller.eliminarArticuloAction(id_articulo.value);
+                    const articulos = await this.controller.eliminarArticuloAction(id_articulo.value);
+                    this.reloadTableArticles(articulos);
                     toastr.success("Artículo eliminado correctamente.");
                     modal.hide();
                 } catch (error) {
