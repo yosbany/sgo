@@ -57,7 +57,7 @@ export default class ArticlesView extends BaseView {
     }
 
     async handleLoadTableArticulo(){
-        const items = this.controller.getArticulosAction();
+        const items = await this.controller.getArticulosAction();
         this.dom.tbodyArticulos.innerHTML = "";
         if (items.length === 0) {
             let tr = document.createElement('tr');
