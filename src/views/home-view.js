@@ -25,7 +25,7 @@ export default class HomeView extends BaseView {
                         this.redirectToPage("#new-purchase-order");
                         break;
                     case 'card2':
-                        alert('Nuevo Movimiento Contable');
+                        alert('Nuevo 11 Movimiento Contable');
                         // Lógica específica para la card 2
                         break;
                     case 'card3':
