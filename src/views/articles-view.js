@@ -26,10 +26,14 @@ export default class ArticlesView extends BaseView {
 
     bindEvents() {
         super.bindBaseEvents();
-        this.dom.btnsVerDetalleArticuloArray.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
-        this.dom.btnGuardarArticulo.addEventListener('click', (event) => this.handleClickBtnGuardarArticulo(event));
-        this.dom.btnEliminarArticulo.addEventListener('click', (event) => this.handleClickBtnEliminarArticulo(event));
-        this.dom.btnNuevoArticulo.addEventListener('click', (event) => this.handleClickBtnNuevoArticulo(event));
+        if(this.dom.btnsVerDetalleArticuloArray)
+            this.dom.btnsVerDetalleArticuloArray.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
+        if(this.dom.btnGuardarArticulo)
+            this.dom.btnGuardarArticulo.addEventListener('click', (event) => this.handleClickBtnGuardarArticulo(event));
+        if(this.dom.btnEliminarArticulo)
+            this.dom.btnEliminarArticulo.addEventListener('click', (event) => this.handleClickBtnEliminarArticulo(event));
+        if(this.dom.btnNuevoArticulo)
+            this.dom.btnNuevoArticulo.addEventListener('click', (event) => this.handleClickBtnNuevoArticulo(event));
     }
 
     reloadDom() {
