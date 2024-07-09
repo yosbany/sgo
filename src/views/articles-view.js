@@ -47,12 +47,9 @@ export default class ArticlesView extends BaseView {
         const options = await this.controller.getProveedoresAction();
         options.forEach(option => {
             const optionElement = $('<option>').attr('value', option.id).text(option.nombre);
-            if (optionsSelected.includes(option.id)) {
-                optionElement.attr('selected', 'selected');
-            }
             this.dom.multiselectProveedoresArticulo.append(optionElement);
         });
-        this.dom.multiselectProveedoresArticulo.trigger('change');
+        this.dom.multiselectProveedoresArticulo.val(optionsSelected).trigger('change');
         this.dom.multiselectProveedoresArticulo.select2({
             width: '100%'
         });
