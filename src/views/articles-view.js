@@ -82,6 +82,7 @@ export default class ArticlesView extends BaseView {
                 this.dom.tbodyArticulos.appendChild(tr);
             });
         }
+        this.reloadDom();
     }
 
     async handleClickBtnVerDetallesArticulo(event){
