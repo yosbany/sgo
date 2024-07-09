@@ -77,7 +77,7 @@ export default class ArticlesView extends BaseView {
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                 try {
                     await this.controller.guardarArticuloAction(articulo);
-                    await this.reloadTableArticles(this.getArticulos())
+                    await this.reloadTableArticles(this.controller.getArticulosAction())
                     toastr.success("Articulo guardado correctamente.");
                     modal.hide();
                 } catch (error) {
