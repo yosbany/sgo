@@ -39,7 +39,7 @@ export default class ArticlesView extends BaseView {
                     const stock_deseado = document.getElementById('stock_deseado');
                     const precio_compra = document.getElementById('precio_compra');
 
-                    id_articulo.value = row.hasOwnProperty('id') ? row.id : (new Date()).getTime();
+                    id_articulo.value = row.id;
                     nombre.value = row.nombre;
                     pack_compra.value = row.pack_compra;
                     stock_deseado.value = row.stock_deseado;
@@ -77,6 +77,7 @@ export default class ArticlesView extends BaseView {
                 const modal = new bootstrap.Modal(document.getElementById('modal-details-items'));
                 try {
                     await this.controller.guardarArticuloAction(articulo);
+                    await this.reloadTableArticles(this.getArticulos())
                     toastr.success("Articulo guardado correctamente.");
                     modal.hide();
                 } catch (error) {

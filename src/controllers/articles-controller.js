@@ -24,6 +24,10 @@ class ArticlesController extends BaseController {
         this.view.listArticlesRenderPartialView(articules, proveedores);
     }
 
+    async getArticulosAction(articulo){
+        await DataPersistenceServiceInstance.getArticulos();
+    }
+
     async guardarArticuloAction(articulo){
         await DataPersistenceServiceInstance.saveArticulo(articulo);
     }
