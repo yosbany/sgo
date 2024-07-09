@@ -11,7 +11,7 @@ export default class ArticlesView extends BaseView {
     async cacheDom() {
         super.cacheBaseDom();
         this.dom.tbodyArticulos = document.getElementById("id-tbody-articulos");
-        this.dom.btnsVerDetalleArticuloArray = document.querySelector('.class-button-detalles-articulo');
+        this.dom.btnsVerDetalleArticuloArray = document.querySelectorAll('.class-button-detalles-articulo');
         this.dom.inputIdArticulo = document.getElementById('id-input-id-articulo');
         this.dom.inputNombreArticulo = document.getElementById('id-input-nombre-articulo');
         this.dom.inputPackCompraArticulo = document.getElementById('id-input-pack-compra-articulo');
@@ -27,7 +27,9 @@ export default class ArticlesView extends BaseView {
     async bindEvents() {
         super.bindBaseEvents();
         if(this.dom.btnsVerDetalleArticuloArray)
-            this.dom.btnsVerDetalleArticuloArray.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
+            this.dom.btnsVerDetalleArticuloArray.forEach(button => {
+                button.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
+            });
         if(this.dom.btnGuardarArticulo)
             this.dom.btnGuardarArticulo.addEventListener('click', (event) => this.handleClickBtnGuardarArticulo(event));
         if(this.dom.btnEliminarArticulo)
