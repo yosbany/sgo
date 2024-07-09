@@ -79,11 +79,11 @@ export default class ArticlesView extends BaseView {
                     await this.controller.guardarArticuloAction(articulo);
                     const articulos = await this.controller.getArticulosAction();
                     await this.reloadTableArticles(articulos);
-                    toastr.success("Articulo guardado correctamente.");
+                    toastr.success("Artículo guardado correctamente.");
                     modal.hide();
                 } catch (error) {
-                    console.error('Error guardando el articlo:', error);
-                    toastr.error("Hubo un error al guardar el articulo. Por favor, intente nuevamente.");
+                    console.error('Error guardando el artíclo:', error);
+                    toastr.error("Hubo un error al guardar el artículo. Por favor, intente nuevamente.");
                 }
                 
                
