@@ -1,6 +1,6 @@
-<button type="button" class="btn btn-info" id="btn-nuevo-articulo">
+<button type="button" class="btn btn-info" id="id-btn-nuevo-articulo">
     <i class="mdi mdi-plus"></i>
-    Nuevo Articulo
+    Nuevo Artículo
 </button>
 <hr>
 <table class="table">
@@ -10,15 +10,15 @@
             <th scope="col" class="text-end"><b>Acciones</b></th>
         </tr>
     </thead>
-    <tbody id="body-table-articules">
+    <tbody id="id-tbody-articulos">
         <!-- Dinamic -->
     </tbody>
 </table>
 <!-- Modal de Confirmación -->
-<div class="modal fade" id="modal-details-items" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="id-div-modal-detalle-articulo" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <input type="hidden" class="form-control" id="id_articulo">
+            <input type="hidden" class="form-control" id="id-input-id-articulo">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalLabel">Detalles del Artículo</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -27,31 +27,31 @@
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-3 text-end control-label col-form-label">Nombre</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                        <input type="text" class="form-control" id="id-input-nombre-articulo" placeholder="Nombre">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="pack_compra" class="col-sm-3 text-end control-label col-form-label">Pack de Compra</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="pack_compra" placeholder="Pack de Compra">
+                        <input type="text" class="form-control" id="id-input-pack-compra-articulo" placeholder="Pack de Compra">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="stock_deseado" class="col-sm-3 text-end control-label col-form-label">Stock Deseado</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="stock_deseado" placeholder="Stock Deseado">
+                        <input type="text" class="form-control" id="id-input-stock-deseado-articulo" placeholder="Stock Deseado">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="precio_compra" class="col-sm-3 text-end control-label col-form-label">Precio de Compra</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="precio_compra" placeholder="Precio de Compra">
+                        <input type="text" class="form-control" id="id-input-precio-compra-articulo" placeholder="Precio de Compra">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="proveedores" class="col-md-3 mt-3">Proveedores</label>
                     <div class="col-md-9 multiselect-admin">
-                        <select class="select2 form-select shadow-none mt-3" id="proveedores" multiple="multiple">
+                        <select class="select2 form-select shadow-none mt-3" id="id-multiselect-proveedores-articulo" multiple="multiple">
                              <!--Dinamic-->
                         </select>
                     </div>
@@ -59,8 +59,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" id="btn_eliminar" data-bs-dismiss="modal">Eliminar</button>
-                <button type="button" class="btn btn-primary" id="btn_guardar" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-danger" id="id-btn-eliminar-articulo" data-bs-dismiss="modal">Eliminar</button>
+                <button type="button" class="btn btn-primary" id="id-btn-guardar-articulo" data-bs-dismiss="modal">Guardar</button>
             </div>
         </div>
     </div>
