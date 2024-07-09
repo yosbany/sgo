@@ -9,8 +9,7 @@ export default class BaseView {
     }
     
     cacheBaseDom() {
-        this.dom.sidebarNav = document.getElementById('sidebarnav');
-        this.dom.sidebarNavItem = this.dom.sidebarNav.querySelectorAll('.sidebar-item');
+        
     }
 
     bindBaseEvents() {
