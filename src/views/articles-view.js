@@ -92,7 +92,7 @@ export default class ArticlesView extends BaseView {
         const id = element.getAttribute('id-obj-row');
         const articulo = await this.controller.getArticuloAction(id);
         console.log("articulo",articulo);
-        this.dom.inputIdArticul.value = articulo.id;
+        this.dom.inputIdArticulo.value = articulo.id;
         this.dom.inputNombreArticulo.value = articulo.nombre;
         this.dom.inputPackCompraArticulo.value = articulo.pack_compra;
         this.dom.inputStockDeseadoArticulo.value = articulo.stock_deseado;
