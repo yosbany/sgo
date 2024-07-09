@@ -17,5 +17,4 @@ links.forEach(function(link) {
 var scripts = document.querySelectorAll('script[src]');
 scripts.forEach(function(script) {
     var src = script.getAttribute('src');
-    script.setAttribute('src', src + (src.includes('?') ? '&' : '?') + 'v=' + timestamp);
 });
