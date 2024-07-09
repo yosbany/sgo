@@ -5,7 +5,23 @@ export default class ArticlesView extends BaseView {
     constructor(controller) {
         super();
         this.controller = controller;
+        this.reloadDom()
     }
+
+    cacheDom() {
+        super.cacheBaseDom();
+        
+    }
+
+    bindEvents() {
+        super.bindBaseEvents();
+    }
+
+    reloadDom() {
+        this.cacheDom();
+        this.bindEvents(); 
+    }
+
 
     async reloadTableArticles(articles) {
         let tbody = document.getElementById("body-table-articules");

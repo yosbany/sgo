@@ -2,8 +2,22 @@ import { redirectTo, showWaitPlease, hideWaitPlease } from '../util.js'
 
 export default class BaseView {
     constructor() {
+        this.dom = {};
+        this.cacheBaseDom();
+        this.bindBaseEvents();
         this.eventHandlerMenu();
     }
+    
+    cacheBaseDom() {
+        this.dom.sidebarNav = document.getElementById('sidebarnav');
+        this.dom.sidebarNavItem = this.dom.sidebarNav.querySelectorAll('.sidebar-item');
+    }
+
+    bindBaseEvents() {
+        
+    }
+
+
 
     getContent(elementId) {
         const element = document.getElementById(elementId);
