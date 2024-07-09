@@ -91,7 +91,15 @@ export default class ArticlesView extends BaseView {
         const element = event.currentTarget;
         const id = element.getAttribute('id-obj-row');
         const articulo = await this.controller.getArticuloAction(id);
-        console.log("articulo",articulo)
+        console.log("articulo",articulo);
+        this.dom.inputIdArticul.value = articulo.id;
+        this.dom.inputNombreArticulo.value = articulo.nombre;
+        this.dom.inputPackCompraArticulo.value = articulo.pack_compra;
+        this.dom.inputStockDeseadoArticulo.value = articulo.stock_deseado;
+        this.dom.inputPrecioCompraArticulo.value = articulo.precio_compra;
+        const idsProveedores = articulo.proveedores.map(item => item.id);
+        this.handleLoadSelectProveedores(idsProveedores);
+        (new bootstrap.Modal(this.dom.modalDetalleArticulo)).show();
     }
 
     async handleClickBtnGuardarArticulo(event){
