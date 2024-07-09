@@ -19,7 +19,7 @@ class ArticlesController extends BaseController {
 
     //route: #list-articles
     async listArticles(){
-        const articules = await DataPersistenceServiceInstance.getArticles();
+        const articules = await DataPersistenceServiceInstance.getArticulos();
         const proveedores = await DataPersistenceServiceInstance.getProveedores();
         this.view.listArticlesRenderPartialView(articules, proveedores);
     }
@@ -27,13 +27,9 @@ class ArticlesController extends BaseController {
     async guardarArticuloAction(articulo){
         await DataPersistenceServiceInstance.saveArticulo(articulo);
     }
-    async eliminarArticuloAction(articulo){
-        await DataPersistenceServiceInstance.deleteArticulo(articulo);
-    }
 
     async eliminarArticuloAction(idArticulo){
-        const articulos = await DataPersistenceServiceInstance.deleteArticulo(idArticulo);
-        return articulos;
+        return await DataPersistenceServiceInstance.deleteArticulo(idArticulo);;
      }
     
 }
