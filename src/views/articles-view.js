@@ -8,7 +8,7 @@ export default class ArticlesView extends BaseView {
         this.reloadDom();
     }
 
-    cacheDom() {
+    async cacheDom() {
         super.cacheBaseDom();
         this.dom.tbodyArticulos = document.getElementById("id-tbody-articulos");
         this.dom.btnsVerDetalleArticuloArray = document.querySelector('.class-button-detalles-articulo');
@@ -24,7 +24,7 @@ export default class ArticlesView extends BaseView {
         this.dom.btnNuevoArticulo = document.getElementById('id-btn-nuevo-articulo');
     }
 
-    bindEvents() {
+    async bindEvents() {
         super.bindBaseEvents();
         if(this.dom.btnsVerDetalleArticuloArray)
             this.dom.btnsVerDetalleArticuloArray.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
@@ -36,13 +36,13 @@ export default class ArticlesView extends BaseView {
             this.dom.btnNuevoArticulo.addEventListener('click', (event) => this.handleClickBtnNuevoArticulo(event));
     }
 
-    reloadDom() {
+    async reloadDom() {
         this.cacheDom();
         this.bindEvents(); 
     } 
 
-    handleLoadSelectProveedores(optionsSelected = []) {
-        const options = this.controller.getProveedoresAction();
+    async handleLoadSelectProveedores(optionsSelected = []) {
+        const options = await this.controller.getProveedoresAction();
         options.forEach(option => {
             const optionElement = $('<option>').attr('value', option.id).text(option.nombre);
             if (optionsSelected.includes(option.id)) {
