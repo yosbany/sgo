@@ -5,7 +5,6 @@ export default class ArticlesView extends BaseView {
     constructor(controller) {
         super();
         this.controller = controller;
-        this.observeDomChanges(this.reloadDom.bind(this));
     }
 
     async reloadDom() {
@@ -84,6 +83,7 @@ export default class ArticlesView extends BaseView {
                 this.dom.tbodyArticulos.appendChild(tr);
             });
         }
+        this.reloadDom();
     }
 
     async handleClickBtnVerDetallesArticulo(event) {
@@ -97,6 +97,7 @@ export default class ArticlesView extends BaseView {
         this.dom.inputPrecioCompraArticulo.value = articulo.precio_compra;
         this.handleLoadSelectProveedores(articulo.proveedores);
         (new bootstrap.Modal(this.dom.modalDetalleArticulo)).show();
+        this.reloadDom();
     }
 
     async handleClickBtnGuardarArticulo(event) {
@@ -117,21 +118,24 @@ export default class ArticlesView extends BaseView {
         } catch (error) {
             toastr.error("Error al guardar el artículo.");
         }
-
+        this.reloadDom();
     }
 
     async handleClickBtnEliminarArticulo(event) {
         const id = this.dom.inputIdArticulo.value;
         const articulo = await this.controller.getArticuloAction(id);
-        console.log("articulo", articulo)
+        console.log("articulo", articulo);
+        this.reloadDom();
     }
 
     async handleClickBtnNuevoArticulo(event) {
-        console.log("new articulo")
+        console.log("new articulo");
+        this.reloadDom();
     }
 
     async listArticlesRenderPartialView(articles, proveedores) {
         await this.getPartials('list-articles.html', 'Artículos');
+        this.reloadDom();
         this.handleLoadTableArticulo();
         this.hideWait();
     }

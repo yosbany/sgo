@@ -16,30 +16,6 @@ export default class BaseView {
         
     }
 
-    observeDomChanges(callback) {
-        const targetNode = document.body;
-        const config = { attributes: true, childList: true, subtree: true };
-        
-        let isScheduled = false;
-
-        const mutationCallback = (mutationsList, observer) => {
-            if (!isScheduled) {
-                isScheduled = true;
-                setTimeout(() => {
-                    isScheduled = false;
-                    if (typeof callback === 'function') {
-                        callback();
-                    }
-                }, 0); 
-            }
-        };
-
-        const observer = new MutationObserver(mutationCallback);
-        observer.observe(targetNode, config);
-    }
-
-
-
     getContent(elementId) {
         const element = document.getElementById(elementId);
         if (element) {
