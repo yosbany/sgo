@@ -101,7 +101,7 @@ export default class ArticlesView extends BaseView {
     async handleClickBtnGuardarArticulo(event){
         try {
             const id = this.dom.inputIdArticulo.value;
-            const articulo = id ? await this.controller.getArticuloAction(id) : {};
+            let articulo = id ? await this.controller.getArticuloAction(id) : {};
             articulo.nombre = this.dom.inputNombreArticulo.value;
             articulo.pack_compra = this.dom.inputPackCompraArticulo.value;
             articulo.stock_deseado = this.dom.inputStockDeseadoArticulo.value;
