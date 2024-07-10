@@ -113,7 +113,7 @@ export default class ArticlesView extends BaseView {
                 var value = $(this).value();
                 articulo.proveedores.push(value);
             });
-            this.controller.guardarArticuloAction(articulo);
+            await this.controller.guardarArticuloAction(articulo);
             toastr.success("Artículo guardado correctamente.");
         } catch (error) {
             console.error(error);
