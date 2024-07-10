@@ -8,8 +8,8 @@ export default class ArticlesView extends BaseView {
     }
 
     async reloadDom() {
-        this.cacheDom();
-        this.bindEvents();
+        await this.cacheDom();
+        await this.bindEvents();
     }
 
     async cacheDom() {
@@ -30,8 +30,6 @@ export default class ArticlesView extends BaseView {
 
     async bindEvents() {
         super.bindBaseEvents();
-        if(this.dom.modalDetalleArticulo)
-            (new bootstrap.Modal(this.dom.modalDetalleArticulo)).hide();
         if (this.dom.btnsVerDetalleArticuloArray)
             this.dom.btnsVerDetalleArticuloArray.forEach(button => {
                 button.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
@@ -57,6 +55,7 @@ export default class ArticlesView extends BaseView {
         this.dom.multiselectProveedoresArticulo.select2({
             width: '100%'
         });
+        this.reloadDom();
     }
 
     async handleLoadTableArticulo() {
@@ -85,6 +84,7 @@ export default class ArticlesView extends BaseView {
                 this.dom.tbodyArticulos.appendChild(tr);
             });
         }
+        this.reloadDom();
     }
 
     async handleClickBtnVerDetallesArticulo(event) {
@@ -138,7 +138,6 @@ export default class ArticlesView extends BaseView {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadDom();
         this.handleLoadTableArticulo();
-        this.reloadDom();
         this.hideWait();
     }
 }
