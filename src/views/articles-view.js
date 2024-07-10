@@ -30,6 +30,8 @@ export default class ArticlesView extends BaseView {
 
     async bindEvents() {
         super.bindBaseEvents();
+        if(this.dom.modalDetalleArticulo)
+            (new bootstrap.Modal(this.dom.modalDetalleArticulo)).hide();
         if (this.dom.btnsVerDetalleArticuloArray)
             this.dom.btnsVerDetalleArticuloArray.forEach(button => {
                 button.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
