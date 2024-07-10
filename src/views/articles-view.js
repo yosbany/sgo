@@ -134,7 +134,7 @@ export default class ArticlesView extends BaseView {
         this.reloadDom();
     }
 
-    async listArticlesRenderPartialView(articles, proveedores) {
+    async listArticlesRenderPartialView() {
         await this.getPartials('list-articles.html', 'Artículos');
         this.reloadDom();
         this.handleLoadTableArticulo();

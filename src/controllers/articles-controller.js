@@ -19,9 +19,7 @@ class ArticlesController extends BaseController {
 
     //route: #list-articles
     async listArticles(){
-        const articules = await DataPersistenceServiceInstance.getArticulos();
-        const proveedores = await DataPersistenceServiceInstance.getProveedores();
-        this.view.listArticlesRenderPartialView(articules, proveedores);
+        this.view.listArticlesRenderPartialView();
     }
 
     async getArticuloAction(id){
