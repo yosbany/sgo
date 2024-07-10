@@ -23,6 +23,7 @@ export default class ArticlesView extends BaseView {
         this.dom.inputPrecioCompraArticulo = document.getElementById('id-input-precio-compra-articulo');
         this.dom.multiselectProveedoresArticulo = $('#id-multiselect-proveedores-articulo');
         this.dom.modalDetalleArticulo = document.getElementById('id-div-modal-detalle-articulo');
+        this.dom.modalDetalleArticuloInstance = new bootstrap.Modal(this.dom.modalDetalleArticulo);
         this.dom.btnGuardarArticulo = document.getElementById('id-btn-guardar-articulo');
         this.dom.btnEliminarArticulo = document.getElementById('id-btn-eliminar-articulo');
         this.dom.btnNuevoArticulo = document.getElementById('id-btn-nuevo-articulo');
@@ -97,7 +98,7 @@ export default class ArticlesView extends BaseView {
         this.dom.inputStockDeseadoArticulo.value = articulo.stock_deseado;
         this.dom.inputPrecioCompraArticulo.value = articulo.precio_compra;
         this.handleLoadSelectProveedores(articulo.proveedores);
-        (new bootstrap.Modal(this.dom.modalDetalleArticulo)).show();
+        this.dom.modalDetalleArticuloInstance.show();
     }
 
     async handleClickBtnGuardarArticulo(event) {
@@ -115,7 +116,7 @@ export default class ArticlesView extends BaseView {
             });
             await this.controller.guardarArticuloAction(articulo);
             toastr.success("Artículo guardado correctamente.");
-            (new bootstrap.Modal(this.dom.modalDetalleArticulo)).hide();
+            this.dom.modalDetalleArticuloInstance.hide();
         } catch (error) {
             console.error(error);
             toastr.error("Error al guardar el artículo.");
