@@ -89,7 +89,6 @@ export default class ArticlesView extends BaseView {
         const element = event.currentTarget;
         const id = element.getAttribute('id-obj-row');
         const articulo = await this.controller.getArticuloAction(id);
-        console.log("articulo",articulo);
         this.dom.inputIdArticulo.value = articulo.id;
         this.dom.inputNombreArticulo.value = articulo.nombre;
         this.dom.inputPackCompraArticulo.value = articulo.pack_compra;
@@ -100,9 +99,24 @@ export default class ArticlesView extends BaseView {
     }
 
     async handleClickBtnGuardarArticulo(event){
-        const id = this.dom.inputIdArticulo.value;
-        const articulo = await this.controller.getArticuloAction(id);
-        console.log("articulo",articulo)
+        try {
+            const id = this.dom.inputIdArticulo.value;
+            const articulo = id ? await this.controller.getArticuloAction(id) : {};
+            articulo.nombre = this.dom.inputNombreArticulo.value;
+            articulo.pack_compra = this.dom.inputPackCompraArticulo.value;
+            articulo.stock_deseado = this.dom.inputStockDeseadoArticulo.value;
+            articulo.precio_compra = this.dom.inputPrecioCompraArticulo.value;
+            articulo.proveedores = [];
+            this.dom.multiselectProveedoresArticulo.find(':selected').each(function() {
+                var value = $(this).value();
+                articulo.proveedores.push(value);
+            });
+            this.controller.guardarArticuloAction(articulo);
+            toastr.success("Artículo guardado correctamente.");
+        } catch (error) {
+            toastr.error("Error al guardar el artículo. Por favor, intente nuevamente.");
+        }
+        
     }
 
     async handleClickBtnEliminarArticulo(event){
