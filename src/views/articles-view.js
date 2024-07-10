@@ -114,7 +114,7 @@ export default class ArticlesView extends BaseView {
             this.controller.guardarArticuloAction(articulo);
             toastr.success("Artículo guardado correctamente.");
         } catch (error) {
-            toastr.error("Error al guardar el artículo. Por favor, intente nuevamente.");
+            toastr.error("Error al guardar el artículo.");
         }
         
     }
