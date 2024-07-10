@@ -115,6 +115,7 @@ export default class ArticlesView extends BaseView {
             });
             await this.controller.guardarArticuloAction(articulo);
             toastr.success("Artículo guardado correctamente.");
+            (new bootstrap.Modal(this.dom.modalDetalleArticulo)).hide();
         } catch (error) {
             console.error(error);
             toastr.error("Error al guardar el artículo.");
