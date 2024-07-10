@@ -45,6 +45,7 @@ export default class ArticlesView extends BaseView {
 
     async handleLoadSelectProveedores(optionsSelected = []) {
         const options = await this.controller.getProveedoresAction();
+        this.dom.multiselectProveedoresArticulo.empty();
         options.forEach(option => {
             const optionElement = $('<option>').attr('value', option.id).text(option.nombre);
             this.dom.multiselectProveedoresArticulo.append(optionElement);
@@ -94,8 +95,7 @@ export default class ArticlesView extends BaseView {
         this.dom.inputPackCompraArticulo.value = articulo.pack_compra;
         this.dom.inputStockDeseadoArticulo.value = articulo.stock_deseado;
         this.dom.inputPrecioCompraArticulo.value = articulo.precio_compra;
-        const idsProveedores = articulo.proveedores.map(item => item.id);
-        this.handleLoadSelectProveedores(idsProveedores);
+        this.handleLoadSelectProveedores(articulo.proveedores);
         (new bootstrap.Modal(this.dom.modalDetalleArticulo)).show();
     }
 
