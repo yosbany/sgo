@@ -110,7 +110,7 @@ export default class ArticlesView extends BaseView {
             articulo.precio_compra = this.dom.inputPrecioCompraArticulo.value;
             articulo.proveedores = [];
             this.dom.multiselectProveedoresArticulo.find(':selected').each(function () {
-                var value = $(this).value();
+                var value = $(this).val();
                 articulo.proveedores.push(value);
             });
             await this.controller.guardarArticuloAction(articulo);
