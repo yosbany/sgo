@@ -1,11 +1,16 @@
 import BaseView from './base-view.js';
 
 export default class ArticlesView extends BaseView {
-    
+
     constructor(controller) {
         super();
         this.controller = controller;
-        this.reloadDom();
+        this.observeDomChanges(this.reloadDom.bind(this));
+    }
+
+    async reloadDom() {
+        this.cacheDom();
+        this.bindEvents();
     }
 
     async cacheDom() {
@@ -26,22 +31,19 @@ export default class ArticlesView extends BaseView {
 
     async bindEvents() {
         super.bindBaseEvents();
-        if(this.dom.btnsVerDetalleArticuloArray)
+        if (this.dom.btnsVerDetalleArticuloArray)
             this.dom.btnsVerDetalleArticuloArray.forEach(button => {
                 button.addEventListener('click', (event) => this.handleClickBtnVerDetallesArticulo(event));
             });
-        if(this.dom.btnGuardarArticulo)
+        if (this.dom.btnGuardarArticulo)
             this.dom.btnGuardarArticulo.addEventListener('click', (event) => this.handleClickBtnGuardarArticulo(event));
-        if(this.dom.btnEliminarArticulo)
+        if (this.dom.btnEliminarArticulo)
             this.dom.btnEliminarArticulo.addEventListener('click', (event) => this.handleClickBtnEliminarArticulo(event));
-        if(this.dom.btnNuevoArticulo)
+        if (this.dom.btnNuevoArticulo)
             this.dom.btnNuevoArticulo.addEventListener('click', (event) => this.handleClickBtnNuevoArticulo(event));
     }
 
-    async reloadDom() {
-        this.cacheDom();
-        this.bindEvents(); 
-    } 
+
 
     async handleLoadSelectProveedores(optionsSelected = []) {
         const options = await this.controller.getProveedoresAction();
@@ -56,7 +58,7 @@ export default class ArticlesView extends BaseView {
         });
     }
 
-    async handleLoadTableArticulo(){
+    async handleLoadTableArticulo() {
         const items = await this.controller.getArticulosAction();
         this.dom.tbodyArticulos.innerHTML = "";
         if (items.length === 0) {
@@ -66,7 +68,7 @@ export default class ArticlesView extends BaseView {
             `;
             this.dom.tbodyArticulos.appendChild(tr);
         }
-        else{
+        else {
             items.forEach(row => {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
@@ -82,10 +84,9 @@ export default class ArticlesView extends BaseView {
                 this.dom.tbodyArticulos.appendChild(tr);
             });
         }
-        this.reloadDom();
     }
 
-    async handleClickBtnVerDetallesArticulo(event){
+    async handleClickBtnVerDetallesArticulo(event) {
         const element = event.currentTarget;
         const id = element.getAttribute('id-obj-row');
         const articulo = await this.controller.getArticuloAction(id);
@@ -98,7 +99,7 @@ export default class ArticlesView extends BaseView {
         (new bootstrap.Modal(this.dom.modalDetalleArticulo)).show();
     }
 
-    async handleClickBtnGuardarArticulo(event){
+    async handleClickBtnGuardarArticulo(event) {
         try {
             const id = this.dom.inputIdArticulo.value;
             let articulo = id ? await this.controller.getArticuloAction(id) : {};
@@ -107,7 +108,7 @@ export default class ArticlesView extends BaseView {
             articulo.stock_deseado = this.dom.inputStockDeseadoArticulo.value;
             articulo.precio_compra = this.dom.inputPrecioCompraArticulo.value;
             articulo.proveedores = [];
-            this.dom.multiselectProveedoresArticulo.find(':selected').each(function() {
+            this.dom.multiselectProveedoresArticulo.find(':selected').each(function () {
                 var value = $(this).value();
                 articulo.proveedores.push(value);
             });
@@ -116,22 +117,21 @@ export default class ArticlesView extends BaseView {
         } catch (error) {
             toastr.error("Error al guardar el artículo.");
         }
-        
+
     }
 
-    async handleClickBtnEliminarArticulo(event){
+    async handleClickBtnEliminarArticulo(event) {
         const id = this.dom.inputIdArticulo.value;
         const articulo = await this.controller.getArticuloAction(id);
-        console.log("articulo",articulo)
+        console.log("articulo", articulo)
     }
 
-    async handleClickBtnNuevoArticulo(event){
+    async handleClickBtnNuevoArticulo(event) {
         console.log("new articulo")
     }
 
     async listArticlesRenderPartialView(articles, proveedores) {
         await this.getPartials('list-articles.html', 'Artículos');
-        this.reloadDom();
         this.handleLoadTableArticulo();
         this.hideWait();
     }

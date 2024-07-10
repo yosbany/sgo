@@ -16,6 +16,27 @@ export default class BaseView {
         
     }
 
+    observeDomChanges(callback) {
+        const targetNode = document.body;
+        const config = { attributes: true, childList: true, subtree: true };
+
+        const mutationCallback = (mutationsList, observer) => {
+            for(const mutation of mutationsList) {
+                if (mutation.type === 'childList') {
+                    console.log('A child node has been added or removed.');
+                } else if (mutation.type === 'attributes') {
+                    console.log(`The ${mutation.attributeName} attribute was modified.`);
+                }
+            }
+            if (typeof callback === 'function') {
+                callback();
+            }
+        };
+
+        const observer = new MutationObserver(mutationCallback);
+        observer.observe(targetNode, config);
+    }
+
 
 
     getContent(elementId) {
