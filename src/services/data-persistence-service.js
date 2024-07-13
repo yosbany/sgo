@@ -63,6 +63,7 @@ class DataPersistenceService {
 
     async findById(entity, id) {
         const data = await this.storageService.getData(entity, []);
+        console.log("data",data)
         return data.find(item => item.id === id) || null;
     }
 
@@ -179,6 +180,7 @@ class DataPersistenceService {
     }
 
     async getOrden(id) {
+        console.log("id",id)
         return await this.findById(this.ENTITIES.ORDENES, id);
     }
 

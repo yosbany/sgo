@@ -34,7 +34,7 @@ class PurchaseOrdersController extends BaseController {
         const idOrden = params ? params.idOrden : null;
         const orden = await DataPersistenceServiceInstance.getOrden(idOrden);
         const proveedores = await DataPersistenceServiceInstance.getProveedores();
-        console.log(orden);
+        console.log("orden", orden);
         this.view.viewPurchaseOrderRenderPartialView(proveedores, orden);
     }
 
