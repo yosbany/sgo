@@ -64,7 +64,7 @@ class DataPersistenceService {
     async findById(entity, id) {
         const data = await this.storageService.getData(entity, []);
         console.log("data",data)
-        return data.find(item => item.id === id) || null;
+        return data.find(item => String(item.id) === String(id)) || null;
     }
 
     async findAll(entity) {
